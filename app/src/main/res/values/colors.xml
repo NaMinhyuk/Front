@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    // Gray Scale
+    <color name="gray_900">#1F2021</color>
+    <color name="gray_800">#3F3F42</color>
+    <color name="gray_700">#5C5D61</color>
+    <color name="gray_600">#6F7075</color>
+    <color name="gray_500">#98989E</color>
+    <color name="gray_400">#B5B6BD</color>
+    <color name="gray_300">#D7D8E0</color>
+    <color name="gray_200">#E8E9ED</color>
+    <color name="gray_100">#F2F3F5</color>
+    <color name="gray_50">#F7F8FA</color>
+
+
+    // primary
+    <color name="blue_400">#0C62C8</color>
+    <color name="blue_300">#1277ED</color>
+    <color name="blue_200">#60A2EF</color>
+    <color name="blue_100">#ECF4FE</color>
+
+    // state color
+    <color name="error">#EF2B2A</color>
+    <color name="success">#08C152</color>
+
+</resources>
