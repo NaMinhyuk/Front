@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top_menu"
+        android:layout_width="360dp"
+        android:layout_height="58dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/detail_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="디지털기기"
+            android:textColor="@color/Gray800"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/detail_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_share"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="16dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/detail_sv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/top_menu"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp_main_banner"
+                android:layout_width="360dp"
+                android:layout_height="360dp"
+                android:orientation="horizontal"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:scrollIndicators="none"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/vp_main_banner"
+                android:background="@drawable/selector_tab_white"
+                app:tabGravity="center"
+                app:tabIndicator="@null"
+                android:paddingEnd="@dimen/dot_padding"
+                android:paddingStart="@dimen/dot_padding" />
+
+            <TextView
+                android:id="@+id/detail_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="디지털기기"
+                android:textColor="@color/Gray600"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/vp_main_banner"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp" />
+
+            <ImageView
+                android:id="@+id/detail_location_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_location"
+                app:layout_constraintStart_toStartOf="@id/detail_title"
+                app:layout_constraintTop_toBottomOf="@id/detail_title"
+                android:layout_marginTop="14dp" />
+
+            <TextView
+                android:id="@+id/detail_location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="울산 무거동"
+                android:textColor="@color/Gray500"
+                android:textSize="11sp"
+                app:layout_constraintTop_toBottomOf="@id/detail_title"
+                app:layout_constraintStart_toEndOf="@id/detail_location_iv"
+                android:layout_marginTop="11.5dp"
+                android:layout_marginLeft="2dp"/>
+
+            <TextView
+                android:id="@+id/detail_name_tv"
+                android:layout_width="328dp"
+                android:layout_height="40dp"
+                android:text="Canon[렌즈 포함] EOS R8CanonCanon[렌즈포함] EOS R8CanonCanon"
+                android:textColor="@color/Gray800"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/detail_location_iv"
+                app:layout_constraintStart_toStartOf="@id/detail_title"
+                android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:id="@+id/detail_star1_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_star"
+                app:layout_constraintTop_toBottomOf="@id/detail_name_tv"
+                app:layout_constraintStart_toStartOf="@id/detail_title"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/detail_star2_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_star"
+                app:layout_constraintTop_toTopOf="@id/detail_star1_iv"
+                app:layout_constraintStart_toEndOf="@id/detail_star1_iv"
+                android:layout_marginLeft="2dp" />
+
+            <ImageView
+                android:id="@+id/detail_star3_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_star"
+                app:layout_constraintTop_toTopOf="@id/detail_star2_iv"
+                app:layout_constraintStart_toEndOf="@id/detail_star2_iv"
+                android:layout_marginLeft="2dp" />
+
+            <ImageView
+                android:id="@+id/detail_star4_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_star"
+                app:layout_constraintTop_toTopOf="@id/detail_star3_iv"
+                app:layout_constraintStart_toEndOf="@id/detail_star3_iv"
+                android:layout_marginLeft="2dp" />
+
+            <ImageView
+                android:id="@+id/detail_star5_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_star"
+                app:layout_constraintTop_toTopOf="@id/detail_star4_iv"
+                app:layout_constraintStart_toEndOf="@id/detail_star4_iv"
+                android:layout_marginLeft="2dp" />
+
+            <TextView
+                android:id="@+id/detail_rate_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(758)"
+                android:textColor="@color/Gray500"
+                android:textSize="11sp"
+                app:layout_constraintBottom_toBottomOf="@id/detail_star1_iv"
+                app:layout_constraintStart_toEndOf="@id/detail_star5_iv"
+                android:layout_marginLeft="2dp" />
+
+            <TextView
+                android:id="@+id/text_dum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보증금 "
+                android:textColor="@color/Gray400"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@id/detail_star1_iv"
+                app:layout_constraintStart_toStartOf="@id/detail_title"
+                android:layout_marginTop="20dp" />
+
+            <TextView
+                android:id="@+id/detail_money_keep_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500,000"
+                android:textColor="@color/Gray400"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/text_dum1"
+                app:layout_constraintStart_toEndOf="@id/text_dum1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:textColor="@color/Gray400"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@id/text_dum1"
+                app:layout_constraintStart_toEndOf="@id/detail_money_keep_tv" />
+
+            <TextView
+                android:id="@+id/detail_money_day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10,000"
+                android:textColor="@color/Gray900"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@id/text_dum1"
+                app:layout_constraintStart_toStartOf="@id/text_dum1"
+                android:layout_marginTop="2dp" />
+
+            <TextView
+                android:id="@+id/text_dum2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 원"
+                android:textColor="@color/Gray900"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/detail_money_day_tv"
+                app:layout_constraintTop_toTopOf="@id/detail_money_day_tv"
+                app:layout_constraintBottom_toBottomOf="@id/detail_money_day_tv" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/일"
+                android:textColor="@color/Gray400"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="@id/detail_money_day_tv"
+                app:layout_constraintBottom_toBottomOf="@id/detail_money_day_tv"
+                app:layout_constraintStart_toEndOf="@id/text_dum2"
+                android:layout_marginLeft="2dp" />
+
+            <ImageView
+                android:id="@+id/divider"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_divider"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_money_day_tv"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:id="@+id/detail_explan_tv"
+                android:layout_width="328dp"
+                android:layout_height="wrap_content"
+                android:text="제품 설명 란입니다. "
+                android:textColor="@color/Gray900"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider"
+                android:layout_marginTop="24dp"/>
+
+            <ImageView
+                android:id="@+id/detail_profile_background_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_profile"
+                app:layout_constraintTop_toBottomOf="@id/detail_explan_tv"
+                app:layout_constraintStart_toStartOf="@id/detail_explan_tv"
+                android:layout_marginTop="24dp" />
+
+            <ImageView
+                android:id="@+id/detail_profile_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_profile_image"
+                app:layout_constraintTop_toTopOf="@id/detail_profile_background_iv"
+                app:layout_constraintStart_toStartOf="@id/detail_profile_background_iv"
+                app:layout_constraintBottom_toBottomOf="@id/detail_profile_background_iv"
+                android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:id="@+id/detail_profile_name_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="닉네임"
+                android:textColor="@color/Gray900"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@id/detail_profile_iv"
+                app:layout_constraintTop_toTopOf="@id/detail_profile_background_iv"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="8dp" />
+
+            <TextView
+                android:id="@+id/detail_profile_explan_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="한줄소개"
+                android:textColor="@color/Gray500"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="@id/detail_profile_name_iv"
+                app:layout_constraintTop_toBottomOf="@id/detail_profile_name_iv" />
+
+            <TextView
+                android:id="@+id/text_dum3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치"
+                android:textSize="16sp"
+                android:textColor="@color/Gray900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detail_profile_background_iv"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp" />
+
+            <ImageView
+                android:id="@+id/detail_map"
+                android:layout_width="328dp"
+                android:layout_height="160dp"
+                app:layout_constraintStart_toStartOf="@id/text_dum3"
+                app:layout_constraintTop_toBottomOf="@id/text_dum3"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/detail_map_location_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="위치 상세표시"
+                android:textSize="12sp"
+                android:textColor="@color/Gray600"
+                app:layout_constraintTop_toBottomOf="@id/detail_map"
+                app:layout_constraintStart_toStartOf="@id/detail_map"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/detail_review_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="사용자 리뷰"
+                android:textColor="@color/Gray900"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/detail_map_location_tv"
+                app:layout_constraintStart_toStartOf="@id/text_dum3"
+                android:layout_marginTop="43dp" />
+
+            <TextView
+                android:id="@+id/review_count_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#1277ED"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/detail_review_tv"
+                app:layout_constraintBottom_toBottomOf="@id/detail_review_tv"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="리뷰"
+                android:textColor="@color/Gray900"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="@id/detail_review_tv"
+                app:layout_constraintEnd_toStartOf="@id/review_count_tv"
+                android:layout_marginRight="4dp"
+                android:paddingBottom="200dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/detail_chat_btn_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_chat_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginRight="12dp" />
+
+        <ImageView
+            android:id="@+id/detail_bottom_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_bottombox"
+            app:layout_constraintTop_toBottomOf="@id/detail_chat_btn_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/detail_bottom_money_hour_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5,000"
+            android:textColor="#1277ED"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="@id/detail_bottom_box"
+            app:layout_constraintStart_toStartOf="@id/detail_bottom_box"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:id="@+id/detail_bottom_money_day_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10,000"
+            android:textColor="#1277ED"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/detail_bottom_money_hour_tv"
+            app:layout_constraintStart_toStartOf="@id/detail_bottom_money_hour_tv"
+            android:layout_marginTop="2dp" />
+
+        <TextView
+            android:id="@+id/dum4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/Gray800"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/detail_bottom_money_hour_tv"
+            app:layout_constraintTop_toTopOf="@id/detail_bottom_money_hour_tv"
+            app:layout_constraintBottom_toBottomOf="@id/detail_bottom_money_hour_tv"
+            android:layout_marginLeft="4dp" />
+
+        <TextView
+            android:id="@+id/dum5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/Gray800"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/detail_bottom_money_day_tv"
+            app:layout_constraintBottom_toBottomOf="@id/detail_bottom_money_day_tv"
+            android:layout_marginLeft="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/시간"
+            android:textColor="@color/Gray400"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/dum4"
+            app:layout_constraintBottom_toBottomOf="@id/detail_bottom_money_hour_tv"
+            android:layout_marginLeft="2dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/일"
+            android:textColor="@color/Gray400"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/dum5"
+            app:layout_constraintBottom_toBottomOf="@id/detail_bottom_money_day_tv"
+            android:layout_marginLeft="2dp" />
+
+        <ImageView
+            android:id="@+id/detail_bottom_reserve_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_bottom_reserve"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/detail_bottom_box"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp" />
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
