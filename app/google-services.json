@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "398334165093",
+    "project_id": "lifesharing-d465f",
+    "storage_bucket": "lifesharing-d465f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398334165093:android:3311b0c891ab7274fc468c",
+        "android_client_info": {
+          "package_name": "com.example.lifesharing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398334165093-bpfqiiajf5oetclrt3oo9hl5647ugbd1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiNBPenFpqLJtxGNmPYjJ7AlRKLbJaTfo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398334165093-bpfqiiajf5oetclrt3oo9hl5647ugbd1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
