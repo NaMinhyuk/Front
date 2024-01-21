@@ -16,12 +16,9 @@ interface RetrofitService {
     @POST("user/join")
     fun registerUserByEnqueue(@Body userInfo: RegisterRequestBody): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
 
-    @Headers("Content-Type: application/json")
-    @POST("user/login")
-     fun loginUserByEnqueue(@Body userInfo: LoginRequestBody): Call<LoginResponseBody>
 
     @Headers("Content-Type: application/json")
     @POST("user/login")
-    fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
+    suspend fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
 
 }

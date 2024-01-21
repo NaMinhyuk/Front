@@ -5,10 +5,13 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import com.example.lifesharing.BuildConfig.*
+
 
 object RetrofitAPI {
 
-    private const val BASE_URL = "http://15.164.22.51:8080"
+    private const val BASE_URL = BASE_URLS
+
 
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
@@ -18,6 +21,7 @@ object RetrofitAPI {
             .build()
     }
 
+
     private val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -25,6 +29,7 @@ object RetrofitAPI {
             .client(okHttpClient) // logcat에서 패킷 내용을 모니터링 할 수 있다 (interceptor)
             .build()
     }
+
 
     val emgMedService: RetrofitService by lazy {
         retrofit.create(RetrofitService::class.java)

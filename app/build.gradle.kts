@@ -26,6 +26,7 @@ android {
         buildConfigField("String", "KAKAO_NATIVE_APP_KEY", getApiKey("kakao.key"))
         buildConfigField("String", "NAVER_CLIENT_ID", getApiKey("naver.id"))
         buildConfigField("String", "NAVER_SECRET_KEY", getApiKey("naver.secret"))
+        buildConfigField("String", "BASE_URLS", getApiKey("base.urls"))
         resValue("string", "kakao_auth_host", getApiKey("kakao.oauth"))
     }
 
@@ -56,6 +57,7 @@ android {
 
 dependencies {
 
+    implementation("com.google.android.datatransport:transport-runtime:3.2.0")
     platform("com.google.firebase:firebase-bom:32.7.0")
     implementation("com.kakao.sdk:v2-user:2.19.0")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")

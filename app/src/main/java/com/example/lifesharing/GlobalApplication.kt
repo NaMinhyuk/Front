@@ -2,18 +2,26 @@ package com.example.lifesharing
 
 import android.app.Application
 import android.content.Context
-import com.google.firebase.BuildConfig
+import com.example.lifesharing.sharedPref.PreferenceUtil
 import com.kakao.sdk.common.KakaoSdk
 import com.navercorp.nid.NaverIdLoginSDK
+import com.example.lifesharing.BuildConfig.*
 
 class GlobalApplication : Application() {
+
+    companion object {
+        lateinit var prefs: PreferenceUtil
+    }
 
     override fun onCreate() {
         super.onCreate()
         // kakao sdk init
-        NaverIdLoginSDK.initialize(this, "3SvlouKq1mjS2CR8T2nX", "3R_PtZHz5X", "lifesharing")
 
-        KakaoSdk.init(this, com.example.lifesharing.BuildConfig.KAKAO_NATIVE_APP_KEY)
+        prefs = PreferenceUtil(applicationContext)
+
+        NaverIdLoginSDK.initialize(this, NAVER_CLIENT_ID, NAVER_SECRET_KEY, "lifesharing")
+
+        KakaoSdk.init(this, KAKAO_NATIVE_APP_KEY)
     }
 
 }
