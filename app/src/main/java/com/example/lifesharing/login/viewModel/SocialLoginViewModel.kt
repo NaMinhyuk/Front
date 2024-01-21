@@ -1,4 +1,4 @@
-package com.example.lifesharing.login
+package com.example.lifesharing.login.viewModel
 
 import android.app.Application
 import android.util.Log
@@ -6,6 +6,7 @@ import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.R
+import com.example.lifesharing.login.SocialLoginActivity
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -15,12 +16,17 @@ import com.kakao.sdk.auth.model.OAuthToken
 import com.kakao.sdk.common.model.ClientError
 import com.kakao.sdk.common.model.ClientErrorCause
 import com.kakao.sdk.user.UserApiClient
+import com.navercorp.nid.NaverIdLoginSDK
+import com.navercorp.nid.oauth.OAuthLoginCallback
 
 class SocialLoginViewModel(application: Application) : AndroidViewModel(application) {
 
     val TAG: String = "로그"
 
     val TAG1: String = "카카오 로그인 관련"
+
+    val TAG2: String = "네이버 로그인 관련"
+
 
     var auth = FirebaseAuth.getInstance()
 
@@ -74,7 +80,9 @@ class SocialLoginViewModel(application: Application) : AndroidViewModel(applicat
                     // 카카오톡에 연결된 카카오계정이 없는 경우, 카카오계정으로 로그인 시도
                     UserApiClient.instance.loginWithKakaoAccount(context, callback = callback)
                 } else if (token != null) {
+                    kakaoToken = token.accessToken
                     Log.i(TAG1, "카카오톡으로 로그인 성공 ${token.accessToken}")
+                    navigatedMainActivity.value = true
                 }
             }
         } else {
@@ -83,7 +91,31 @@ class SocialLoginViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun naverLogin() {
+
+        NaverIdLoginSDK.initialize(context, com.example.lifesharing.BuildConfig.NAVER_CLIENT_ID, com.example.lifesharing.BuildConfig.NAVER_SECRET_KEY, "lifesharing")
+
         Log.d(TAG, "naverLogin: ")
+        val oAuthLoginCallback = object : OAuthLoginCallback {
+            override fun onSuccess() {
+                Log.d("네이버", "AccessToken : " + NaverIdLoginSDK.getAccessToken())
+                Log.d("네이버", "ReFreshToken : " + NaverIdLoginSDK.getRefreshToken())
+                Log.d("네이버", "Expires : " + NaverIdLoginSDK.getExpiresAt().toString())
+                Log.d("네이버", "TokenType : " + NaverIdLoginSDK.getTokenType())
+                Log.d("네이", "State : " + NaverIdLoginSDK.getState().toString())
+            }
+
+            override fun onFailure(httpStatus: Int, message: String) {
+                val errorCode = NaverIdLoginSDK.getLastErrorCode().code
+                val errorDescription = NaverIdLoginSDK.getLastErrorDescription()
+                Log.e(TAG2, "네이버 로버그인 실패 $errorCode, $errorDescription" )
+            }
+
+            override fun onError(errorCode: Int, message: String) {
+                onFailure(errorCode, message)
+            }
+        }
+
+        NaverIdLoginSDK.authenticate(context, oAuthLoginCallback)
     }
 
     fun googleLogin(view: View) {

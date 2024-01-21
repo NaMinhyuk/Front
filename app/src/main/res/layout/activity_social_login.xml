@@ -5,11 +5,11 @@
 
     <data>
         <variable
-            name="viewModel"
-            type="com.example.lifesharing.login.SocialLoginViewModel" />
-        <variable
             name="activity"
             type="com.example.lifesharing.login.SocialLoginActivity" />
+        <variable
+            name="viewModel"
+            type="com.example.lifesharing.login.viewModel.SocialLoginViewModel" />
     </data>
 
     <LinearLayout
@@ -59,7 +59,7 @@
             android:textSize="14sp" />
 
         <Button
-            android:onClick="@{()-> viewModel.naverLogin()}"
+            android:onClick="@{()-> activity.naverLogin()}"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="48dp"

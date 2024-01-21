@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityRegisterBinding
+import com.example.lifesharing.login.viewModel.RegisterViewModel
 
 class RegisterActivity : AppCompatActivity() {
 

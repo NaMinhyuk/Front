@@ -1,8 +1,9 @@
-package com.example.lifesharing.service
+package com.example.lifesharing.service.work
 
 import android.util.Log
 import com.example.lifesharing.model.request_body.RegisterRequestBody
 import com.example.lifesharing.model.response_body.RegisterResponseBody
+import com.example.lifesharing.service.api.RetrofitAPI
 import retrofit2.Call
 import retrofit2.Response
 
@@ -13,7 +14,6 @@ class RegisterWork(private val userInfo: RegisterRequestBody) {
     private val service = RetrofitAPI.emgMedService
 
     fun registerWork() {
-
         // call 작업은 두가지로 수행
         // execute - request 보내고 response를 받는 행위를 동기적!
         // enqueue - request 비동기적, response 콜백, 즉 동기적!
@@ -23,9 +23,13 @@ class RegisterWork(private val userInfo: RegisterRequestBody) {
                     call: Call<RegisterResponseBody>,
                     response: Response<RegisterResponseBody>
                 ) {
+                    val result = response.body()
+
                     if (response.isSuccessful) {
-                        val result = response.body()
                         Log.d(TAG, "RetrofitWork - onResponse() called 회원가입 성공 $result")
+                        // 여기서 성공했을 시 accessToken을 저장하는 로직을 구현해야함 실제로는 로그인이 되었을 때 넣어지게끔 로직 구현
+                    } else {
+                        Log.d(TAG, "회원가입 실패 $result")
                     }
                 }
 

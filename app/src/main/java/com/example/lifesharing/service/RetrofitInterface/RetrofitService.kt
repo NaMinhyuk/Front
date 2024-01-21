@@ -5,6 +5,7 @@ import com.example.lifesharing.model.request_body.RegisterRequestBody
 import com.example.lifesharing.model.response_body.LoginResponseBody
 import com.example.lifesharing.model.response_body.RegisterResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Headers
 import retrofit2.http.POST
@@ -17,6 +18,10 @@ interface RetrofitService {
 
     @Headers("Content-Type: application/json")
     @POST("user/login")
-    fun loginUserByEnqueue(@Body userInfo: LoginRequestBody): Call<LoginResponseBody>
+     fun loginUserByEnqueue(@Body userInfo: LoginRequestBody): Call<LoginResponseBody>
+
+    @Headers("Content-Type: application/json")
+    @POST("user/login")
+    fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
 
 }

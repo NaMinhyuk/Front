@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.lifesharing.MainActivity
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityLoginBinding
+import com.example.lifesharing.login.viewModel.LoginViewModel
 
 class LoginActivity : AppCompatActivity() {
 

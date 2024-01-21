@@ -24,6 +24,8 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "KAKAO_NATIVE_APP_KEY", getApiKey("kakao.key"))
+        buildConfigField("String", "NAVER_CLIENT_ID", getApiKey("naver.id"))
+        buildConfigField("String", "NAVER_SECRET_KEY", getApiKey("naver.secret"))
         resValue("string", "kakao_auth_host", getApiKey("kakao.oauth"))
     }
 
@@ -58,6 +60,11 @@ dependencies {
     implementation("com.kakao.sdk:v2-user:2.19.0")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
+    implementation("com.navercorp.nid:oauth-jdk8:5.9.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    implementation("androidx.preference:preference-ktx:1.2.1")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")

@@ -1,4 +1,4 @@
-package com.example.lifesharing.service
+package com.example.lifesharing.service.api
 
 import com.example.lifesharing.service.RetrofitInterface.RetrofitService
 import okhttp3.OkHttpClient
@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitAPI {
 
-    private const val BASE_URL = "https://dev.lifesharing.shop/"
+    private const val BASE_URL = "http://15.164.22.51:8080"
 
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
