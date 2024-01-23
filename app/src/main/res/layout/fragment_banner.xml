@@ -9,7 +9,7 @@
         android:layout_width="360dp"
         android:layout_height="227dp"
         android:scaleType="fitXY"
-        app:srcCompat="@drawable/img_banner_home"
+        app:srcCompat="@drawable/home_banner_img"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

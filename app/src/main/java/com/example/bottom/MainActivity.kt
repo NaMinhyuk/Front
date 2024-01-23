@@ -2,9 +2,11 @@ package com.example.bottom
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
-import com.example.newpractice.HomeFragment
+import com.example.bottom.home.HomeFragment
+import com.example.bottom.messenger.MessengerFragment
+import com.example.bottom.mypage.MyPageMainFragment
+import com.example.bottom.regist.RegistrationFragment
+import com.example.bottom.reservation.ReservationFragment
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.mypageFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frame, MyPageFragment())
+                        .replace(R.id.main_frame, MyPageMainFragment())
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }

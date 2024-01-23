@@ -24,18 +24,18 @@
             android:textColor="@color/blue_300" />
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="133dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="130dp"
             android:layout_gravity="center"
-            android:src="@drawable/search_ic"/>
+            app:srcCompat="@drawable/home_top_search"/>
 
         <ImageView
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="17dp"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="13dp"
             android:layout_gravity="center"
-            android:src="@drawable/alarm_ic"/>
+            app:srcCompat="@drawable/home_top_alarm"/>
 
     </LinearLayout>
 
@@ -73,6 +73,28 @@
                 android:layout_marginTop="16dp"
                 android:layout_gravity="center"/>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/indicator0_home_iv"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    app:srcCompat="@drawable/indicator_shape_blue" />
+
+                <ImageView
+                    android:id="@+id/indicator1_home_iv"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="8dp"
+                    app:srcCompat="@drawable/indicator_shape_gray"/>
+
+            </LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
@@ -82,59 +104,11 @@
                 android:textSize="53px"
                 android:textStyle="normal"
                 android:textColor="@color/gray_900"/>
-            
-            <TableLayout
+
+            <FrameLayout
                 android:layout_width="328dp"
                 android:layout_height="617dp"
-                android:layout_gravity="center">
-
-                <TableRow>
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginTop="16dp"
-                        android:layout_gravity="center"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:layout_width="158dp"
-                            android:layout_height="158dp"
-                            android:src="@drawable/camera_img"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="울산 무거동"
-                            android:textColor="@color/gray_500"
-                            android:textSize="35px"
-                            android:textStyle="normal"/>
-
-                        <RatingBar
-                            android:layout_width="104dp"
-                            android:layout_height="13dp"
-                            android:isIndicator="true"
-                            android:numStars="5"
-                            android:rating="1"
-                            style="@style/Widget.AppCompat.RatingBar.Small"/>
-
-                        <EditText
-                            android:layout_width="156dp"
-                            android:layout_height="40dp" />
-
-                        <EditText
-                            android:layout_width="53dp"
-                            android:layout_height="13dp" />
-
-                        <EditText
-                            android:layout_width="76dp"
-                            android:layout_height="19dp" />
-
-                    </LinearLayout>
-
-                </TableRow>
-
-            </TableLayout>
+                android:layout_gravity="center"/>
 
         </LinearLayout>
 
