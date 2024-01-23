@@ -1,9 +1,9 @@
-package com.example.lifesharing
+package com.example.lifesharing.reservation
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesharing.MainActivity
 import com.example.lifesharing.databinding.ActivityRegistAddBinding
 import com.example.lifesharing.databinding.ActivityRegistFinishBinding
 

@@ -1,4 +1,4 @@
-package com.example.lifesharing
+package com.example.lifesharing.reservation
 
 import android.os.Bundle
 import android.os.PersistableBundle
