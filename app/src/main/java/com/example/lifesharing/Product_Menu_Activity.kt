@@ -1,5 +1,6 @@
 package com.example.lifesharing
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
@@ -16,6 +17,11 @@ class Product_Menu_Activity : AppCompatActivity() {
 
         val binding = ActivityProductMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.backButton.setOnClickListener{
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
 
         initRecycler()

@@ -13,7 +13,12 @@ class Product_Detail_Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.detailBackBtn.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, Product_Menu_Activity::class.java)
+            startActivity(intent)
+        }
+
+        binding.detailBottomReserveBtn.setOnClickListener{
+            val intent = Intent(this, Product_Detail_Reserve_Activity::class.java)
             startActivity(intent)
         }
 

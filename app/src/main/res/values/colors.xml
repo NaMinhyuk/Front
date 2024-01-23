@@ -14,4 +14,13 @@
     <color name="Gray100">#F2F3F5</color>
     <color name="Gray50">#F7F8FA</color>
 
+    <color name="Blue400">#0C62C8</color>
+    <color name="Blue300">#1277ED</color>
+    <color name="Blue200">#60A2EF</color>
+    <color name="Blue100">#ECF4FE</color>
+
+    <color name="Error">#EF2B2A</color>
+    <color name="Success">#08C152</color>
+
+
 </resources>
