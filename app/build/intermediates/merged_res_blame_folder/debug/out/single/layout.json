@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-mergeDebugResources-56:/layout/activity_login.xml",
+        "source": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-main-59:/layout/activity_login.xml"
+    },
+    {
+        "merged": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-mergeDebugResources-56:/layout/activity_register.xml",
+        "source": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-main-59:/layout/activity_register.xml"
+    },
+    {
+        "merged": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-mergeDebugResources-56:/layout/activity_social_login.xml",
+        "source": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-main-59:/layout/activity_social_login.xml"
+    },
+    {
+        "merged": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-mergeDebugResources-56:/layout/activity_main.xml",
+        "source": "/Users/hayeong/.gradle/daemon/8.0/com.example.lifesharing.app-main-59:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.lifesharing.app-mergeDebugResources-56:/layout/activity_login.xml",
+        "source": "com.example.lifesharing.app-main-59:/layout/activity_login.xml"
+    }
+]

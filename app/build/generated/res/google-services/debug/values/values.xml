@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">398334165093-bpfqiiajf5oetclrt3oo9hl5647ugbd1.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">398334165093</string>
+    <string name="google_api_key" translatable="false">AIzaSyCiNBPenFpqLJtxGNmPYjJ7AlRKLbJaTfo</string>
+    <string name="google_app_id" translatable="false">1:398334165093:android:3311b0c891ab7274fc468c</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCiNBPenFpqLJtxGNmPYjJ7AlRKLbJaTfo</string>
+    <string name="google_storage_bucket" translatable="false">lifesharing-d465f.appspot.com</string>
+    <string name="project_id" translatable="false">lifesharing-d465f</string>
+</resources>
