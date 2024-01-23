@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.model.request_body.LoginRequestBody
 import com.example.lifesharing.service.api.RetrofitAPI
+import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -19,6 +20,7 @@ class LoginWork(private val userInfo: LoginRequestBody) {
 
     private val service = RetrofitAPI.emgMedService
 
+    private val service1 = RetrofitAPIwithToken.retrofit()
 
     fun loginWorkWithCoroutine() {
 

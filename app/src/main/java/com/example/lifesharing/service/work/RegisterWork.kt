@@ -4,6 +4,7 @@ import android.util.Log
 import com.example.lifesharing.model.request_body.RegisterRequestBody
 import com.example.lifesharing.model.response_body.RegisterResponseBody
 import com.example.lifesharing.service.api.RetrofitAPI
+import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import retrofit2.Call
 import retrofit2.Response
 
@@ -14,6 +15,7 @@ class RegisterWork(private val userInfo: RegisterRequestBody) {
     private val service = RetrofitAPI.emgMedService
 
     fun registerWork() {
+
         // call 작업은 두가지로 수행
         // execute - request 보내고 response를 받는 행위를 동기적!
         // enqueue - request 비동기적, response 콜백, 즉 동기적!

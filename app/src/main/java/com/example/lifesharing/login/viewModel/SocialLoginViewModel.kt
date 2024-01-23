@@ -23,9 +23,12 @@ class SocialLoginViewModel(application: Application) : AndroidViewModel(applicat
 
     val TAG: String = "로그"
 
-    val TAG1: String = "카카오 로그인 관련"
+    val TAG1: String = "카카오"
 
-    val TAG2: String = "네이버 로그인 관련"
+    val TAG2: String = "네이버"
+
+    val TAG3: String = "구글"
+
 
 
     var auth = FirebaseAuth.getInstance()
@@ -119,7 +122,7 @@ class SocialLoginViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun googleLogin(view: View) {
-        Log.d(TAG, "googleLogin: ")
+        Log.d(TAG3, "googleLogin: ")
         var i = googleSignInClient.signInIntent
         (view.context as? SocialLoginActivity)?.googleLoginResult?.launch(i)
     }
@@ -128,6 +131,7 @@ class SocialLoginViewModel(application: Application) : AndroidViewModel(applicat
         val credential = GoogleAuthProvider.getCredential(idToken, null)
         auth.signInWithCredential(credential).addOnCompleteListener {
             if (it.isSuccessful) {
+                Log.d(TAG3, "firebaseAuthWithGoogle: ${auth.currentUser.toString()}")
                 navigatedMainActivity.value = true
             } else {
 

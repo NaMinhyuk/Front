@@ -2,7 +2,6 @@ package com.example.lifesharing.login.viewModel
 
 import android.app.Application
 import android.util.Log
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.GlobalApplication

@@ -21,6 +21,7 @@ class SocialLoginActivity : AppCompatActivity() {
     lateinit var binding: ActivitySocialLoginBinding
     val socialLoginViewModel : SocialLoginViewModel by viewModels()
 
+    val TAG1: String = "구글"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -66,6 +67,8 @@ class SocialLoginActivity : AppCompatActivity() {
         val account = task.getResult(ApiException::class.java)
         account.idToken // 로그인한 사용자 정보를 암호화한 값
         socialLoginViewModel.firebaseAuthWithGoogle(account.idToken)
+
+        Log.d(TAG1, "${account.idToken} ")
     }
 
     fun naverLogin() {

@@ -12,7 +12,6 @@ object RetrofitAPI {
 
     private const val BASE_URL = BASE_URLS
 
-
     private val okHttpClient: OkHttpClient by lazy {
         OkHttpClient.Builder()
             .addInterceptor(HttpLoggingInterceptor().apply {
