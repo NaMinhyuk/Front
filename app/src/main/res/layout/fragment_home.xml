@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/home_bar"
+        android:layout_width="360dp"
+        android:layout_height="58dp"
+        android:orientation="horizontal"
+        android:backgroundTint="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="18dp"
+            android:layout_gravity="center"
+            android:text="LIFE SHARING"
+            android:textSize="18sp"
+            android:fontFamily="@font/fugaze_one"
+            android:textColor="@color/blue_300" />
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="130dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/home_top_search"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="13dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/home_top_alarm"/>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/home_bar"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/home_banner_vp"
+                android:layout_width="360dp"
+                android:layout_height="227dp"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="40dp"
+                android:text="카테고리"
+                android:textSize="16sp"
+                android:textStyle="normal"
+                android:textColor="@color/gray_900"/>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/home_category_vp"
+                android:layout_width="328dp"
+                android:layout_height="174dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/indicator0_home_iv"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    app:srcCompat="@drawable/indicator_shape_blue" />
+
+                <ImageView
+                    android:id="@+id/indicator1_home_iv"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="8dp"
+                    app:srcCompat="@drawable/indicator_shape_gray"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="40dp"
+                android:text="최신 등록 아이템"
+                android:textSize="18sp"
+                android:textStyle="normal"
+                android:textColor="@color/gray_900"/>
+
+            <FrameLayout
+                android:layout_width="328dp"
+                android:layout_height="617dp"
+                android:layout_marginTop="16dp"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
