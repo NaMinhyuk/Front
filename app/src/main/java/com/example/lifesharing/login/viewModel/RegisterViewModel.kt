@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.lifesharing.model.request_body.RegisterRequestBody
+import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.service.work.RegisterWork
 
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {

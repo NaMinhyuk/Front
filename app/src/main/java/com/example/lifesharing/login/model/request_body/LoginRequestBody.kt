@@ -1,4 +1,4 @@
-package com.example.lifesharing.model.request_body
+package com.example.lifesharing.login.model.request_body
 
 data class LoginRequestBody(
     val email: String?,

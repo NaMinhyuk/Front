@@ -4,7 +4,7 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.lifesharing.GlobalApplication
-import com.example.lifesharing.model.request_body.LoginRequestBody
+import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.service.api.RetrofitAPI
 import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import kotlinx.coroutines.CompletableDeferred

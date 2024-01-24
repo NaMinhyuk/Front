@@ -1,8 +1,8 @@
 package com.example.lifesharing.service.work
 
 import android.util.Log
-import com.example.lifesharing.model.request_body.RegisterRequestBody
-import com.example.lifesharing.model.response_body.RegisterResponseBody
+import com.example.lifesharing.login.model.request_body.RegisterRequestBody
+import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.service.api.RetrofitAPI
 import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import retrofit2.Call

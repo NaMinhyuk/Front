@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.GlobalApplication
-import com.example.lifesharing.model.request_body.LoginRequestBody
+import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.service.work.LoginWork
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {

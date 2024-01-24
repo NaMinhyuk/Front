@@ -1,9 +1,9 @@
 package com.example.lifesharing.service.RetrofitInterface
 
-import com.example.lifesharing.model.request_body.LoginRequestBody
-import com.example.lifesharing.model.request_body.RegisterRequestBody
-import com.example.lifesharing.model.response_body.LoginResponseBody
-import com.example.lifesharing.model.response_body.RegisterResponseBody
+import com.example.lifesharing.login.model.request_body.LoginRequestBody
+import com.example.lifesharing.login.model.request_body.RegisterRequestBody
+import com.example.lifesharing.login.model.response_body.LoginResponseBody
+import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
