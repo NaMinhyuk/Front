@@ -3,4 +3,6 @@
     <string name="kakao_app_key">74e2c1e2edf1abbd90419c9de3c7102c</string>
     <string name="email_hint">이메일을 입력해주세요.</string>
     <string name="password_hint">비밀번호를 입력해주세요.</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
