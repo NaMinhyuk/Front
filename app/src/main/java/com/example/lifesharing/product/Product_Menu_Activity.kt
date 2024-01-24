@@ -3,7 +3,8 @@ package com.example.lifesharing
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lifesharing.databinding.ActivityProductDetailBinding
+import com.example.lifesharing.Product.MenuAdapter
+import com.example.lifesharing.product_data.MenuData
 import com.example.lifesharing.databinding.ActivityProductMenuBinding
 
 class Product_Menu_Activity : AppCompatActivity() {

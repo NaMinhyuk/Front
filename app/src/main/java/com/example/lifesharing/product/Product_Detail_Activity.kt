@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
+import com.example.lifesharing.product.Product_Detail_Reserve_Activity
 
 class Product_Detail_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
