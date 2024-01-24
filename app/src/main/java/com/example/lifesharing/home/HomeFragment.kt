@@ -1,4 +1,4 @@
-package com.example.bottom.home
+package com.example.lifesharing.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
-import com.example.bottom.R
-import com.example.bottom.databinding.FragmentHomeBinding
+import com.example.lifesharing.R
+import com.example.lifesharing.databinding.FragmentHomeBinding
 
 class HomeFragment: Fragment(){
 

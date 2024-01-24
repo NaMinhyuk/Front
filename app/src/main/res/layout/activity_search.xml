@@ -8,23 +8,23 @@
         android:id="@+id/search_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"
-        app:srcCompat="@drawable/back_ic"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-    
+        app:srcCompat="@drawable/back_ic" />
+
     <TextView
         android:id="@+id/search_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="18dp"
         android:layout_marginStart="118dp"
+        android:layout_marginTop="18dp"
         android:text="검색"
         android:textSize="48px"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/search_back_iv"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
@@ -33,11 +33,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
         android:focusable="false"
-        app:queryBackground="@color/gray_500"
-        app:queryHint="찾는 상품을 검색해 보세요"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/search_title_tv"
-        app:layout_constraintStart_toStartOf="parent"/>
-
+        app:queryBackground="@color/gray_500"
+        app:queryHint="찾는 상품을 검색해 보세요" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.lifesharing"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -79,6 +79,11 @@ dependencies {
     implementation("androidx.activity:activity-ktx:1.8.2")
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.core:core-ktx:1.12.0")
+
+    implementation("androidx.navigation:navigation-fragment:2.3.2")
+    implementation("androidx.navigation:navigation-ui:2.3.2")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

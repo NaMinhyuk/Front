@@ -57,7 +57,7 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:text="디지털기기"
-                android:textSize="33px"
+                android:textSize="33sp"
                 android:textColor="@color/gray_900" />
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +67,7 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:text="악기/음향"
-                android:textSize="33px"
+                android:textSize="33sp"
                 android:textColor="@color/gray_900" />
             <TextView
                 android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:text="게임/취미"
-                android:textSize="33px"
+                android:textSize="33sp"
                 android:textColor="@color/gray_900" />
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_weight="1"
                 android:textAlignment="center"
                 android:text="캠핑/레저"
-                android:textSize="33px"
+                android:textSize="33sp"
                 android:textColor="@color/gray_900" />
 
         </TableRow>

@@ -1,4 +1,4 @@
-package com.example.bottom.home_data
+package com.example.lifesharing.home_data
 
 data class BannerItem(
     val image: Int,

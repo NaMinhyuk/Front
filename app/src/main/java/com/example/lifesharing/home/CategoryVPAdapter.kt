@@ -1,4 +1,4 @@
-package com.example.bottom.home
+package com.example.lifesharing.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

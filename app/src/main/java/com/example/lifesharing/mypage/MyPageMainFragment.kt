@@ -1,11 +1,11 @@
-package com.example.bottom.mypage
+package com.example.lifesharing.mypage
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bottom.databinding.FragmentMyPageMainBinding
+import com.example.lifesharing.databinding.FragmentMyPageMainBinding
 
 class MyPageMainFragment : Fragment() {
 

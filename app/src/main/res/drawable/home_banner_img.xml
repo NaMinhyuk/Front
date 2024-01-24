@@ -4,8 +4,7 @@
     android:viewportWidth="360"
     android:viewportHeight="227">
   <path
-      android:pathData="M0,0h360v227h-360z"
-      android:fillColor="url(#pattern0)"/>
+      android:pathData="M0,0h360v227h-360z" />
   <path
       android:pathData="M0,0h360v227h-360z"
       android:strokeAlpha="0.7"

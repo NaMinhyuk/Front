@@ -1,11 +1,11 @@
-package com.example.bottom.home_data
+package com.example.lifesharing.home_data
 
-import com.example.bottom.R
+import com.example.lifesharing.R
 
 val fakeBannerItemList = listOf(
     BannerItem(R.drawable.home_banner_img),
     BannerItem(R.drawable.home_banner_img)
-}
+)
 
 val fakeCategoryItemList = listOf(
     CategoryItem(R.layout.fragment_category_a, "디지털기기1"),

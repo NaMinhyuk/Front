@@ -1,18 +1,18 @@
-package com.example.bottom.home
+package com.example.lifesharing.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bottom.databinding.FragmentBannerBinding
+import com.example.lifesharing.databinding.FragmentBannerBinding
 
 
 class BannerFragment(val imgRes : Int) : Fragment() {
 
     lateinit var binding : FragmentBannerBinding
 
-    override fun OnCreateView (
+    override fun onCreateView (
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?

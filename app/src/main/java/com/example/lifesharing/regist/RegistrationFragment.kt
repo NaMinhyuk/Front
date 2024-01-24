@@ -1,11 +1,11 @@
-package com.example.bottom.regist
+package com.example.lifesharing.regist
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.bottom.databinding.FragmentRegistrationBinding
+import com.example.lifesharing.databinding.FragmentRegistrationBinding
 
 class RegistrationFragment : Fragment() {
 

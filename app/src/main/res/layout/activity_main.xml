@@ -18,7 +18,6 @@
         app:backgroundTint="@color/white"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/bottom_navi_menu"
-        app:itemTextAppearanceActive="@style/TextStyle_btn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
