@@ -3,7 +3,6 @@ pluginManagement {
         google()
         mavenCentral()
         gradlePluginPortal()
-
     }
 }
 dependencyResolutionManagement {
@@ -11,11 +10,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven (url = "https://jitpack.io")
-        maven (url= "https://devrepo.kakao.com/nexus/content/groups/public/") // 카카오 로그인
+        maven(url = "https://jitpack.io")
+        maven(url = "https://devrepo.kakao.com/nexus/content/groups/public/") // 카카오 로그인
     }
 }
 
 rootProject.name = "lifesharing"
 include(":app")
- 
