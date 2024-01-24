@@ -1,4 +1,4 @@
-package com.example.lifesharing
+package com.example.lifesharing.product
 
 import android.content.Intent
 import android.os.Bundle

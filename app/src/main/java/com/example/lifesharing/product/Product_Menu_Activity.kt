@@ -1,10 +1,13 @@
-package com.example.lifesharing
+package com.example.lifesharing.product
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.lifesharing.databinding.ActivityProductDetailBinding
+import com.example.lifesharing.MainActivity
+import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityProductMenuBinding
+import com.example.lifesharing.product_data.MenuAdapter
+import com.example.lifesharing.product_data.MenuData
 
 class Product_Menu_Activity : AppCompatActivity() {
 

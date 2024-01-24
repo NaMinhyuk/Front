@@ -1,4 +1,4 @@
-package com.example.lifesharing.Product
+package com.example.lifesharing.product_data
 
 import android.content.Context
 import android.view.LayoutInflater

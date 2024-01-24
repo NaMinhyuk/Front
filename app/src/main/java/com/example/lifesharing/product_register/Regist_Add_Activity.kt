@@ -1,7 +1,6 @@
-package com.example.lifesharing.reservation
+package com.example.lifesharing.product_register
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.databinding.ActivityRegistAddBinding
 

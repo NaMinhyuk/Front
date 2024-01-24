@@ -1,9 +1,9 @@
-package com.example.lifesharing
+package com.example.lifesharing.product
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityDetailReserveBinding
-import com.example.lifesharing.databinding.ActivityProductDetailBinding
 
 class Product_Detail_Reserve_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
