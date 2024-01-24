@@ -14,8 +14,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Lifesharing"
+        android:theme="@style/Theme.LIFESHARING"
         tools:targetApi="31">
+
+        <activity android:name=".Product_Menu_Activity" android:exported="true">
+        </activity>
+
+        <activity android:name=".Product_Detail_Activity" android:exported="true" >
+
+
+
+        </activity>
+
+        <activity android:name=".Product_Detail_Reserve_Activity" android:exported="true">
+        </activity>
+
+        <activity android:name=".Regist_Add_Activity" android:exported="true">
+        </activity>
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key"
@@ -36,6 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -58,6 +75,7 @@
                     android:scheme="@string/kakao_auth_host" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
