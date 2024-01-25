@@ -7,8 +7,10 @@ import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Query
 
 interface RetrofitService {
 
@@ -20,8 +22,6 @@ interface RetrofitService {
     @Headers("Content-Type: application/json")
     @POST("user/login")
     suspend fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
-
-
 
 
 }

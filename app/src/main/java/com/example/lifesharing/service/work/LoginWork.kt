@@ -20,7 +20,7 @@ class LoginWork(private val userInfo: LoginRequestBody) {
 
     private val service = RetrofitAPI.emgMedService
 
-    private val service1 = RetrofitAPIwithToken.retrofit()
+    // private val service1 = RetrofitAPIwithToken.retrofit()
 
     fun loginWorkWithCoroutine() {
 
@@ -34,6 +34,7 @@ class LoginWork(private val userInfo: LoginRequestBody) {
                         Log.d("로그인 성공", "$result")
 
                         val successResult = result?.result?.token
+
                         GlobalApplication.prefs.setString("access_token", successResult!! )
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {
