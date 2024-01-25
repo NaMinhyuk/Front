@@ -315,13 +315,24 @@
                 android:layout_marginTop="24dp"
                 android:layout_marginLeft="16dp" />
 
-            <ImageView
-                android:id="@+id/detail_map"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_map_view"
                 android:layout_width="328dp"
                 android:layout_height="160dp"
                 app:layout_constraintStart_toStartOf="@id/text_dum3"
                 app:layout_constraintTop_toBottomOf="@id/text_dum3"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="16dp">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <ImageView-->
+<!--                android:id="@+id/product_map_view"-->
+<!--                android:layout_width="328dp"-->
+<!--                android:layout_height="160dp"-->
+<!--                app:layout_constraintStart_toStartOf="@id/text_dum3"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/text_dum3"-->
+<!--                android:layout_marginTop="16dp" />-->
+
 
             <TextView
                 android:id="@+id/detail_map_location_tv"
@@ -330,8 +341,8 @@
                 android:text="위치 상세표시"
                 android:textSize="12sp"
                 android:textColor="@color/Gray600"
-                app:layout_constraintTop_toBottomOf="@id/detail_map"
-                app:layout_constraintStart_toStartOf="@id/detail_map"
+                app:layout_constraintTop_toBottomOf="@id/product_map_view"
+                app:layout_constraintStart_toStartOf="@id/product_map_view"
                 android:layout_marginTop="8dp" />
 
             <TextView

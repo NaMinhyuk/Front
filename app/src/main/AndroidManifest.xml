@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LIFESHARING"
-        tools:targetApi="31">
+        tools:targetApi="31"
+        android:usesCleartextTraffic="true">
+
         <activity android:name=".MainActivity" android:exported="true">
         </activity>
         <activity android:name=".product.Product_Menu_Activity" android:exported="true">
@@ -35,6 +37,18 @@
 
         </activity>
 
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="9f2e646c60069e6855bcaa48ca28ff03" />
+
     </application>
+
+<!--    인터넷 연결-->
+    <uses-permission android:name="android.permission.INTERNET" />
+<!--    GPS와 네트워크를 사용하여 사용자의 정확한 위치 정보를 가져온다.-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<!--    네크워크만 사용하여 사용자의 대략적인 위치 정보만을 가져온다.-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
 
 </manifest>

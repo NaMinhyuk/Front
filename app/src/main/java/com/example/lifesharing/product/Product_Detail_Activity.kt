@@ -2,10 +2,14 @@ package com.example.lifesharing.product
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
 
 class Product_Detail_Activity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,6 +26,11 @@ class Product_Detail_Activity : AppCompatActivity() {
             startActivity(intent)
         }
 
+//        val mapView = MapView(this)
+//        val mapViewContainer: ViewGroup = findViewById(R.id.map_view)
+//        mapViewContainer.addView(mapView)
+
+
 
 //        vpMainBanner.adapter = RecyclerViewAdapter()
 //        TabLayoutMediator(
@@ -32,4 +41,6 @@ class Product_Detail_Activity : AppCompatActivity() {
 //            vpMainBanner.setCurrentItem(tab.position)
 //        }.attach()
     }
+
+
 }

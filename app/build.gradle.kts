@@ -1,6 +1,12 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+}
+
+fun getApikey(propertyKey: String) : String {
+    return gradleLocalProperties(rootDir).getProperty(propertyKey)
 }
 
 android {
@@ -9,16 +15,20 @@ android {
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     defaultConfig {
         applicationId = "com.example.lifesharing"
-        minSdk = 22
+        minSdk = 23
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URLS", getApikey("base.urls"))
+
     }
 
     buildTypes {
@@ -53,4 +63,11 @@ dependencies {
 
     implementation("com.google.android.material:material:1.4.0")
     implementation("com.github.bumptech.glide:glide:4.16.0") //image를 연동하기 위해 사용 참고 : https://yunaaaas.tistory.com/43
+
+    //retrofit 사용
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("com.google.code.gson:gson:2.8.8") //SerializedName 어노테이션 사용하기위한 라이브러리
+//    implementation("com.kakao.sdk:v2-map:2.7.0") // 카카오맵 SDK
 }
