@@ -10,4 +10,9 @@
     <style name="TextLabel" parent="TextAppearance.Design.Hint">
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="TextStyle_btn">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
 </resources>

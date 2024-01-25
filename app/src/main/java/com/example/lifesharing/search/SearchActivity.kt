@@ -7,29 +7,30 @@ import androidx.appcompat.widget.SearchView
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivitySearchBinding
 
-class SearchActivity() : AppCompatActivity() {
-
-    lateinit var binding: ActivitySearchBinding
+class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
-        binding = ActivitySearchBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_search)
     }
 
-//    private fun initSearchView() {
-//        // init SearchView
-//        binding.search.isSubmitButtonEnabled = true
-//        binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-//            override fun onQueryTextSubmit(query: String?): Boolean {
-//                // @TODO
-//                return false
-//            }
-//
-//            override fun onQueryTextChange(newText: String?): Boolean {
-//                // @TODO
-//                return true
-//            }
-//        })
-//    }
+    private fun initSearchView() {
+
+        lateinit var binding : ActivitySearchBinding
+
+        // init SearchView
+        binding.searchBar.isSubmitButtonEnabled = true
+        binding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                // @TODO
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                // @TODO
+                return true
+            }
+        })
+    }
 }
