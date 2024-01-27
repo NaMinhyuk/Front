@@ -5,20 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.lifesharing.databinding.FragmentCategoryABinding
+import com.example.lifesharing.databinding.FragmentFirstCategoryBinding
 
+class First_CategoryFragment() : Fragment() {
 
-class CategoryFragment(val imgRes : Int) : Fragment() {
-
-    lateinit var binding : FragmentCategoryABinding
+    lateinit var binding : FragmentFirstCategoryBinding
 
     override fun onCreateView (
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentCategoryABinding.inflate(inflater, container, false)
-        //binding.bannerIv.setImageResource(imgRes)
+        binding = FragmentFirstCategoryBinding.inflate(inflater, container, false)
 
         return binding.root
     }

@@ -1,4 +1,4 @@
-package com.example.lifesharing.home
+package com.example.lifesharing.home.home_data
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 
-class BannerVPAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
+class CategoryVPAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
 
-    private val fragmentlist : ArrayList<Fragment> = ArrayList()
+    var fragmentlist : ArrayList<Fragment> = ArrayList()
 
     override fun getItemCount(): Int = fragmentlist.size
 
