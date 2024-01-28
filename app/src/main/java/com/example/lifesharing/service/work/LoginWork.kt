@@ -33,8 +33,12 @@ class LoginWork(private val userInfo: LoginRequestBody) {
                         val result = response.body()
                         Log.d("로그인 성공", "$result")
 
-                        val successResult = result?.result?.token
-                        GlobalApplication.prefs.setString("access_token", successResult!! )
+                        val accessToken = result?.result?.tokenDTO?.accessToken
+                        val refreshToken = result?.result?.tokenDTO?.refreshToken
+
+                        GlobalApplication.prefs.setString("access_token", accessToken!! )
+                        GlobalApplication.prefs.setString("refresh_token", refreshToken!! )
+
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {
                         Log.d("로그인 실패", response.code().toString())
@@ -44,8 +48,6 @@ class LoginWork(private val userInfo: LoginRequestBody) {
                 Log.e(TAG, "로그인 에러 ${e.message}")
             }
         }
-
-
 
     }
 }

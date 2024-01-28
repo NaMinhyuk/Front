@@ -1,12 +1,14 @@
 package com.example.lifesharing.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
 import com.example.lifesharing.R
@@ -22,6 +24,8 @@ class HomeFragment: Fragment(){
     lateinit var binding: FragmentHomeBinding
     private lateinit var newRegistItemAdapter: NewRegistItemAdapter
     private lateinit var viewModel: ProductViewModel
+
+    val TAG:String = "로그"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,6 +57,20 @@ class HomeFragment: Fragment(){
         setupFilterSpinner()
 
         viewModel = ViewModelProvider(this).get(ProductViewModel::class.java)
+        viewModel.filteredProducts.observe(viewLifecycleOwner, Observer { products ->
+            val newRegistItems = products.map { product ->
+                // ProductResultDTO를 NewRegistItemData로 변환
+                NewRegistItemData(
+                    img = product.imageUrl ?: R.drawable.camara.toString(), // 이미지 URL이 null이면 기본 카메라 사진
+                    location = product.location,
+                    reviewCount = product.reviewCount,
+                    name = product.name,
+                    deposit = product.deposit,
+                    dayPrice = product.dayPrice
+                )
+            }
+            newRegistItemAdapter.setItems(ArrayList(newRegistItems)) // 변환된 데이터로 RecyclerView를 업데이트
+        })
 
         return binding.root
     }
@@ -60,13 +78,6 @@ class HomeFragment: Fragment(){
     private fun initRecycler() {
         newRegistItemAdapter = NewRegistItemAdapter(ArrayList())
         binding.newItemRv.adapter = newRegistItemAdapter
-
-        val items = ArrayList<NewRegistItemData>().apply {
-            add(NewRegistItemData(img = R.drawable.camara, location = "울산 무거동", review = "(100)", name = "카메라", deposit = 500000, a_day_fee = 10000))
-            add(NewRegistItemData(img = R.drawable.camara, location = "울산 삼산", review = "(0)", name = "카메라", deposit = 500000, a_day_fee = 10000))
-        }
-
-        newRegistItemAdapter.setItems(items)
     }
 
     private fun setupFilterSpinner() {
@@ -92,13 +103,14 @@ class HomeFragment: Fragment(){
     private fun handleFilterOption(selectedOption: String) {
         when (selectedOption) {
             "최신순" -> {
-                viewModel.filterProductsBy("recent")
+                Log.d(TAG, "handleFilterOption: ")
+                viewModel.getFilteredProduct("recent")
             }
             "인기순" -> {
-                viewModel.filterProductsBy("popular")
+                viewModel.getFilteredProduct("popular")
             }
             "리뷰순" -> {
-                viewModel.filterProductsBy("review")
+                viewModel.getFilteredProduct("review")
             }
         }
     }

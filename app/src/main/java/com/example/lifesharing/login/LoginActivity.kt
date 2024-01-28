@@ -41,10 +41,10 @@ class LoginActivity : AppCompatActivity() {
                         binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
                         passwordFlag = false
                     }
-                    !passwordRegex(s.toString()) -> {
-                        binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
-                        passwordFlag = false
-                    }
+//                    !passwordRegex(s.toString()) -> {
+//                        binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
+//                        passwordFlag = false
+//                    }
                     else -> {
                         binding.passwordInputLayout.error = null
                         passwordFlag = true
@@ -73,10 +73,10 @@ class LoginActivity : AppCompatActivity() {
                         binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
                         emailFlag = false
                     }
-                    pattern!!.matcher(s).matches() -> {
-                        binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
-                        emailFlag = false
-                    }
+//                    pattern!!.matcher(s).matches() -> {
+//                        binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
+//                        emailFlag = false
+//                    }
                     else -> {
                         binding.emailInputLayout.error = null
                         emailFlag = true
@@ -88,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun flagCheck() {
-        binding.loginButton.isEnabled = emailFlag && passwordFlag
+        binding.loginButton.isEnabled = emailFlag
     }
 
 

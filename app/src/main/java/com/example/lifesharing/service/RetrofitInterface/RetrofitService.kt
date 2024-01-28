@@ -25,5 +25,5 @@ interface RetrofitService {
     suspend fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
 
     @GET("product/home")
-    suspend fun getFilteredProducts(@Query("filter") filter: String): Response<ProductResponse>
+    fun getFilteredProducts(@Query("filter") filter: String) : Call<ProductResponse>
 }
