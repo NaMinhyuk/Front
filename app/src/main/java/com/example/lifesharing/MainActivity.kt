@@ -29,45 +29,55 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.main_frame, HomeFragment())
             .commitAllowingStateLoss()
 
-        binding.mainBottomNavi.setOnItemSelectedListener { item ->
+        binding.mainBottomNavi.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
-
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frame, HomeFragment())
                         .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
+                    // 아이콘 변경
+                    item.setIcon(R.drawable.btm_home_select_ic)
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.reservationFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frame, ReservationFragment())
                         .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
+
+                    item.setIcon(R.drawable.btm_reserve_select_ic)
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.registerFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frame, RegistrationFragment())
                         .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
+
+                    item.setIcon(R.drawable.btm_regist_select_ic)
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.messengerFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frame, MessengerFragment())
                         .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
+
+                    item.setIcon(R.drawable.btm_messenger_select_ic)
+                    return@setOnNavigationItemSelectedListener true
                 }
 
                 R.id.mypageFragment -> {
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.main_frame, MyPageMainFragment())
                         .commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
+
+                    item.setIcon(R.drawable.btm_my_page_ic)
+                    return@setOnNavigationItemSelectedListener true
                 }
+
                 else -> {
-                    return@setOnItemSelectedListener  true
+                    return@setOnNavigationItemSelectedListener false
                 }
             }
         }
