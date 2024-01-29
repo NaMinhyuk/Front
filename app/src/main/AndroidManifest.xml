@@ -16,11 +16,7 @@
         android:theme="@style/Theme.LIFESHARING"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <activity
-            android:name=".mypage.MyProfileActivity"
-            android:exported="false"
-            android:label="@string/title_activity_my_profile"
-            android:theme="@style/Theme.LIFESHARING" />
+
         <activity
             android:name=".Product_Menu_Activity"
             android:exported="true"></activity>
@@ -37,10 +33,11 @@
         <activity android:name=".search.SearchActivity" />
 
         <activity android:name=".mypage.MyPageActivity"/>
+        <activity android:name=".mypage.MyProfileActivity"/>
         <activity android:name=".mypage.WishListActivity"/>
         <activity android:name=".mypage.NoticeActivity"/>
         <activity android:name=".mypage.FAQ_Activity"/>
-        <activity android:name=".mypage.QnA_Ativity"/>
+        <activity android:name=".mypage.QnA_Activity"/>
         <activity android:name=".mypage.Service_ToS_Activity"/>
         <activity android:name=".mypage.ReviewOperationPolicyActivity"/>
         <activity android:name=".mypage.PrivacyPolicyActivity"/>

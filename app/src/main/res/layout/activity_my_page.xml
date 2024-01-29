@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <FrameLayout
         android:id="@+id/my_page_profile_fl"
         android:layout_width="360dp"
         android:layout_height="332dp"
-        android:background="@color/gray_100"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        android:background="@color/gray_100">
 
         <ImageView
             android:layout_width="328dp"
@@ -20,367 +19,24 @@
             android:layout_marginTop="24dp"
             android:src="@drawable/my_page_main_profile" />
 
-
     </FrameLayout>
 
     <ScrollView
         android:layout_width="360dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/my_page_profile_fl"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list1"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/my_page_main_rv"
+                tools:listitem="@layout/my_page_main_list"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name1"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="내 정보"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name1"
-                    app:layout_constraintTop_toTopOf="@+id/list_name1" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-            
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-               android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list2"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name2"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="찜 목록"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name2"
-                    app:layout_constraintTop_toTopOf="@+id/list_name2" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list3"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name3"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="이용내역"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name3"
-                    app:layout_constraintTop_toTopOf="@+id/list_name3" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list4"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name4"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="등록내역"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name4"
-                    app:layout_constraintTop_toTopOf="@+id/list_name4" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list5"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name5"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="내가 쓴 리뷰"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name5"
-                    app:layout_constraintTop_toTopOf="@+id/list_name5" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list6"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name6"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="공지사항"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name6"
-                    app:layout_constraintTop_toTopOf="@+id/list_name6" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list7"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name7"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="FAQ"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name7"
-                    app:layout_constraintTop_toTopOf="@+id/list_name7" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list8"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name8"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="1:1 문의"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name8"
-                    app:layout_constraintTop_toTopOf="@+id/list_name8" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="8dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list9"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name9"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="서비스 이용약관"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name9"
-                    app:layout_constraintTop_toTopOf="@+id/list_name9" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list10"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name10"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="리뷰운영정책"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name10"
-                    app:layout_constraintTop_toTopOf="@+id/list_name10" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_centerInParent="true"
-                android:background="@color/gray_200"/>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/list11"
-                android:layout_width="match_parent"
-                android:layout_height="56dp"
-                android:backgroundTint="@color/white">
-                <TextView
-                    android:id="@+id/list_name11"
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginLeft="16dp"
-                    android:text="개인정보 처리방침"
-                    android:textColor="@color/black"
-                    android:textSize="14sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:id="@+id/list_shortcut11"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/my_page_shortcut_ic"
-                    app:layout_constraintStart_toEndOf="@+id/list_name11"
-                    app:layout_constraintTop_toTopOf="@+id/list_name11" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         </LinearLayout>
     </ScrollView>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
