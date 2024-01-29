@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
-import com.example.mypage.mypage.MyPageMainList
-import com.example.mypage.mypage.MyPageMainListAdapter
+import com.example.lifesharing.mypage_data.MyPageMainList
+import com.example.lifesharing.mypage_data.MyPageMainListAdapter
 
 class MyPageActivity : AppCompatActivity() {
 

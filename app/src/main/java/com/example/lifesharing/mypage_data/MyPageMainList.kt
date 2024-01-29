@@ -1,4 +1,4 @@
-package com.example.mypage.mypage
+package com.example.lifesharing.mypage_data
 
 data class MyPageMainList(
     val list: String

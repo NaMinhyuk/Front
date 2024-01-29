@@ -7,7 +7,6 @@ import com.example.lifesharing.databinding.ActivityMainBinding
 import com.example.lifesharing.home.HomeFragment
 import com.example.lifesharing.messenger.MessengerFragment
 import com.example.lifesharing.mypage.MyPageActivity
-import com.example.lifesharing.mypage.MyPageMainFragment
 import com.example.lifesharing.regist.RegistrationFragment
 import com.example.lifesharing.reservation.ReservationFragment
 
@@ -72,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.mypageFragment -> {
                     val intent = Intent(this@MainActivity, MyPageActivity::class.java)
                     startActivity(intent)
-                    true
+
                     true
                 }
 
