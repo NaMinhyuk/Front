@@ -4,11 +4,12 @@ import android.util.Log
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.service.api.RetrofitAPI
-import com.example.lifesharing.service.api.RetrofitAPIwithToken
+import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 
-class RegisterWork(private val userInfo: RegisterRequestBody) {
+class RegisterWork(private val userInfo: RegisterRequestBody, private val imageFile: MultipartBody.Part?) {
 
     val TAG: String = "로그"
 
@@ -19,7 +20,7 @@ class RegisterWork(private val userInfo: RegisterRequestBody) {
         // call 작업은 두가지로 수행
         // execute - request 보내고 response를 받는 행위를 동기적!
         // enqueue - request 비동기적, response 콜백, 즉 동기적!
-        service.registerUserByEnqueue(userInfo)
+        service.registerUser(userInfo, imageFile)
             .enqueue(object : retrofit2.Callback<RegisterResponseBody> {
                 override fun onResponse(
                     call: Call<RegisterResponseBody>,
@@ -36,7 +37,7 @@ class RegisterWork(private val userInfo: RegisterRequestBody) {
                 }
 
                 override fun onFailure(call: Call<RegisterResponseBody>, t: Throwable) {
-                    Log.d(TAG, "RetrofitWork - onFailure() 화원가입 실패")
+                    Log.d(TAG, "RetrofitWork - onFailure() 화원가입 실패 ${t.message}")
                 }
             } )
     }

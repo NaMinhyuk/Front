@@ -11,6 +11,9 @@ class GlobalApplication : Application() {
 
     companion object {
         lateinit var prefs: PreferenceUtil
+
+        lateinit var instance: GlobalApplication
+            private set
     }
 
     override fun onCreate() {
@@ -18,6 +21,8 @@ class GlobalApplication : Application() {
         // kakao sdk init
 
         prefs = PreferenceUtil(applicationContext)
+
+        instance = this
 
         NaverIdLoginSDK.initialize(this, NAVER_CLIENT_ID, NAVER_SECRET_KEY, "lifesharing")
 

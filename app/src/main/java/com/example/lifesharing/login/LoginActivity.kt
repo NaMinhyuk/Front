@@ -73,10 +73,10 @@ class LoginActivity : AppCompatActivity() {
                         binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
                         emailFlag = false
                     }
-                    pattern!!.matcher(s).matches() -> {
-                        binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
-                        emailFlag = false
-                    }
+//                    pattern!!.matcher(s).matches() -> {
+//                        binding.emailInputLayout.error = "올바른 이메일을 입력해주세요."
+//                        emailFlag = false
+//                    }
                     else -> {
                         binding.emailInputLayout.error = null
                         emailFlag = true
@@ -88,7 +88,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun flagCheck() {
-        binding.loginButton.isEnabled = emailFlag && passwordFlag
+        binding.loginButton.isEnabled = emailFlag // && passwordFlag
     }
 
 
@@ -111,15 +111,15 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
-        binding.passwordInputLayout.editText?.addTextChangedListener(passwordListener)
-        binding.passwordInput.hint = resources.getString(R.string.password_hint)
-        binding.passwordInput.setOnFocusChangeListener{_, hasFocus ->
-            if (hasFocus) {
-                binding.passwordInput.hint =""
-            } else {
-                binding.passwordInput.hint = resources.getString(R.string.password_hint)
-            }
-        }
+//        binding.passwordInputLayout.editText?.addTextChangedListener(passwordListener)
+//        binding.passwordInput.hint = resources.getString(R.string.password_hint)
+//        binding.passwordInput.setOnFocusChangeListener{_, hasFocus ->
+//            if (hasFocus) {
+//                binding.passwordInput.hint =""
+//            } else {
+//                binding.passwordInput.hint = resources.getString(R.string.password_hint)
+//            }
+//        }
     }
 
     fun setObserve() {

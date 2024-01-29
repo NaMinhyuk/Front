@@ -6,6 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.login.model.request_body.LoginRequestBody
+import com.example.lifesharing.messenger.api.MessengerRoomListWork
 import com.example.lifesharing.service.work.LoginWork
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
@@ -15,7 +16,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     var showMainActivity : MutableLiveData<Boolean> = MutableLiveData(false)
 
-    val TAG = "LoginViewModel"
+    val TAG = "로그"
 
     fun loginLogic() {
 
@@ -27,12 +28,19 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         val loginWork = LoginWork(loginUserData)
         loginWork.loginWorkWithCoroutine()
 
-        Log.d(TAG, "loginLogic 진행중 ")
-
         val token = GlobalApplication.prefs.getString("access_token", "")
 
         if (token != "") {
             showMainActivity.value = true
+
+            val userId = GlobalApplication.prefs.getString("user_id", "")
+
+            Log.d(TAG, "loginLogic: $userId")
+
+            val getMessengerRoomListWork = MessengerRoomListWork(userId.toInt())
+
+            getMessengerRoomListWork.getMessengerRoomList()
+
         } else {
             Log.d(TAG, "loginLogic: 뭔가 잘못되고 있다... 액세스토큰값 없음")
         }

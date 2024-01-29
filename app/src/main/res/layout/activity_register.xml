@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.lifesharing.login.viewModel.RegisterViewModel" />
+
         <variable
             name="activity"
             type="com.example.lifesharing.login.RegisterActivity" />
@@ -15,8 +17,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingHorizontal="16dp"
         android:background="@color/white"
+        android:paddingHorizontal="16dp"
         tools:context=".login.RegisterActivity">
 
         <ScrollView
@@ -36,7 +38,7 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:layout_width="wrap_content"
+                        android:layout_width="47dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="13dp"
@@ -51,7 +53,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginTop="13dp"
-                        android:text="회원가입"
+                        android:text="@string/register"
+                        android:textColor="#000"
                         android:textSize="18sp" />
                 </LinearLayout>
 
@@ -60,10 +63,13 @@
                     android:layout_height="32dp" />
 
                 <ImageView
+                    android:id="@+id/user_profile"
                     android:layout_width="106dp"
                     android:layout_height="106dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/lifesharing_logo" />
+                    android:background="@drawable/box_border"
+                    android:onClick="@{() -> activity.pickImage()}"
+                    android:src="@drawable/login_input_profile_1" />
 
                 <View
                     android:layout_width="0dp"
@@ -74,6 +80,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="이메일"
+                    android:textColor="#000"
+
                     android:textSize="14sp" />
 
                 <View
@@ -82,15 +90,17 @@
 
 
                 <EditText
-                    android:text="@={viewModel.email}"
                     android:id="@+id/editTextTextEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/box_border"
                     android:ems="10"
-                    android:hint="이메일을 입력해 주세요."
+                    android:hint="이메일을 입력해 주세요"
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
+                    android:text="@={activity.email}"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -102,6 +112,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="비밀번호"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -110,15 +121,17 @@
 
 
                 <EditText
-                    android:text="@={viewModel.password}"
                     android:id="@+id/password_input"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/box_border"
                     android:ems="10"
-                    android:hint="비밀번호를 입력해 주세요."
+                    android:hint="비밀번호를 입력해 주세요"
                     android:inputType="textPassword"
                     android:padding="12dp"
+                    android:text="@={activity.password}"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -130,6 +143,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="비밀번호 확인"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -138,15 +152,17 @@
 
 
                 <EditText
-                    android:text="@={viewModel.checkPassword}"
                     android:id="@+id/password_input1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/box_border"
                     android:ems="10"
-                    android:hint="비밀번호를 입력해 주세요."
+                    android:hint="비밀번호를 입력해 주세요"
                     android:inputType="textPassword"
                     android:padding="12dp"
+                    android:text="@={activity.checkPassword}"
+                    android:textColor="#000"
+                    android:textColorHint="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -158,23 +174,44 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="닉네임"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="6dp" />
 
-                <EditText
-                    android:text="@={viewModel.name}"
-                    android:id="@+id/password_input2"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/box_border"
-                    android:ems="10"
-                    android:hint="닉네임을 입력해 주세요."
-                    android:inputType="textPassword"
-                    android:padding="12dp"
-                    android:textSize="14sp" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/password_input2"
+                        android:layout_width="235dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/box_border"
+                        android:ems="10"
+                        android:hint="닉네임을 입력해 주세요"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:text="@={activity.name}"
+                        android:textColor="#000"
+                        android:textColorHint="#000"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="0dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/register_check_btn"
+                        android:text="중복 확인"
+                        android:textColor="@color/gray_400" />
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
@@ -184,6 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="영어와 한글만 입력해 주세요"
+                    android:textColor="#000"
                     android:textSize="12sp" />
 
                 <View
@@ -195,23 +233,45 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="전화번호"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="6dp" />
 
-                <EditText
-                    android:text="@={viewModel.phone}"
-                    android:id="@+id/password_input3"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/box_border"
-                    android:ems="10"
-                    android:hint="숫자만 입력해 주세요"
-                    android:inputType="textPassword"
-                    android:padding="12dp"
-                    android:textSize="14sp" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/password_input3"
+                        android:layout_width="235dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/box_border"
+                        android:ems="10"
+                        android:hint="숫자만 입력해 주세요"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:text="@={activity.phone}"
+                        android:textColor="#000"
+                        android:textColorHint="#000"
+                        android:textSize="14sp" />
+
+
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="0dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/register_check_btn"
+                        android:text="인증 요청"
+                        android:textColor="@color/gray_400" />
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
@@ -222,23 +282,44 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="인증번호"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
                     android:layout_width="0dp"
                     android:layout_height="6dp" />
 
-                <EditText
-                    android:text="@={viewModel.verifiedNumber}"
-                    android:id="@+id/password_input4"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/box_border"
-                    android:ems="10"
-                    android:hint="인증번호를 입력해 주세요"
-                    android:inputType="textPassword"
-                    android:padding="12dp"
-                    android:textSize="14sp" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/password_input4"
+                        android:layout_width="235dp"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/box_border"
+                        android:ems="10"
+                        android:hint="인증번호를 입력해 주세요"
+                        android:inputType="textPassword"
+                        android:padding="12dp"
+                        android:text="@={activity.verifiedNumber}"
+                        android:textColor="#000"
+                        android:textColorHint="#000"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:layout_width="6dp"
+                        android:layout_height="0dp" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/register_check_btn"
+                        android:text="인증 요청"
+                        android:textColor="@color/gray_400" />
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="0dp"
@@ -249,6 +330,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="위치 인증"
+                    android:textColor="#000"
                     android:textSize="14sp" />
 
                 <View
@@ -258,12 +340,12 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:textAlignment="center"
+                    android:background="@drawable/location_auth"
                     android:gravity="center"
                     android:text="위치 인증하기"
-                    android:textSize="14sp"
+                    android:textAlignment="center"
                     android:textColor="#5C5D61"
-                    android:background="@drawable/location_auth" />
+                    android:textSize="14sp" />
 
                 <View
                     android:layout_width="0dp"
@@ -292,8 +374,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="모두 동의하기"
-                        android:textSize="14sp"
                         android:textColor="#5C5D61"
+                        android:textSize="14sp"
                         android:textStyle="bold" />
 
                     <View
@@ -333,8 +415,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="개인정보 처리방침"
-                        android:textSize="14sp"
-                        android:textColor="#3F3F42" />
+                        android:textColor="#3F3F42"
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="2dp"
@@ -344,8 +426,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(필수)"
-                        android:textSize="14sp"
-                        android:textColor="#B5B6BD" />
+                        android:textColor="#B5B6BD"
+                        android:textSize="14sp" />
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="보기"
+                        />
                 </LinearLayout>
 
                 <View
@@ -370,8 +458,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="서비스 이용약관"
-                        android:textSize="14sp"
-                        android:textColor="#3F3F42" />
+                        android:textColor="#3F3F42"
+                        android:textSize="14sp" />
 
                     <View
                         android:layout_width="2dp"
@@ -381,8 +469,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="(필수)"
-                        android:textSize="14sp"
-                        android:textColor="#B5B6BD" />
+                        android:textColor="#B5B6BD"
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <View
@@ -391,15 +479,15 @@
 
 
                 <Button
-                    android:onClick="@{() -> viewModel.registerLogic()}"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
-                    android:textAlignment="center"
+                    android:background="@drawable/location_auth"
                     android:gravity="center"
+                    android:onClick="@{() -> activity.registerWithImage()}"
                     android:text="가입하기"
-                    android:textSize="14sp"
+                    android:textAlignment="center"
                     android:textColor="#5C5D61"
-                    android:background="@drawable/location_auth" />
+                    android:textSize="14sp" />
 
 
             </LinearLayout>
