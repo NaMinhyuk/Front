@@ -4,4 +4,25 @@
     <string name="email_hint">이메일을 입력해주세요.</string>
     <string name="password_hint">비밀번호를 입력해주세요.</string>
     <string name="hello_blank_fragment">hello world</string>
+
+    <string-array name="filter_options">
+        <item>최신순</item>
+        <item>인기순</item>
+        <item>리뷰순</item>
+    </string-array>
+
+    <string-array name="mypage_main_list">
+        <item>내 정보</item>
+        <item>찜 목록</item>
+        <item>이용내역</item>
+        <item>등록내역</item>
+        <item>내가 쓴 리뷰</item>
+        <item>공지사항</item>
+        <item>FAQ</item>
+        <item>1:1 문의</item>
+        <item>서비스 이용약관</item>
+        <item>리뷰운영정책</item>
+        <item>개인정보 처리방침</item>
+    </string-array>
+
 </resources>

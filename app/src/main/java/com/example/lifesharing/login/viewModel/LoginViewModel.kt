@@ -15,7 +15,7 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
 
     var showMainActivity : MutableLiveData<Boolean> = MutableLiveData(false)
 
-    val TAG = "LoginViewModel"
+    val TAG = "로그"
 
     fun loginLogic() {
 
@@ -32,6 +32,9 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         val token = GlobalApplication.prefs.getString("access_token", "")
 
         if (token != "") {
+
+            Log.d(TAG, "토큰 값 $token: ")
+
             showMainActivity.value = true
         } else {
             Log.d(TAG, "loginLogic: 뭔가 잘못되고 있다... 액세스토큰값 없음")

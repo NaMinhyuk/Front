@@ -7,7 +7,6 @@
 
 
     <application
-        android:usesCleartextTraffic="true"
         android:name=".GlobalApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -17,8 +16,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LIFESHARING"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
+        <activity
+            android:name=".Product_Menu_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Product_Detail_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".product.Product_Detail_Reserve_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".product_register.Regist_Add_Activity"
+            android:exported="true"></activity>
 
         <activity android:name=".Product_Menu_Activity" android:exported="true">
         </activity>
@@ -30,9 +42,17 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
+        <activity android:name=".search.SearchActivity" />
 
-        <activity android:name=".product.Product_Detail_Reserve_Activity" android:exported="true">
-        </activity>
+        <activity android:name=".mypage.MyPageActivity"/>
+        <activity android:name=".mypage.MyProfileActivity"/>
+        <activity android:name=".mypage.WishListActivity"/>
+        <activity android:name=".mypage.NoticeActivity"/>
+        <activity android:name=".mypage.FAQ_Activity"/>
+        <activity android:name=".mypage.QnA_Activity"/>
+        <activity android:name=".mypage.Service_ToS_Activity"/>
+        <activity android:name=".mypage.ReviewOperationPolicyActivity"/>
+        <activity android:name=".mypage.PrivacyPolicyActivity"/>
 
         <activity android:name=".product.Product_Pay_Activity" android:exported="true">
             <intent-filter>
@@ -62,25 +82,40 @@
 <!--            </intent-filter>-->
         </activity>
 
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="@string/kakao_app_key" />
+
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key" />
         <meta-data android:name="com.kakao.vectormap.APP_KEY" android:value="@string/kakao_app_key"/>
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
 
         <activity
             android:name=".login.LoginActivity"
-            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge" />
         <activity
             android:name=".login.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".login.SocialLoginActivity"
             android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
         </activity>
 
         <activity
@@ -98,10 +133,12 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:host="oauth"
+                <data
+                    android:host="oauth"
                     android:scheme="@string/kakao_auth_host" />
             </intent-filter>
         </activity>

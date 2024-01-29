@@ -12,6 +12,13 @@ data class LoginResponseBody(
 
 data class LoginResult(
     @SerializedName("userId") var userId: Int? = null,
-    @SerializedName("token") var token: String? = null,
-    @SerializedName("createdAt") var createdAt: String? = null
+    @SerializedName("createdAt") var createdAt: String? = null,
+    @SerializedName("tokenDTO") var tokenDTO: TokenDTO? = null,
+
+)
+
+data class TokenDTO(
+    @SerializedName("grantType") var grantType: String?=null,
+    @SerializedName("accessToken") var accessToken: String?=null,
+    @SerializedName("refreshToken") var refreshToken: String?=null
 )

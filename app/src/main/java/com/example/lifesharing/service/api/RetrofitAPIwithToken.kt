@@ -1,5 +1,6 @@
 package com.example.lifesharing.service.api
 
+import android.util.Log
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.service.RetrofitInterface.RetrofitService
 import okhttp3.Interceptor
@@ -14,6 +15,8 @@ import com.example.lifesharing.BuildConfig.*
 
 object RetrofitAPIwithToken {
     private const val BASE_URL = BASE_URLS
+
+    val TAG = "로그"
 
     @Singleton
     fun okHttpClient(interceptor: AppInterceptor): OkHttpClient {
@@ -34,11 +37,18 @@ object RetrofitAPIwithToken {
     }
 
     class AppInterceptor : Interceptor {
+
+        val accessToken = GlobalApplication.prefs.getString("access_token", "") // ViewModel에서 지정한 key로 JWT 토큰을 가져온다.
+        val token = "Bearer $accessToken"
+
+
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain) : Response = with(chain) {
-            val accessToken = GlobalApplication.prefs.getString("accessToken", "") // ViewModel에서 지정한 key로 JWT 토큰을 가져온다.
+
+            Log.d(TAG, "intercept: $token")
+
             val newRequest = request().newBuilder()
-                .addHeader("Authorization", accessToken) // 헤더에 authorization라는 key로 JWT 를 넣어준다.
+                .addHeader("Authorization", token) // 헤더에 authorization라는 key로 JWT 를 넣어준다.
                 .build()
             proceed(newRequest)
         }

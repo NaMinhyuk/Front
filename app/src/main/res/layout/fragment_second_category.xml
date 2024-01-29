@@ -3,20 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="328dp"
     android:layout_height="wrap_content"
+    android:layout_gravity="center"
     android:orientation="vertical">
-
-    <!--<de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/item_category_image"
-        android:layout_width="56dp"
-        android:layout_height="56dp"
-        app:srcCompat="@drawable/macbook_ic"
-        app:civ_border_color="@color/white"
-        app:civ_border_overlay="true"
-        app:civ_border_width="5dp"
-        app:civ_circle_background_color="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />-->
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -24,13 +12,22 @@
 
         <TableRow>
             <ImageView
+                android:id="@+id/home_category_digital_iv"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_weight="1"
-                android:src="@drawable/home_category_digital"
-                android:onClick="onClick"/>
+                android:src="@drawable/home_category_digital"/>
+
+            <ImageView
+                android:id="@+id/home_category_sound_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_sound"/>
 
             <ImageView
                 android:layout_width="56dp"
@@ -38,8 +35,7 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/home_category_sound"
-                android:onClick="onClick"/>
+                android:src="@drawable/home_category_game"/>
 
             <ImageView
                 android:layout_width="56dp"
@@ -47,17 +43,7 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/home_category_game"
-                android:onClick="onClick"/>
-
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/home_category_camping"
-                android:onClick="onClick"/>
+                android:src="@drawable/home_category_camping"/>
 
         </TableRow>
 
@@ -105,15 +91,8 @@
 
         </TableRow>
 
-        <TableRow>
-            <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
-                android:layout_marginStart="13dp"
-                android:layout_marginEnd="13dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/home_category_clothes"
-                android:onClick="onClick"/>
+        <TableRow
+            android:layout_marginTop="5dp">
 
             <ImageView
                 android:layout_width="56dp"
@@ -121,23 +100,28 @@
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
                 android:layout_weight="1"
-                android:onClick="onClick"/>
+                android:src="@drawable/home_category_clothes" />
 
             <ImageView
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
-                android:layout_weight="1"
-                android:onClick="onClick"/>
+                android:layout_weight="1"/>
 
             <ImageView
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_marginStart="13dp"
                 android:layout_marginEnd="13dp"
-                android:layout_weight="1"
-                android:onClick="onClick"/>
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"/>
 
         </TableRow>
 

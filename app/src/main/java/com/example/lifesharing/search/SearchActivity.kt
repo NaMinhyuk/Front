@@ -2,10 +2,13 @@ package com.example.lifesharing.search
 
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivitySearchBinding
+import com.example.lifesharing.home.HomeFragment
+
 
 class SearchActivity : AppCompatActivity() {
 
@@ -14,7 +17,7 @@ class SearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search)
     }
 
-    private fun initSearchView() {
+    /*private fun initSearchView() {
 
         lateinit var binding : ActivitySearchBinding
 
@@ -32,5 +35,5 @@ class SearchActivity : AppCompatActivity() {
                 return true
             }
         })
-    }
+    }*/
 }

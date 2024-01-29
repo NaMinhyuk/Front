@@ -20,8 +20,7 @@ object RetrofitAPI {
             .build()
     }
 
-
-    private val retrofit: Retrofit by lazy {
+    val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())

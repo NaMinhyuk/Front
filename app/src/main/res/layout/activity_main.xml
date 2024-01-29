@@ -11,7 +11,7 @@
         android:layout_width="360dp"
         android:layout_height="56dp"
         app:itemIconSize="24dp"
-        app:itemIconTint="@color/gray_600"
+        app:itemIconTint="@color/blue_300"
         app:itemTextColor="@color/gray_600"
         app:itemPaddingBottom="8dp"
         app:itemPaddingTop="10dp"

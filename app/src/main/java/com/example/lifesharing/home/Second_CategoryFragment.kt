@@ -5,17 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.lifesharing.databinding.FragmentNewRegistItemBinding
+import com.example.lifesharing.databinding.FragmentSecondCategoryBinding
 
-class NewRegistItemFragment : Fragment() {
-    lateinit var binding: FragmentNewRegistItemBinding
+class Second_CategoryFragment() : Fragment() {
 
-    override fun onCreateView(
+    lateinit var binding : FragmentSecondCategoryBinding
+
+    override fun onCreateView (
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentNewRegistItemBinding.inflate(inflater, container, false)
+        binding = FragmentSecondCategoryBinding.inflate(inflater, container, false)
 
         return binding.root
     }
