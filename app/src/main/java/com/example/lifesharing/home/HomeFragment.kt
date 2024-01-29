@@ -117,29 +117,14 @@ class HomeFragment: Fragment(){
 
         val options = resources.getStringArray(R.array.filter_options)
 
-        val guideText = "필터"
-        val optionsWithGuide = listOf(guideText) + options.toList()
-
-        val adapter = ArrayAdapter(
-            requireContext(),
-            R.layout.home_spinner_item_selected,  // 선택된 아이템을 보여줄 레이아웃
-            R.id.spinner_title_tv,  // 레이아웃 안의 TextView ID
-            optionsWithGuide
-        )
-        adapter.setDropDownViewResource(R.layout.home_spinner_item_dropdown) // 드롭다운 레이아웃
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, options)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         filterSpinner.adapter = adapter
 
         filterSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-
-                if (position == 0) {
-                    // 가이드 문구가 선택되었으므로 여기에 대한 처리를 추가하세요.
-                    // 예를 들어, 사용자에게 메시지를 표시하거나 아무 작업도 수행하지 않을 수 있습니다.
-                } else {
-                    // 실제 옵션을 선택한 경우 해당 옵션에 대한 처리를 수행합니다.
-                    val selectedOption = options[position - 1] // 가이드 문구를 제외한 실제 옵션의 위치는 position - 1입니다.
-                    handleFilterOption(selectedOption)
-                }
+                val selectedOption = options[position]
+                handleFilterOption(selectedOption)
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {

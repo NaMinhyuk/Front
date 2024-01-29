@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             .replace(R.id.main_frame, HomeFragment())
             .commitAllowingStateLoss()
 
-        binding.mainBottomNavi.setOnNavigationItemSelectedListener { item ->
+        binding.mainBottomNavi.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> {
                     supportFragmentManager.beginTransaction()
@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     // 아이콘 변경
                     item.setIcon(R.drawable.btm_home_select_ic)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
 
                 R.id.reservationFragment -> {
@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_reserve_select_ic)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
 
                 R.id.registerFragment -> {
@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_regist_select_ic)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
 
                 R.id.messengerFragment -> {
@@ -64,20 +64,28 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_messenger_select_ic)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
 
                 R.id.mypageFragment -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frame, MyPageMainFragment())
+                        .replace(R.id.main_frame, MessengerFragment())
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_my_page_ic)
-                    return@setOnNavigationItemSelectedListener true
+                    true
                 }
 
                 else -> {
-                    return@setOnNavigationItemSelectedListener false
+                    // 선택되지 않았을 때 각 Fragment에 따른 기본 아이콘으로 변경하는 로직
+                    when (item.itemId) {
+                        R.id.homeFragment -> item.setIcon(R.drawable.btm_home_ic)
+                        R.id.reservationFragment -> item.setIcon(R.drawable.btm_reserve_ic)
+                        R.id.registerFragment -> item.setIcon(R.drawable.btm_regist_ic)
+                        R.id.messengerFragment -> item.setIcon(R.drawable.btm_messenger_ic)
+                        R.id.mypageFragment -> item.setIcon(R.drawable.btm_my_page_ic)
+                    }
+                    false
                 }
             }
         }
