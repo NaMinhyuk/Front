@@ -25,30 +25,30 @@ class Product_Detail_Reserve_Calendar_Fragment : Fragment() {
 
         val view = binding?.root
 
-        initView(_binding!!)
-
-        create_data()
+//        initView(_binding!!)
+//
+//        create_data()
         return view
     }
 
-    private fun initView(binding: FragmentCalendarBinding) {
-        recyclerView = binding.calRv
-        val position: Int = Int.MAX_VALUE / 2
-
-        binding.calRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
-        binding.calRv.adapter = Month_adapter()
-
-        //아이템 위치지정
-        binding.calRv.scrollToPosition(position)
-
-        val snap = PagerSnapHelper()
-        snap.attachToRecyclerView(binding.calRv)
-
-    }
-    private fun create_data() {
-        binding?.calRv?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-
-    }
+//    private fun initView(binding: FragmentCalendarBinding) {
+//        recyclerView = binding.calRv
+//        val position: Int = Int.MAX_VALUE / 2
+//
+//        binding.calRv.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+//        binding.calRv.adapter = Month_adapter()
+//
+//        //아이템 위치지정
+//        binding.calRv.scrollToPosition(position)
+//
+//        val snap = PagerSnapHelper()
+//        snap.attachToRecyclerView(binding.calRv)
+//
+//    }
+//    private fun create_data() {
+//        binding?.calRv?.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//
+//    }
 
     override fun onDestroyView() {
         super.onDestroyView()
