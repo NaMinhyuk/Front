@@ -58,6 +58,8 @@ android {
 dependencies {
 
     implementation("com.google.android.datatransport:transport-runtime:3.2.0")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
     platform("com.google.firebase:firebase-bom:32.7.0")
     implementation("com.kakao.sdk:v2-user:2.19.0")
     implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
@@ -83,7 +85,6 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.5.3")
     implementation("androidx.navigation:navigation-ui:2.5.3")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation("com.tbuonomo:dotsindicator:5.0")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

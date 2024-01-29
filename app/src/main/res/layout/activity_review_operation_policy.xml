@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/search_back_iv"
+        android:id="@+id/rop_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
@@ -17,27 +17,15 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/search_title_tv"
+        android:id="@+id/rop_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="118dp"
-        android:text="검색"
+        android:layout_marginStart="95dp"
+        android:text="리뷰운영정책"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/search_back_iv"
+        app:layout_constraintStart_toEndOf="@+id/rop_back_iv"
         app:layout_constraintTop_toTopOf="parent"/>
-
-    <!--<androidx.appcompat.widget.SearchView
-        android:id="@+id/search_bar"
-        android:layout_width="328dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="14dp"
-        android:focusable="false"
-        app:queryBackground="@color/gray_500"
-        app:queryHint="찾는 상품을 검색해 보세요"
-        app:layout_constraintTop_toBottomOf="@+id/search_title_tv"
-        app:layout_constraintStart_toStartOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
