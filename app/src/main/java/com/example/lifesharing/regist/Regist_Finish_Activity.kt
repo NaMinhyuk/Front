@@ -1,4 +1,4 @@
-package com.example.lifesharing.reservation
+package com.example.lifesharing.regist
 
 import android.content.Intent
 import android.os.Bundle

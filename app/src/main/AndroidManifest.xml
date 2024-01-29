@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
-    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -17,22 +19,53 @@
         android:theme="@style/Theme.LIFESHARING"
         tools:targetApi="31">
 
+
         <activity android:name=".Product_Menu_Activity" android:exported="true">
         </activity>
 
         <activity android:name=".Product_Detail_Activity" android:exported="true" >
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
         </activity>
 
         <activity android:name=".product.Product_Detail_Reserve_Activity" android:exported="true">
         </activity>
 
-        <activity android:name=".product_register.Regist_Add_Activity" android:exported="true">
+        <activity android:name=".product.Product_Pay_Activity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="@string/kakao_app_key"
-            />
+        <activity android:name=".product.Product_Detail_Reserve_Finish_Activity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".profile.Profile_Activity" android:exported="true" >
+
+        </activity>
+
+        <activity android:name=".charge.Charge_Activity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".regist.Regist_Add_Activity" android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key" />
+        <meta-data android:name="com.kakao.vectormap.APP_KEY" android:value="@string/kakao_app_key"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
+
         <activity
             android:name=".login.LoginActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar.Bridge"
@@ -43,6 +76,16 @@
         <activity
             android:name=".login.SocialLoginActivity"
             android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -50,15 +93,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-        </activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
             android:exported="true">

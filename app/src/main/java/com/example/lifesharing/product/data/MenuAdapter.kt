@@ -1,4 +1,4 @@
-package com.example.lifesharing.Product
+package com.example.lifesharing.product.data
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,7 +9,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.lifesharing.R
-import com.example.lifesharing.product_data.MenuData
 
 class MenuAdapter(private val context: Context) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
 

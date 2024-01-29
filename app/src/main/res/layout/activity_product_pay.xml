@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="결제상세"
+        android:textSize="16sp"
+        android:textColor="@color/gray_800"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="18dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pay_backbtn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:paddingBottom="80dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/pay_body_cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/pay_item_cl"
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/gray_50"
+                android:layout_marginTop="60dp">
+
+                <ImageView
+                    android:id="@+id/pay_camera_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pay_camera"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="16dp"/>
+                <ImageView
+                    android:id="@+id/pay_location_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pay_location"
+                    app:layout_constraintTop_toTopOf="@id/pay_camera_img"
+                    app:layout_constraintStart_toEndOf="@id/pay_camera_img"
+                    android:layout_marginLeft="11dp"
+                    android:paddingTop="3dp"/>
+                <TextView
+                    android:id="@+id/pay_location_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="울산 무거동"
+                    android:textSize="11sp"
+                    android:textColor="@color/gray_500"
+                    app:layout_constraintTop_toTopOf="@id/pay_location_iv"
+                    app:layout_constraintStart_toEndOf="@id/pay_location_iv"
+                    android:layout_marginLeft="2dp"/>
+
+                <TextView
+                    android:id="@+id/pay_title_tv"
+                    android:layout_width="237dp"
+                    android:layout_height="wrap_content"
+                    android:text="Canon [렌즈 포함] EOS R8CanonCanon..."
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintTop_toBottomOf="@id/pay_location_iv"
+                    app:layout_constraintStart_toEndOf="@id/pay_camera_img"
+                    android:layout_marginLeft="11dp"
+                    android:layout_marginTop="3dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="일"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintStart_toStartOf="@id/pay_title_tv"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_day_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/pay_money_day_tv"
+                    android:layout_marginLeft="58dp" />
+
+                <TextView
+                    android:id="@+id/pay_money_day_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10,000"
+                    android:textColor="#1277ED"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/pay_title_tv"
+                    app:layout_constraintStart_toStartOf="@id/pay_title_tv"
+                    android:layout_marginLeft="71dp"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="원"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_day_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/pay_money_day_tv"
+                    app:layout_constraintStart_toEndOf="@id/pay_money_day_tv"
+                    android:layout_marginLeft="2dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pay_crossline"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_day_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/pay_money_day_tv"
+                    app:layout_constraintStart_toEndOf="@id/pay_money_day_tv"
+                    android:layout_marginLeft="25dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="시간"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintEnd_toStartOf="@id/pay_money_hour_tv"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_hour_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/pay_money_hour_tv"
+                    android:layout_marginRight="2dp"/>
+
+                <TextView
+                    android:id="@+id/pay_money_hour_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5,000"
+                    android:textColor="#1277ED"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_day_tv"
+                    app:layout_constraintStart_toEndOf="@id/pay_money_day_tv"
+                    android:layout_marginLeft="60dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="원"
+                    android:textSize="12sp"
+                    android:textColor="@color/gray_800"
+                    app:layout_constraintTop_toTopOf="@id/pay_money_hour_tv"
+                    app:layout_constraintBottom_toBottomOf="@id/pay_money_hour_tv"
+                    app:layout_constraintStart_toEndOf="@id/pay_money_hour_tv"
+                    android:layout_marginLeft="2dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/pay_title1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대여기간"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toBottomOf="@id/pay_item_cl"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대여일"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintTop_toBottomOf="@id/pay_title1"
+                app:layout_constraintStart_toStartOf="@id/pay_title1"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/pay_before_day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.10(수)"
+                android:textSize="20sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toBottomOf="@id/pay_title1"
+                app:layout_constraintStart_toStartOf="@id/pay_title1"
+                android:layout_marginTop="38dp" />
+
+            <TextView
+                android:id="@+id/pay_before_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오전 12시 부터"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintTop_toBottomOf="@id/pay_before_day_tv"
+                app:layout_constraintStart_toStartOf="@id/pay_title1"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="70dp"
+                android:background="@color/gray_200"
+                app:layout_constraintStart_toEndOf="@id/pay_before_time_tv"
+                app:layout_constraintBottom_toBottomOf="@id/pay_before_time_tv"
+                android:layout_marginLeft="70dp"/>
+
+            <TextView
+                android:id="@+id/pay_dum1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="반납일"
+                android:textColor="@color/gray_500"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pay_title1"
+                android:layout_marginRight="124dp"
+                android:layout_marginTop="16dp"/>
+
+            <TextView
+                android:id="@+id/pay_after_day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.14(일)"
+                android:textSize="20sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toBottomOf="@id/pay_dum1"
+                app:layout_constraintStart_toStartOf="@id/pay_dum1" />
+
+            <TextView
+                android:id="@+id/pay_after_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="오후 4시 까지"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintTop_toBottomOf="@id/pay_after_day_tv"
+                app:layout_constraintStart_toStartOf="@id/pay_dum1"/>
+
+            <View
+                android:id="@+id/pay_cross_line"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:background="@color/gray_100"
+                app:layout_constraintTop_toBottomOf="@id/pay_before_time_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:id="@+id/pay_title2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="결재금액"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/pay_cross_line"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="총"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toBottomOf="@id/pay_title2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:id="@+id/pay_total_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4일 17시간"
+                android:textSize="16sp"
+                android:textColor="#1277ED"
+                app:layout_constraintTop_toBottomOf="@id/pay_title2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginLeft="34dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="대여"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintStart_toEndOf="@id/pay_total_time"
+                app:layout_constraintTop_toTopOf="@id/pay_total_time"
+                app:layout_constraintBottom_toBottomOf="@id/pay_total_time"
+                android:layout_marginLeft="4dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_day_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4일"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintStart_toStartOf="@id/pay_title2"
+                app:layout_constraintTop_toBottomOf="@id/pay_total_time"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_time_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17시간"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintStart_toStartOf="@id/pay_title2"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_day_title"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_save_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보증금"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintStart_toStartOf="@id/pay_title2"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_time_title"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_day_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="40,000원"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toTopOf="@id/pay_body_money_day_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_time_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="85,000원"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toTopOf="@id/pay_body_money_time_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:id="@+id/pay_body_money_save_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="80,000원"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toTopOf="@id/pay_body_money_save_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보증금은 제품 회수 후 다시 돌려드려요!"
+                android:textSize="12sp"
+                android:textColor="#1277ED"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_save_title"
+                app:layout_constraintStart_toStartOf="@id/pay_title2"
+                android:layout_marginTop="8dp"/>
+
+            <View
+                android:layout_width="328dp"
+                android:layout_height="1dp"
+                android:background="@color/gray_300"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_save_title"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="42dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="최종 결제 금액"
+                android:textSize="18sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_save_title"
+                app:layout_constraintStart_toStartOf="@id/pay_title2"
+                android:layout_marginTop="66dp" />
+
+            <TextView
+                android:id="@+id/pay_total_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="205,000"
+                android:textSize="18sp"
+                android:textColor="#1277ED"
+                app:layout_constraintTop_toBottomOf="@id/pay_body_money_save_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="66dp"
+                android:layout_marginRight="36dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="원"
+                android:textColor="@color/gray_900"
+                android:textSize="18sp"
+                app:layout_constraintTop_toTopOf="@id/pay_total_money"
+                app:layout_constraintStart_toEndOf="@id/pay_total_money"
+                app:layout_constraintBottom_toBottomOf="@id/pay_total_money"
+                android:layout_marginLeft="4dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                app:layout_constraintTop_toBottomOf="@id/pay_total_money"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/gray_100"
+                android:layout_marginTop="24dp"/>
+
+            <TextView
+                android:id="@+id/pay_title3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="캐시 사용"
+                android:textColor="@color/gray_900"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/pay_total_money"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="56dp"
+                android:layout_marginLeft="16dp"/>
+
+            <TextView
+                android:id="@+id/pay_charge_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="충전하기"
+                android:textSize="14sp"
+                android:textColor="#1277ED"
+                app:layout_constraintTop_toTopOf="@id/pay_title3"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="36dp" />
+
+            <ImageView
+                android:id="@+id/pay_charge_iv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pay_charge_btn"
+                app:layout_constraintTop_toTopOf="@id/pay_charge_tv"
+                app:layout_constraintStart_toEndOf="@id/pay_charge_tv"
+                app:layout_constraintBottom_toBottomOf="@id/pay_charge_tv"
+                android:layout_marginLeft="4dp"/>
+
+            <ImageView
+                android:id="@+id/pat_usebtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pay_usebtn"
+                app:layout_constraintTop_toBottomOf="@id/pay_title3"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="24dp"
+                android:layout_marginRight="16dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="보유캐시"
+                android:textSize="16sp"
+                android:textColor="@color/gray_600"
+                app:layout_constraintTop_toTopOf="@id/pat_usebtn"
+                app:layout_constraintBottom_toBottomOf="@id/pat_usebtn"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginLeft="16dp" />
+
+            <TextView
+                android:id="@+id/pay_point_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 P"
+                android:textSize="16sp"
+                android:textColor="@color/gray_900"
+                app:layout_constraintTop_toTopOf="@id/pat_usebtn"
+                app:layout_constraintBottom_toBottomOf="@id/pat_usebtn"
+                app:layout_constraintEnd_toStartOf="@id/pat_usebtn"
+                android:layout_marginRight="8dp" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <ImageView
+        android:id="@+id/pay_cancle_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pay_cancle_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="8dp"/>
+
+    <ImageView
+        android:id="@+id/pay_paybtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pay_paybtn"
+        app:layout_constraintTop_toTopOf="@id/pay_cancle_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="16dp"/>
+
+    <TextView
+        android:id="@+id/pay_total_money_bottom_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="205,000원 결제하기"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintTop_toTopOf="@id/pay_cancle_btn"
+        app:layout_constraintStart_toStartOf="@id/pay_paybtn"
+        app:layout_constraintEnd_toEndOf="@id/pay_paybtn"
+        app:layout_constraintBottom_toBottomOf="@id/pay_paybtn"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

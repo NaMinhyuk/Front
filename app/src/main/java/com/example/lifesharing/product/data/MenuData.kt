@@ -1,4 +1,4 @@
-package com.example.lifesharing.product_data
+package com.example.lifesharing.product.data
 
 data class MenuData(
     val img : Int,

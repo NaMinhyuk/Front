@@ -13,5 +13,9 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         val binding = ActivityDetailReserveBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.reserveBackBtn.setOnClickListener {
+            finish()
+        }
+
     }
 }
