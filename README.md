@@ -10,3 +10,9 @@ FE 규칙
 - git branch MH
 - git commit -m "메세지"
 - git push -f origin MH
+
+4. Push 이후 Merge과정 참고사항
+- git checkout origin/(브랜치명) : 생성된 브랜치로 전환하기
+- git fetch —all : 업데이트된 브랜치 확인하기 (무조건 필요함!!)
+- git merge (merge할 브랜치명) : 전환된 브랜치에서 merge
+- conflict 나면 수정
