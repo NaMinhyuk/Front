@@ -25,6 +25,7 @@
             android:textColor="@color/blue_300" />
 
         <ImageView
+            android:id="@+id/home_search_ic"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="130dp"
@@ -32,6 +33,7 @@
             app:srcCompat="@drawable/home_top_search"/>
 
         <ImageView
+            android:id="@+id/home_alarm_ic"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="13dp"
@@ -69,20 +71,31 @@
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/home_category_vp"
-                android:layout_width="328dp"
-                android:layout_height="174dp"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"/>
+                android:layout_width="360dp"
+                android:layout_height="179dp"
+                android:layout_marginTop="16dp" />
 
-            <me.relex.circleindicator.CircleIndicator3
-                android:id="@+id/home_category_indicator"
+            <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="16dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                app:ci_drawable_unselected="@drawable/indicator_shape_gray"
-                app:ci_drawable="@drawable/indicator_shape_blue"
-                app:ci_animator="@animator/scale_with_alpha"
-                app:layout_constraintTop_toBottomOf="@id/home_category_vp" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/indicator0_iv_main"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    app:srcCompat="@drawable/indicator_shape_blue" />
+
+                <ImageView
+                    android:id="@+id/indicator1_iv_main"
+                    android:layout_width="6dp"
+                    android:layout_height="6dp"
+                    android:layout_marginStart="8dp"
+                    app:srcCompat="@drawable/indicator_shape_gray" />
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -104,11 +117,11 @@
                     android:layout_width="52dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="150dp"
-                    android:layout_marginEnd="16dp" />
-
+                    android:layout_marginEnd="16dp"
+                    android:padding="0dp"
+                    style="@style/Theme_Spinner"/>
 
             </LinearLayout>
-
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/new_item_rv"
                 android:layout_width="360dp"

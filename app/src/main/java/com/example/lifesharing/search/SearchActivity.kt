@@ -7,6 +7,7 @@ import androidx.appcompat.widget.SearchView
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivitySearchBinding
 
+
 class SearchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?){
@@ -14,7 +15,7 @@ class SearchActivity : AppCompatActivity() {
         setContentView(R.layout.activity_search)
     }
 
-    private fun initSearchView() {
+    /*private fun initSearchView() {
 
         lateinit var binding : ActivitySearchBinding
 
@@ -32,5 +33,5 @@ class SearchActivity : AppCompatActivity() {
                 return true
             }
         })
-    }
+    }*/
 }

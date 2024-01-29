@@ -1,6 +1,8 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.Lifesharing" parent="Theme.AppCompat.Light">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
@@ -15,4 +17,13 @@
         <item name="android:textSize">12sp</item>
         <item name="android:paddingTop">10dp</item>
     </style>
+
+    <style name="Theme_Spinner" parent="Widget.AppCompat.Spinner">
+        <item name="android:overlapAnchor">false</item>
+        <item name="overlapAnchor"> false</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:dropDownWidth">52dp</item>
+        <item name="android:background">@drawable/home_spinner_bg</item>
+    </style>
+
 </resources>

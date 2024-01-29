@@ -135,9 +135,8 @@
         app:layout_constraintStart_toStartOf="@id/location_ic"
         app:layout_constraintTop_toBottomOf="@id/deposit_tv"/>
 
-
     <TextView
-        android:id="@+id/day_fee_tv"
+        android:id="@+id/day_price_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="2dp"
@@ -154,7 +153,7 @@
         android:text="원"
         android:textColor="@color/gray_800"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@id/day_fee_tv"
+        app:layout_constraintStart_toEndOf="@id/day_price_tv"
         app:layout_constraintTop_toTopOf="@id/a_day_tv"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

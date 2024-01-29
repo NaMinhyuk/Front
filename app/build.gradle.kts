@@ -80,10 +80,10 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.core:core-ktx:1.12.0")
 
-    implementation("androidx.navigation:navigation-fragment:2.3.2")
-    implementation("androidx.navigation:navigation-ui:2.3.2")
+    implementation("androidx.navigation:navigation-fragment:2.5.3")
+    implementation("androidx.navigation:navigation-ui:2.5.3")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
-    implementation ("me.relex:circleindicator:2.1.6")
+    implementation("com.tbuonomo:dotsindicator:5.0")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")

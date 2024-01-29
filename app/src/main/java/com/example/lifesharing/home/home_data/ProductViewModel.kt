@@ -4,9 +4,6 @@ import android.app.Application
 import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.example.lifesharing.home.ProductFilter
-import com.example.lifesharing.service.RetrofitInterface.RetrofitService
-import com.example.lifesharing.service.api.RetrofitAPI
 import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import retrofit2.Call
 import retrofit2.Response

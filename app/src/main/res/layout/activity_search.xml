@@ -26,7 +26,7 @@
         app:layout_constraintStart_toEndOf="@+id/search_back_iv"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.appcompat.widget.SearchView
+    <!--<androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
         android:layout_width="328dp"
         android:layout_height="44dp"
@@ -36,6 +36,6 @@
         app:queryBackground="@color/gray_500"
         app:queryHint="찾는 상품을 검색해 보세요"
         app:layout_constraintTop_toBottomOf="@+id/search_title_tv"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

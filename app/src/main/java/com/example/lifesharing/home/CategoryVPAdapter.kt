@@ -1,4 +1,4 @@
-package com.example.lifesharing.home.home_data
+package com.example.lifesharing.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

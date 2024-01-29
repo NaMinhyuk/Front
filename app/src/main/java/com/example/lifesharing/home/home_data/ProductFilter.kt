@@ -1,4 +1,4 @@
-package com.example.lifesharing.home
+package com.example.lifesharing.home.home_data
 
 import android.util.Log
 import com.example.lifesharing.home.home_data.ProductResponse

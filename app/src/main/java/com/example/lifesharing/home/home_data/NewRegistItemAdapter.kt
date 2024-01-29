@@ -37,7 +37,7 @@ class NewRegistItemAdapter(private val items: ArrayList<NewRegistItemData>) : Re
         private val review: TextView = itemView.findViewById(R.id.review_num_tv)
         private val name: TextView = itemView.findViewById(R.id.new_item_name_tv)
         private val deposit: TextView = itemView.findViewById(R.id.deposit_tv)
-        private val a_day_fee: TextView = itemView.findViewById(R.id.day_fee_tv)
+        private val day_price: TextView = itemView.findViewById(R.id.day_price_tv)
 
         fun bind(item: NewRegistItemData) {
             Glide.with(itemView).load(item.img).into(image)
@@ -45,7 +45,7 @@ class NewRegistItemAdapter(private val items: ArrayList<NewRegistItemData>) : Re
             review.text = item.reviewCount.toString() // 수정된 부분: reviewCount 필드를 사용
             name.text = item.name
             deposit.text = item.deposit.toString()
-            a_day_fee.text = item.dayPrice.toString() // 수정된 부분: dayPrice 필드를 사용
+            day_price.text = item.dayPrice.toString() // 수정된 부분: dayPrice 필드를 사용
         }
     }
 }
