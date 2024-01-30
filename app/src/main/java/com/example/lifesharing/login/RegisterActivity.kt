@@ -50,7 +50,7 @@ class RegisterActivity : AppCompatActivity() {
 
     lateinit var mediaPath: Path
 
-    var body: MultipartBody.Part?=null
+    lateinit var body: MultipartBody.Part
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,7 +76,7 @@ class RegisterActivity : AppCompatActivity() {
 
                 val file = File(imagePath)
                 val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
-                body = MultipartBody.Part.createFormData("profile", file.name, requestFile)
+                body = MultipartBody.Part.createFormData("multipartFile", file.name, requestFile)
 
             } else {
                 Log.d(TAG, "pickImage: no media selected")

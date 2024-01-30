@@ -26,25 +26,4 @@ class RegisterViewModel(application: Application) : AndroidViewModel(application
 
     private lateinit var pickSingleMediaLaunder: ActivityResultLauncher<Intent>
 
-
-
-
-
-
-    fun registerLogic() {
-         val registerUserData = RegisterRequestBody(
-            email.value.toString(),
-            password.value.toString(),
-            name.value.toString(),
-            phone.value.toString()
-        )
-
-        Log.d(TAG, "$registerUserData ")
-
-        val retrofitWork = RegisterWork(registerUserData, null)
-        retrofitWork.registerWork()
-        // 리턴값 보고 네비게이터 하는 분기 처리 해줘야함
-        showLoginActivity.value = true
-    }
-
 }

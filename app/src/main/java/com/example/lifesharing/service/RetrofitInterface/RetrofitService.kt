@@ -31,7 +31,7 @@ interface RetrofitService {
     @POST("user/join")
     fun registerUser(
         @Part ("joinDTO") joinDTO: RegisterRequestBody,
-        @Part multipartFile: MultipartBody.Part?
+        @Part multipartFile: MultipartBody.Part
     ): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
 
 

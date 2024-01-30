@@ -9,7 +9,7 @@ import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 
-class RegisterWork(private val userInfo: RegisterRequestBody, private val imageFile: MultipartBody.Part?) {
+class RegisterWork(private val userInfo: RegisterRequestBody, private val imageFile: MultipartBody.Part) {
 
     val TAG: String = "로그"
 
