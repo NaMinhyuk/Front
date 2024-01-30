@@ -338,6 +338,8 @@
                     android:layout_height="6dp" />
 
                 <Button
+                    android:onClick="@{() -> activity.getLocation()}"
+                    android:id="@+id/register_location_btn"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/location_auth"

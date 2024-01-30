@@ -8,6 +8,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.service.work.RegisterWork
+import com.google.android.gms.location.LocationServices
 
 class RegisterViewModel(application: Application) : AndroidViewModel(application) {
 

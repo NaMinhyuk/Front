@@ -1,4 +1,4 @@
-package com.example.lifesharing.sharedPref
+package com.example.lifesharing.util
 
 import android.content.Context
 import android.content.SharedPreferences
