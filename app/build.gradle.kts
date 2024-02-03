@@ -66,6 +66,8 @@ dependencies {
     implementation("androidx.datastore:datastore-preferences:1.0.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
 
+    implementation("io.reactivex.rxjava2:rxkotlin:2.4.0")
+
     implementation("com.google.android.gms:play-services-location:21.1.0")
 
     // implementation("com.github.bishoybasily:stomp:2.0.5")

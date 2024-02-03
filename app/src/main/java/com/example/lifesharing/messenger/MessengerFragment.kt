@@ -1,6 +1,5 @@
 package com.example.lifesharing.messenger
 
-import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -8,19 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
-import com.example.lifesharing.databinding.FragmentChatRoomItemBinding
 import com.example.lifesharing.databinding.FragmentMessengerBinding
-import com.example.lifesharing.messenger.model.MessengerRoomItem
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 
 
 class MessengerFragment : Fragment(), MessengerRecyclerViewInterface {
@@ -72,6 +64,7 @@ class MessengerFragment : Fragment(), MessengerRecyclerViewInterface {
         intent.putExtra("opponentName", chatRoomList!![position].opponentName)
         intent.putExtra("opponentUserId", chatRoomList!![position].receiverId)
         intent.putExtra("productId", chatRoomList!![position].productId)
+        intent.putExtra("roomId", chatRoomList!![position].roomId)
         
         startActivity(intent)
     }
