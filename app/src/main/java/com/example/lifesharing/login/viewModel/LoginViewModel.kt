@@ -6,7 +6,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.login.model.request_body.LoginRequestBody
-import com.example.lifesharing.messenger.api.MessengerRoomListWork
+import com.example.lifesharing.service.work.MessengerRoomListWork
 import com.example.lifesharing.service.work.LoginWork
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
@@ -40,6 +40,8 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
             val getMessengerRoomListWork = MessengerRoomListWork(userId.toInt())
 
             getMessengerRoomListWork.getMessengerRoomList()
+
+
 
         } else {
             Log.d(TAG, "loginLogic: 뭔가 잘못되고 있다... 액세스토큰값 없음")

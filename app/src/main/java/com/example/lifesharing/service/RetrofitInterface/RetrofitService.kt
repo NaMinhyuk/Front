@@ -1,10 +1,12 @@
 package com.example.lifesharing.service.RetrofitInterface
 
+import com.example.lifesharing.common.response_body.ProductIdResponseBody
 import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListResponseBody
+import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
 import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Response
@@ -43,5 +45,16 @@ interface RetrofitService {
     fun getMessengerRoomList(
         @Path("sender") senderId : Int
     ) : Call<MessengerRoomListResponseBody>
+
+    @GET("chats/room-list-temp/{user}")
+    fun getMessengerRoomListTemp(
+        @Path("user") userId: Int
+    ) : Call<MessengerRoomListTempResponseBody>
+
+    @GET("product/detail")
+    fun getProductData(
+        @Query("productId") productId: Int
+    ) : Call<ProductIdResponseBody>
+
 
 }

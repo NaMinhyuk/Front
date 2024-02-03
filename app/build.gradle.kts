@@ -68,7 +68,8 @@ dependencies {
 
     implementation("com.google.android.gms:play-services-location:21.1.0")
 
-    implementation("com.github.bishoybasily:stomp:2.0.5")
+    // implementation("com.github.bishoybasily:stomp:2.0.5")
+    implementation("com.github.NaikSoftware:StompProtocolAndroid:1.6.6")
 
     implementation("com.github.bumptech.glide:glide:4.16.0") //image를 연동하기 위해 사용 참고 : https://yunaaaas.tistory.com/43
 

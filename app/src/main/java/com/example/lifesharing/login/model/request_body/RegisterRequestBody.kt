@@ -5,5 +5,10 @@ data class RegisterRequestBody(
     val password: String?,
     val name: String?,
     val phone: String?,
-   // val locationDTO:  LocationDTO?=null,
+    val locationDTO:  LocationDTO?,
+)
+
+data class LocationDTO(
+    val roadAddPart1: String?,
+    val emdNm : String?,
 )

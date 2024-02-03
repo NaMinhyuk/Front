@@ -2,6 +2,7 @@ package com.example.lifesharing.messenger
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.printservice.CustomPrinterIconCallback
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBar
@@ -9,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityMessengerDetailBinding
 import com.example.lifesharing.messenger.viewModel.MessengerDetailViewModel
+import ua.naiksoftware.stomp.Stomp
 
 class MessengerDetailActivity : AppCompatActivity(), MessengerDataTransfer {
 
@@ -46,6 +48,14 @@ class MessengerDetailActivity : AppCompatActivity(), MessengerDataTransfer {
         val actionBar: ActionBar? = supportActionBar
         actionBar!!.setDisplayHomeAsUpEnabled(true) // 앱바 뒤로가기 버튼 만들기
 
+    }
+
+    fun initStomp() {
+
+        val wsServerUrl : String = "example";
+        val stompClient = Stomp.over(Stomp.ConnectionProvider.OKHTTP, wsServerUrl)
+
+        stompClient.connect()
     }
 
     override fun onDataTransfer(data: String) {

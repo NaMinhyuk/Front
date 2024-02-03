@@ -83,6 +83,7 @@
             app:layout_constraintTop_toTopOf="@id/messenger_detail_appbar">
 
             <ImageView
+                android:id="@+id/product_img"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/camera_dummy" />
@@ -111,7 +112,8 @@
                         android:layout_height="0dp"/>
 
                     <TextView
-                        android:id="@+id/messenger_detail_location"
+
+                        android:id="@+id/product_detail_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="울산 무거동"
@@ -121,22 +123,17 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/messenger_detail_product_name"
+                    android:id="@+id/product_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="거래 제품 데이터"
                     android:textColor="@color/gray_800"
                     android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="거래 제품 데이터2"
-                    android:textColor="@color/black" />
 
                 <View
                     android:layout_width="0dp"
-                    android:layout_height="6dp" />
+                    android:layout_height="18dp" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -159,7 +156,7 @@
                         android:layout_height="0dp" />
 
                     <TextView
-                        android:id="@+id/messenger_detail_day_price"
+                        android:id="@+id/product_day_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="10,000"
@@ -181,10 +178,7 @@
                         android:layout_width="12dp"
                         android:layout_height="0dp" />
 
-                    <View
-                        android:layout_width="1dp"
-                        android:layout_height="14dp"
-                        android:background="@color/gray_800" />
+
 
                     <View
                         android:layout_width="12dp"
@@ -202,7 +196,7 @@
                         android:layout_height="0dp" />
 
                     <TextView
-                        android:id="@+id/messenger_detail_hour_price"
+                        android:id="@+id/product_hour_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="5,000"

@@ -6,7 +6,7 @@ data class MessengerRoomListResponseBody(
     @SerializedName("isSuccess") var isSuccess: Boolean?,
     @SerializedName("code") var code: String?=null,
     @SerializedName("message") var message: String?=null,
-    @SerializedName("result") var result: MessengerRoomListResult?= MessengerRoomListResult()
+    @SerializedName("result") var result: List<MessengerRoomListResult>?=null
 )
 
 data class MessengerRoomListResult(

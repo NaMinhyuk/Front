@@ -29,6 +29,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityRegisterBinding
+import com.example.lifesharing.login.model.request_body.LocationDTO
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.viewModel.RegisterViewModel
 import com.example.lifesharing.service.work.RegisterWork
@@ -64,6 +65,10 @@ class RegisterActivity : AppCompatActivity() {
 
     lateinit var body: MultipartBody.Part
 
+    lateinit var roadAdd: String
+
+    lateinit var emdNm : String
+
 //    override fun onStart() {
 //        super.onStart()
 //    }
@@ -76,9 +81,12 @@ class RegisterActivity : AppCompatActivity() {
         binding.activity = this
         binding.lifecycleOwner = this
 
+        body = MultipartBody.Part.createFormData("multipartFile", "","".toRequestBody("image/*".toMediaTypeOrNull()))
+
         pickMedia = registerForActivityResult(/* contract = */
             ActivityResultContracts.PickVisualMedia()
         ) /* callback = */
+
         { uri ->
             if (uri != null) {
                 Log.d(TAG, "pickImage: $uri")
@@ -114,7 +122,8 @@ class RegisterActivity : AppCompatActivity() {
             email.value.toString(),
             password.value.toString(),
             name.value.toString(),
-            phone.value.toString()
+            phone.value.toString(),
+            LocationDTO(roadAdd, emdNm)
         )
 
 
@@ -143,6 +152,7 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     @SuppressLint("MissingPermission")
     fun getLocation() {
         RequestPermissionsUtil(this).requestLocation()
@@ -160,10 +170,16 @@ class RegisterActivity : AppCompatActivity() {
                     // adminArea 도 or 광역시
                     // locality 지역이름 시 혹은 군구 ?
                     // thoroughfore 동
-                    address?.getAddressLine(0)
-                    Log.d(TAG, "실제 위도:${address?.adminArea} ${address?.locality} ${address?.thoroughfare} // ${address?.getAddressLine(0)}")
+
+                    roadAdd = address?.getAddressLine(0)!!
+                    emdNm = address.thoroughfare!!
+
+                    Log.d(TAG, roadAdd)
+                    Log.d(TAG, "실제 위도: $emdNm") // ${address.getAddressLine(0)}")
                 }
             }
+
+        revokeSelfPermissionOnKill("")
     }
 
     private fun getAddress(lat: Double, lng: Double): List<Address>? {

@@ -4,9 +4,7 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.BuildConfig
-import com.example.lifesharing.GlobalApplication
-import com.example.lifesharing.messenger.api.MessengerRoomListWork
-import com.gmail.bishoybasily.stomp.lib.Event
+// import com.gmail.bishoybasily.stomp.lib.Event
 import okhttp3.OkHttpClient
 
 
@@ -22,32 +20,32 @@ class MessengerDetailViewModel(application: Application): AndroidViewModel(appli
 
     val client = OkHttpClient()
 
-    val stompClient = com.gmail.bishoybasily.stomp.lib.StompClient(client, intervalMills)
-
-    var stompConnection = stompClient.connect().subscribe {
-        when (it.type) {
-            Event.Type.OPENED -> {
-
-            }
-
-            Event.Type.CLOSED -> {
-
-            }
-            Event.Type.ERROR -> {
-
-            }
-
-            else -> {}
-        }
-    }
+//    val stompClient = com.gmail.bishoybasily.stomp.lib.StompClient(client, intervalMills)
+//
+//    var stompConnection = stompClient.connect().subscribe {
+//        when (it.type) {
+//            Event.Type.OPENED -> {
+//
+//            }
+//
+//            Event.Type.CLOSED -> {
+//
+//            }
+//            Event.Type.ERROR -> {
+//
+//            }
+//
+//            else -> {}
+//        }
+//    }
 
 
  //stomp는 진짜 몰겠다 ㅋㅋ
-    fun runStomp(roomId: Int, UserId: Int) {
-        stompClient.connect()
-    }
-
-    fun getChatRoomList() {
-
-    }
+//    fun runStomp(roomId: Int, UserId: Int) {
+//        stompClient.connect()
+//    }
+//
+//    fun getChatRoomList() {
+//
+//    }
 }

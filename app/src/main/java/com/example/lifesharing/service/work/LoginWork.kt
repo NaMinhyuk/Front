@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 
 class LoginWork(private val userInfo: LoginRequestBody) {
 
-    val TAG: String = "login"
+    val TAG: String = "로그"
 
     private val service = RetrofitAPI.emgMedService
 
@@ -43,6 +43,7 @@ class LoginWork(private val userInfo: LoginRequestBody) {
 
                         GlobalApplication.prefs.setString("access_token", accessToken!! )
                         GlobalApplication.prefs.setString("refresh_token", refreshToken!!)
+                        Log.d(TAG, "유저 id ${GlobalApplication.prefs.getString("user_id", userId.toString())} ")
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {
                         Log.d("로그인 실패", response.code().toString())

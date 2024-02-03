@@ -74,9 +74,10 @@
                     android:layout_height="6dp" />
 
                 <TextView
+                    android:id="@+id/chat_room_item_last_chat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="오늘 대여 가능하신지..?"
+                    android:text="채팅을 시작해보세요!"
                     android:textColor="#000"
                     android:textSize="14sp"
                     android:textStyle="bold" />
