@@ -1,491 +1,529 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/regist_headerbox_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/regist_headerbox"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <data>
+        <variable
+            name="activity"
+            type="com.example.lifesharing.regist.Regist_Add_Activity" />
 
+    </data>
 
-    <ImageView
-        android:id="@+id/regist_back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/regist_back_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="13dp"
-        android:layout_marginLeft="16dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="등록하기"
-        android:textColor="@color/Gray800"
-        android:textSize="16sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="18dp"/>
-
-    <ImageView
-        android:id="@+id/regist_search_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/regist_search_btn"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="17dp"
-        android:layout_marginRight="20dp" />
-
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/regist_headerbox_iv"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="24dp"
-        android:layout_marginLeft="16dp" >
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <ImageView
+            android:id="@+id/regist_headerbox_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/regist_headerbox"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/regist_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/regist_back_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록하기"
+            android:textColor="@color/Gray800"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="18dp" />
+
+        <ImageView
+            android:id="@+id/regist_search_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/regist_search_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="17dp"
+            android:layout_marginRight="20dp" />
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/regist_headerbox_iv"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="24dp"
+            android:layout_marginLeft="16dp">
 
-            <TextView
-                android:id="@+id/regist_body_title1"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="제품 이름"
-                android:textSize="16sp"
-                android:textColor="@color/Gray600"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+                android:paddingBottom="160dp">
 
-            <ImageView
-                android:id="@+id/regist_title1_inputbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_input_box"
-                app:layout_constraintTop_toBottomOf="@id/regist_body_title1"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="12dp" />
+                <TextView
+                    android:id="@+id/regist_body_title1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="제품 이름"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray600"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <EditText
-                android:id="@+id/regist_title1_input_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toTopOf="@id/regist_title1_inputbox"
-                app:layout_constraintStart_toStartOf="@id/regist_title1_inputbox"
-                app:layout_constraintBottom_toBottomOf="@id/regist_title1_inputbox"
-                android:layout_marginLeft="14dp"
-                android:hint="제품 이름을 작성해 주세요"
-                android:textColor="@color/Gray400"
-                android:textSize="14sp"
-                android:background="@null"/>
+                <ImageView
+                    android:id="@+id/regist_title1_inputbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_input_box"
+                    app:layout_constraintTop_toBottomOf="@id/regist_body_title1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/regist_title2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="카테고리"
-                android:textColor="@color/Gray700"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/regist_title1_input_et"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                <EditText
+                    android:text="@={activity.productName}"
+                    android:id="@+id/regist_title1_input_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/regist_title1_inputbox"
+                    app:layout_constraintStart_toStartOf="@id/regist_title1_inputbox"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_title1_inputbox"
+                    android:layout_marginLeft="14dp"
+                    android:hint="제품 이름을 작성해 주세요"
+                    android:textColor="@color/Gray400"
+                    android:textSize="14sp"
+                    android:background="@null" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="*"
-                android:textColor="@color/Error"
-                android:textSize="12sp"
-                app:layout_constraintTop_toTopOf="@id/regist_title2"
-                app:layout_constraintStart_toEndOf="@id/regist_title2"
-                android:layout_marginLeft="2dp" />
+                <TextView
+                    android:id="@+id/regist_title2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="카테고리"
+                    android:textColor="@color/Gray700"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title1_input_et"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
 
-            <ImageView
-                android:id="@+id/regist_category_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_1"
-                app:layout_constraintTop_toBottomOf="@id/regist_title2"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="16dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/Error"
+                    android:textSize="12sp"
+                    app:layout_constraintTop_toTopOf="@id/regist_title2"
+                    app:layout_constraintStart_toEndOf="@id/regist_title2"
+                    android:layout_marginLeft="2dp" />
 
-            <TextView
-                android:id="@+id/regist_category_text1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="디지털기기"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_1"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_1"
-                app:layout_constraintTop_toTopOf="@id/regist_category_1"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_1" />
+                <ImageView
+                    android:id="@+id/regist_category_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_1"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp" />
 
-
-            <ImageView
-                android:id="@+id/regist_category_2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_2"
-                app:layout_constraintTop_toTopOf="@id/regist_category_1"
-                app:layout_constraintStart_toEndOf="@id/regist_category_1"
-                android:layout_marginLeft="8dp" />
-            <TextView
-                android:id="@+id/regist_category_text2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="악기/음향"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_2"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_2"
-                app:layout_constraintTop_toTopOf="@id/regist_category_2"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_2" />
-
-            <ImageView
-                android:id="@+id/regist_category_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_3"
-                app:layout_constraintTop_toBottomOf="@id/regist_category_1"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/regist_category_text3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="게임/취미"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_3"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_3"
-                app:layout_constraintTop_toTopOf="@id/regist_category_3"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_3" />
+                <TextView
+                    android:id="@+id/regist_category_text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="디지털기기"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_1"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_1"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_1"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_1" />
 
 
-            <ImageView
-                android:id="@+id/regist_category_4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_4"
-                app:layout_constraintTop_toTopOf="@id/regist_category_3"
-                app:layout_constraintStart_toEndOf="@id/regist_category_3"
-                android:layout_marginLeft="8dp" />
-            <TextView
-                android:id="@+id/regist_category_text4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="캠핑/레저"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_4"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_4"
-                app:layout_constraintTop_toTopOf="@id/regist_category_4"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_4" />
+                <ImageView
+                    android:id="@+id/regist_category_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_2"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_1"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_1"
+                    android:layout_marginLeft="8dp" />
 
-            <ImageView
-                android:id="@+id/regist_category_5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_5"
-                app:layout_constraintTop_toTopOf="@id/regist_category_4"
-                app:layout_constraintStart_toEndOf="@id/regist_category_4"
-                android:layout_marginLeft="8dp" />
+                <TextView
+                    android:id="@+id/regist_category_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="악기/음향"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_2"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_2"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_2"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_2" />
 
-            <TextView
-                android:id="@+id/regist_category_text5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="의류"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_5"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_5"
-                app:layout_constraintTop_toTopOf="@id/regist_category_5"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_5" />
+                <ImageView
+                    android:id="@+id/regist_category_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_3"
+                    app:layout_constraintTop_toBottomOf="@id/regist_category_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" />
 
-            <ImageView
-                android:id="@+id/regist_category_6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_6"
-                app:layout_constraintTop_toBottomOf="@id/regist_category_3"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/regist_category_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="게임/취미"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_3"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_3"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_3"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_3" />
 
-            <TextView
-                android:id="@+id/regist_category_text6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="신발"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_6"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_6"
-                app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_6" />
 
-            <ImageView
-                android:id="@+id/regist_category_7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_7"
-                app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                app:layout_constraintStart_toEndOf="@id/regist_category_6"
-                android:layout_marginLeft="8dp" />
+                <ImageView
+                    android:id="@+id/regist_category_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_4"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_3"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_3"
+                    android:layout_marginLeft="8dp" />
 
-            <TextView
-                android:id="@+id/regist_category_text7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="생활/주방"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_7"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_7"
-                app:layout_constraintTop_toTopOf="@id/regist_category_7"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_7" />
+                <TextView
+                    android:id="@+id/regist_category_text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="캠핑/레저"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_4"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_4"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_4"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_4" />
 
-            <ImageView
-                android:id="@+id/regist_category_8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_category_8"
-                app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                app:layout_constraintStart_toEndOf="@id/regist_category_7"
-                android:layout_marginLeft="8dp" />
+                <ImageView
+                    android:id="@+id/regist_category_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_5"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_4"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_4"
+                    android:layout_marginLeft="8dp" />
 
-            <TextView
-                android:id="@+id/regist_category_text8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="가구"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintStart_toStartOf="@id/regist_category_8"
-                app:layout_constraintEnd_toEndOf="@id/regist_category_8"
-                app:layout_constraintTop_toTopOf="@id/regist_category_8"
-                app:layout_constraintBottom_toBottomOf="@id/regist_category_8" />
+                <TextView
+                    android:id="@+id/regist_category_text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="의류"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_5"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_5"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_5"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_5" />
 
-            <TextView
-                android:id="@+id/regist_title3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1일 대여가격"
-                android:textSize="16sp"
-                android:textColor="@color/Gray600"
-                app:layout_constraintTop_toBottomOf="@id/regist_category_6"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp"/>
+                <ImageView
+                    android:id="@+id/regist_category_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_6"
+                    app:layout_constraintTop_toBottomOf="@id/regist_category_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp" />
 
-            <ImageView
-                android:id="@+id/regist_title3_inputbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_input_box"
-                app:layout_constraintTop_toBottomOf="@id/regist_title3"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="12dp" />
+                <TextView
+                    android:id="@+id/regist_category_text6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="신발"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_6"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_6"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_6" />
 
-            <EditText
-                android:id="@+id/regist_title3_input_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="1일 대여 가격을 작성해 주세요"
-                android:textSize="14sp"
-                android:textColor="@color/Gray400"
-                app:layout_constraintTop_toTopOf="@id/regist_title3_inputbox"
-                app:layout_constraintBottom_toBottomOf="@id/regist_title3_inputbox"
-                app:layout_constraintStart_toStartOf="@id/regist_title3_inputbox"
-                android:layout_marginLeft="14dp"
-                android:background="@null" />
+                <ImageView
+                    android:id="@+id/regist_category_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_7"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_6"
+                    android:layout_marginLeft="8dp" />
 
-            <TextView
-                android:id="@+id/regist_title4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1시간 대여가격"
-                android:textSize="16sp"
-                android:textColor="@color/Gray600"
-                app:layout_constraintTop_toBottomOf="@id/regist_title3_inputbox"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                <TextView
+                    android:id="@+id/regist_category_text7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="생활/주방"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_7"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_7"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_7"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_7" />
 
-            <ImageView
-                android:id="@+id/regist_title4_inputbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_input_box"
-                app:layout_constraintTop_toBottomOf="@id/regist_title4"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="12dp" />
+                <ImageView
+                    android:id="@+id/regist_category_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_category_8"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_7"
+                    android:layout_marginLeft="8dp" />
 
-            <EditText
-                android:id="@+id/regist_title4_input_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="1시간 대여 가격을 작성해 주세요"
-                android:textSize="14sp"
-                android:textColor="@color/Gray400"
-                app:layout_constraintTop_toTopOf="@id/regist_title4_inputbox"
-                app:layout_constraintBottom_toBottomOf="@id/regist_title4_inputbox"
-                app:layout_constraintStart_toStartOf="@id/regist_title4_inputbox"
-                android:layout_marginLeft="14dp"
-                android:background="@null" />
+                <TextView
+                    android:id="@+id/regist_category_text8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="가구"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintStart_toStartOf="@id/regist_category_8"
+                    app:layout_constraintEnd_toEndOf="@id/regist_category_8"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_8"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_category_8" />
 
-            <TextView
-                android:id="@+id/regist_title5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="보증금 설정"
-                android:textColor="@color/Gray600"
-                android:textSize="16sp"
-                app:layout_constraintTop_toBottomOf="@id/regist_title4_inputbox"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                <TextView
+                    android:id="@+id/regist_title3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1일 대여가격"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray600"
+                    app:layout_constraintTop_toBottomOf="@id/regist_category_6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
 
-            <ImageView
-                android:id="@+id/regist_title5_inputbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_input_box"
-                app:layout_constraintTop_toBottomOf="@id/regist_title5"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="12dp" />
+                <ImageView
+                    android:id="@+id/regist_title3_inputbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_input_box"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp" />
 
-            <EditText
-                android:id="@+id/regist_title5_input_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="보증금을 설정해 주세요"
-                android:textColor="@color/Gray400"
-                android:textSize="14sp"
-                app:layout_constraintTop_toTopOf="@id/regist_title5_inputbox"
-                app:layout_constraintBottom_toBottomOf="@id/regist_title5_inputbox"
-                app:layout_constraintStart_toStartOf="@id/regist_title5_inputbox"
-                android:layout_marginLeft="14dp"
-                android:background="@null" />
+                <EditText
+                    android:text="@={activity.day_price}"
+                    android:id="@+id/regist_title3_input_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="1일 대여 가격을 작성해 주세요"
+                    android:textSize="14sp"
+                    android:textColor="@color/Gray400"
+                    app:layout_constraintTop_toTopOf="@id/regist_title3_inputbox"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_title3_inputbox"
+                    app:layout_constraintStart_toStartOf="@id/regist_title3_inputbox"
+                    android:layout_marginLeft="14dp"
+                    android:background="@null" />
 
-            <TextView
-                android:id="@+id/regist_title6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="대여기간 설정"
-                android:textSize="16sp"
-                android:textColor="@color/Gray600"
-                app:layout_constraintTop_toBottomOf="@id/regist_title5_inputbox"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                <TextView
+                    android:id="@+id/regist_title4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1시간 대여가격"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray600"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title3_inputbox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
 
-            <ImageView
-                android:id="@+id/regist_set_time_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/regist_cal_btn"
-                app:layout_constraintTop_toBottomOf="@id/regist_title6"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="16dp" />
+                <ImageView
+                    android:id="@+id/regist_title4_inputbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_input_box"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/regist_title7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="상세 설명"
-                android:textSize="16sp"
-                android:textColor="@color/Gray600"
-                app:layout_constraintTop_toBottomOf="@id/regist_set_time_btn"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="32dp" />
+                <EditText
+                    android:text="@={activity.time_price}"
+                    android:id="@+id/regist_title4_input_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="1시간 대여 가격을 작성해 주세요"
+                    android:textSize="14sp"
+                    android:textColor="@color/Gray400"
+                    app:layout_constraintTop_toTopOf="@id/regist_title4_inputbox"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_title4_inputbox"
+                    app:layout_constraintStart_toStartOf="@id/regist_title4_inputbox"
+                    android:layout_marginLeft="14dp"
+                    android:background="@null" />
 
-            <ImageView
-                android:id="@+id/regist_detail_inputbox"
-                android:layout_width="wrap_content"
-                android:layout_height="192dp"
-                android:src="@drawable/regist_detail_inputbox"
-                app:layout_constraintTop_toBottomOf="@id/regist_title7"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="12dp"
-                android:background="@color/white" />
+                <TextView
+                    android:id="@+id/regist_title5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="보증금 설정"
+                    android:textColor="@color/Gray600"
+                    android:textSize="16sp"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title4_inputbox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
 
-            <EditText
-                android:id="@+id/regist_title7_et"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="제품에 대한 설명을 해 주세요"
-                android:textSize="14sp"
-                android:textColor="@color/Gray500"
-                app:layout_constraintTop_toTopOf="@id/regist_detail_inputbox"
-                app:layout_constraintStart_toStartOf="@id/regist_detail_inputbox"
-                android:layout_marginTop="12dp"
-                android:layout_marginLeft="12dp"
-                android:background="@null" />
+                <ImageView
+                    android:id="@+id/regist_title5_inputbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_input_box"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/regist_detail_maxnum_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="(0/200)"
-                android:textSize="14sp"
-                android:textColor="@color/Gray500"
-                app:layout_constraintTop_toBottomOf="@id/regist_detail_inputbox"
-                app:layout_constraintEnd_toEndOf="@id/regist_detail_inputbox"
-                android:layout_marginTop="4dp" />
+                <EditText
+                    android:text="@={activity.deposit}"
+                    android:id="@+id/regist_title5_input_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="보증금을 설정해 주세요"
+                    android:textColor="@color/Gray400"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="@id/regist_title5_inputbox"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_title5_inputbox"
+                    app:layout_constraintStart_toStartOf="@id/regist_title5_inputbox"
+                    android:layout_marginLeft="14dp"
+                    android:background="@null" />
 
-            <TextView
-                android:id="@+id/detail_title8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="사진 업로드"
-                android:textSize="16sp"
-                android:textColor="@color/Gray700"
-                app:layout_constraintTop_toBottomOf="@id/regist_detail_inputbox"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="60dp" />
+                <TextView
+                    android:id="@+id/regist_title6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="대여기간 설정"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray600"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title5_inputbox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/detail_title8"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="16dp">
+                <ImageView
+                    android:id="@+id/regist_set_time_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_cal_btn"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title6"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/regist_title7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="상세 설명"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray600"
+                    app:layout_constraintTop_toBottomOf="@id/regist_set_time_btn"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="32dp" />
+
+                <ImageView
+                    android:id="@+id/regist_detail_inputbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="192dp"
+                    android:src="@drawable/regist_detail_inputbox"
+                    app:layout_constraintTop_toBottomOf="@id/regist_title7"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="12dp"
+                    android:background="@color/white" />
+
+                <EditText
+                    android:text="@={activity.product_text}"
+                    android:id="@+id/regist_title7_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="제품에 대한 설명을 해 주세요"
+                    android:textSize="14sp"
+                    android:textColor="@color/Gray500"
+                    app:layout_constraintTop_toTopOf="@id/regist_detail_inputbox"
+                    app:layout_constraintStart_toStartOf="@id/regist_detail_inputbox"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@null" />
+
+                <TextView
+                    android:id="@+id/regist_detail_maxnum_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0/200)"
+                    android:textSize="14sp"
+                    android:textColor="@color/Gray500"
+                    app:layout_constraintTop_toBottomOf="@id/regist_detail_inputbox"
+                    app:layout_constraintEnd_toEndOf="@id/regist_detail_inputbox"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/detail_title8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="사진 업로드"
+                    android:textSize="16sp"
+                    android:textColor="@color/Gray700"
+                    app:layout_constraintTop_toBottomOf="@id/regist_detail_inputbox"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="60dp" />
+
 
                 <ImageView
                     android:id="@+id/regist_image_iv"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/regist_image_inputbox"
+                    app:layout_constraintTop_toBottomOf="@id/detail_title8"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"/>
+
+
+                <ImageView
+                    android:id="@+id/regist_image1"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/pay_camera"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toEndOf="@id/regist_image_iv"
+                    app:layout_constraintTop_toTopOf="@id/regist_image_iv"
+                    android:layout_marginLeft="8dp" />
+
+                <ImageView
+                    android:id="@+id/regist_image1_xbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/regist_image_inputbox"
-                    app:layout_constraintTop_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:paddingBottom="150dp"/>
-
-            </LinearLayout>
-
+                    android:src="@drawable/regist_add_xbtn"
+                    app:layout_constraintTop_toTopOf="@id/regist_image1"
+                    app:layout_constraintEnd_toEndOf="@id/regist_image1"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp" />
 
 
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/regist_bottom_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/regist_bottom"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
 
 
-    <ImageView
-        android:id="@+id/regist_bottom_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/regist_bottom"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

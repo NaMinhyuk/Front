@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_day_layout"
     android:layout_width="46dp"
     android:layout_height="50dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/calendar_day"
+        android:id="@+id/calendar_day_text"
         android:layout_width="37dp"
         android:layout_height="16dp"
         android:text="11"
-        android:textColor="@color/Gray400"
+        android:textColor="@color/gray_900"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_marginTop="6dp"
         android:layout_marginLeft="4dp"
         android:gravity="center" />
+<<<<<<< HEAD
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/calendar_money"
         android:layout_width="37dp"
@@ -29,5 +31,7 @@
         android:layout_marginTop="6dp"
         android:layout_marginLeft="4dp"
         android:gravity="center" />
+=======
+>>>>>>> 4cdacea ([2.5] MH git test)
 
 </androidx.constraintlayout.widget.ConstraintLayout>

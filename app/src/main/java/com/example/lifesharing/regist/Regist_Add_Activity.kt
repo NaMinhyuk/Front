@@ -12,14 +12,18 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityRegistAddBinding
 import com.example.lifesharing.product.Product_Detail_Reserve_Activity
+import com.google.android.datatransport.runtime.firebase.transport.LogEventDropped
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -39,13 +43,26 @@ class Regist_Add_Activity : AppCompatActivity() {
 
     lateinit var pickMultipleMediaRequest: ActivityResultLauncher<PickVisualMediaRequest>
 
+    var productName: MutableLiveData<String> = MutableLiveData("")
+    var day_price: MutableLiveData<String> = MutableLiveData("")
+    var time_price: MutableLiveData<String> = MutableLiveData("")
+    var deposit : MutableLiveData<String> = MutableLiveData("")
+    var lendingPeriod : MutableLiveData<String> = MutableLiveData("3.31(월)-4.6(금)(4일)")
+    var product_text : MutableLiveData<String> = MutableLiveData("")
+
+
+    lateinit var binding: ActivityRegistAddBinding
+
+
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityRegistAddBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-        
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_regist_add)
+        //binding.viewModel = loginViewModel
+        binding.activity = this
+        binding.lifecycleOwner = this
+
         pickMultipleMediaRequest = registerForActivityResult(
             ActivityResultContracts.PickMultipleVisualMedia(5))
         { uris ->
@@ -64,7 +81,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                         )
 
                         // 디코딩된 이미지를 ImageView에 설정
-                        binding.registImageIv.setImageBitmap(bitmap)
+                        binding.registImage1.setImageBitmap(bitmap)
 
                         // 이미지 경로를 서버에 보낼 준비
                         Log.d(TAG, "imagePath가 잘 찍힐까요? 이거를 서버에 보내주면 되는데~ $imagePath")
@@ -89,12 +106,20 @@ class Regist_Add_Activity : AppCompatActivity() {
         }
 
         binding.registSetTimeBtn.setOnClickListener {
-            val intent = Intent(this, Product_Detail_Reserve_Activity::class.java)
+            val intent = Intent(this, Regist_SetTime_Activity::class.java)
             startActivity(intent)
         }
 
         binding.registImageIv.setOnClickListener {
             pickImage()
+        }
+        binding.registBottomBtn.setOnClickListener {
+            test()
+        }
+
+        binding.registImage1Xbtn.setOnClickListener {
+            binding.registImage1.visibility = View.GONE
+            binding.registImage1Xbtn.visibility = View.GONE
         }
 
 
@@ -164,5 +189,13 @@ class Regist_Add_Activity : AppCompatActivity() {
         }
     }
 
+    fun test() {
+        Log.d(TAG, "productname: ${productName.value.toString()}")
+        Log.d(TAG, "dayprice: ${day_price.value.toString()}")
+        Log.d(TAG, "time_price: ${time_price.value.toString()}")
+        Log.d(TAG, "deposit: ${deposit.value.toString()}")
+        Log.d(TAG, "product_text: ${product_text.value.toString()}")
+        Log.d(TAG, "lendingPeriod: ${lendingPeriod.value.toString()}")
+    }
 
 }

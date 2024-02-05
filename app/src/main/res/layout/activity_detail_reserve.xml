@@ -532,6 +532,12 @@
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_12_btn"
                 app:layout_constraintBottom_toBottomOf="@id/reserve_hour_12_btn" />
 
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="250dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/reserve_hour_12_tv"/>
+
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
