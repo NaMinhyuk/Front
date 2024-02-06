@@ -5,6 +5,7 @@ import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
+import com.example.lifesharing.mypage.mypage_api.NoticeDataResponse
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import retrofit2.Call
 import retrofit2.Response
@@ -31,5 +32,8 @@ interface RetrofitService {
 
     @GET("user/my-page")
     fun getUserProfile(): Call<UserInfoResponse>
+
+    @GET("notice")
+    fun getNoticeList(@Query("page") page: Int): Call<NoticeDataResponse>
 
 }

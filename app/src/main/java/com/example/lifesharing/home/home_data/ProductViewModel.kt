@@ -23,9 +23,9 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
                 if (response.isSuccessful) {
                     Log.d(TAG, "상품 필터 정보 $result")
 
-                    Log.d(TAG, " ${result?.ProductResultDTOList?.productResultDTO} ")
+                    Log.d(TAG, " ${result?.productResultDTOList?.productResultDTO} ")
 
-                    filteredProducts.postValue(result?.ProductResultDTOList?.productResultDTO)
+                    filteredProducts.postValue(result?.productResultDTOList?.productResultDTO)
 
                 } else {
                     Log.e(TAG, " 통신 실패: ${response.message()}", )
