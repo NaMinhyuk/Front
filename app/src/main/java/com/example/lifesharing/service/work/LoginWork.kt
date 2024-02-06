@@ -39,6 +39,8 @@ class LoginWork(private val userInfo: LoginRequestBody) {
                         GlobalApplication.prefs.setString("access_token", accessToken!! )
                         GlobalApplication.prefs.setString("refresh_token", refreshToken!! )
 
+                        MyPageUserInfo().getMyPageUserInfo()
+
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {
                         Log.d("로그인 실패", response.code().toString())

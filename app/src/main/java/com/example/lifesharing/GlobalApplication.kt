@@ -6,11 +6,24 @@ import com.example.lifesharing.sharedPref.PreferenceUtil
 import com.kakao.sdk.common.KakaoSdk
 import com.navercorp.nid.NaverIdLoginSDK
 import com.example.lifesharing.BuildConfig.*
+import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
+import com.kakao.sdk.user.model.User
 
 class GlobalApplication : Application() {
 
     companion object {
+
+        private var userInfoData : UserInfoResultDTO?=null
+
         lateinit var prefs: PreferenceUtil
+
+        fun getUserInfoData(): UserInfoResultDTO {
+            return userInfoData!!
+        }
+
+        fun setUserInfoData(userData: UserInfoResultDTO) {
+            userInfoData = userData
+        }
     }
 
     override fun onCreate() {

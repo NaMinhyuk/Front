@@ -15,8 +15,6 @@ class ProductViewModel(application: Application) : AndroidViewModel(application)
 
     private val TAG: String = "로그"
     val filteredProducts: MutableLiveData<List<ProductResultDTO>> = MutableLiveData()
-    val isLoading: MutableLiveData<Boolean> = MutableLiveData()
-    val errorMessage: MutableLiveData<String> = MutableLiveData()
 
     fun getFilteredProduct(filter: String) {
         service.getFilteredProducts(filter).enqueue(object : retrofit2.Callback<ProductResponse> {

@@ -2,21 +2,35 @@ package com.example.lifesharing.mypage
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
+import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
+import com.example.lifesharing.service.work.MyPageUserInfo
 
 class MyPageActivity : AppCompatActivity() {
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: MyPageMainListAdapter
 
+    private lateinit var userInfoData : UserInfoResultDTO
+
+    val TAG = "로그"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_page)
+
+        userInfoData = GlobalApplication.getUserInfoData()
+
+        Log.d(TAG, "userdata: ${userInfoData.nickname}")
+
+        // recyclerView
 
         recyclerView = findViewById(R.id.my_page_main_rv)
 

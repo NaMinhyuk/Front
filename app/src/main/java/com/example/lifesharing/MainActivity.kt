@@ -102,6 +102,7 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, MyPageActivity::class.java)
                     startActivity(intent)
 
+
                     homeIconSelected = false
                     reserveIconSelected = false
                     registIconSelected = false
