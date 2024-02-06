@@ -3,7 +3,7 @@ package com.example.lifesharing.regist.model.response_body
 import com.google.gson.annotations.SerializedName
 import java.time.LocalDateTime
 
-data class RegistResponseBody(
+data class ProductRegisterResponseBody(
     @SerializedName("isSuccess") val isSuccess: Boolean?,
     @SerializedName("code") var code: String?,
     @SerializedName("message") var message: String,
@@ -11,6 +11,6 @@ data class RegistResponseBody(
 )
 
 data class RegistResult(
-  @SerializedName("productId")  var productId: Int?=null,
-  @SerializedName("createdAt")  var createdAt: LocalDateTime?=null
+    @SerializedName("productId")  var productId: Int?=null,
+    @SerializedName("createdAt")  var createdAt: String?=null
 )

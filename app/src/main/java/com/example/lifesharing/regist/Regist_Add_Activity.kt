@@ -20,15 +20,21 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.lifecycleScope
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityRegistAddBinding
 import com.example.lifesharing.product.Product_Detail_Reserve_Activity
+import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
+import com.example.lifesharing.service.work.RegisterProduct
 import com.google.android.datatransport.runtime.firebase.transport.LogEventDropped
+import kotlinx.coroutines.delay
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
-
+import kotlinx.coroutines.*
 
 class Regist_Add_Activity : AppCompatActivity() {
 
@@ -41,18 +47,20 @@ class Regist_Add_Activity : AppCompatActivity() {
 
     val imagePaths = mutableListOf<String>()
 
+    var categoryId : Int?=null
+
     lateinit var pickMultipleMediaRequest: ActivityResultLauncher<PickVisualMediaRequest>
 
     var productName: MutableLiveData<String> = MutableLiveData("")
     var day_price: MutableLiveData<String> = MutableLiveData("")
     var time_price: MutableLiveData<String> = MutableLiveData("")
     var deposit : MutableLiveData<String> = MutableLiveData("")
-    var lendingPeriod : MutableLiveData<String> = MutableLiveData("3.31(월)-4.6(금)(4일)")
+    var lendingPeriod : MutableLiveData<String> = MutableLiveData("2.23(월)-4.13(금)(8일)")
     var product_text : MutableLiveData<String> = MutableLiveData("")
 
+    var imageList : ArrayList<MultipartBody.Part> = ArrayList<MultipartBody.Part>()
 
     lateinit var binding: ActivityRegistAddBinding
-
 
     @RequiresApi(Build.VERSION_CODES.P)
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -63,6 +71,8 @@ class Regist_Add_Activity : AppCompatActivity() {
         binding.activity = this
         binding.lifecycleOwner = this
 
+
+        //송하영 단일 미디어 항목 코드
         pickMultipleMediaRequest = registerForActivityResult(
             ActivityResultContracts.PickMultipleVisualMedia(5))
         { uris ->
@@ -75,7 +85,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                         Log.d(TAG, "pickImage: $uri")
                         Log.d(TAG, "pickImage: $imagePath 가 잘 들어왔나요 ??")
 
-                        // 이미지 디코딩
+                        // 이미지 디코딩 화면에 보여주기 위함
                         val bitmap: Bitmap = ImageDecoder.decodeBitmap(
                             ImageDecoder.createSource(contentResolver, uri)
                         )
@@ -89,6 +99,12 @@ class Regist_Add_Activity : AppCompatActivity() {
                         val file = File(imagePath)
                         val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
                         body = MultipartBody.Part.createFormData("profile", file.name, requestFile)
+
+                        Log.d(TAG, "body : $body")
+                        imageList.add(body!!)
+
+                        Log.d(TAG, "이미지리스트 들어왔나여ㅛ? $imageList")
+
                     }
                 }
 
@@ -111,6 +127,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
 
 
+
         binding.registBackBtn.setOnClickListener {
             finish()
         }
@@ -124,12 +141,38 @@ class Regist_Add_Activity : AppCompatActivity() {
             pickImage()
         }
         binding.registBottomBtn.setOnClickListener {
-            test()
+            registerProduct()
         }
 
         binding.registImage1Xbtn.setOnClickListener {
             binding.registImage1.visibility = View.GONE
             binding.registImage1Xbtn.visibility = View.GONE
+        }
+
+        //카테고리ID 지정
+        binding.registCategory1.setOnClickListener {
+            categoryId = 1
+        }
+        binding.registCategory2.setOnClickListener {
+            categoryId = 2
+        }
+        binding.registCategory3.setOnClickListener {
+            categoryId = 3
+        }
+        binding.registCategory4.setOnClickListener {
+            categoryId = 4
+        }
+        binding.registCategory5.setOnClickListener {
+            categoryId = 5
+        }
+        binding.registCategory6.setOnClickListener {
+            categoryId = 6
+        }
+        binding.registCategory7.setOnClickListener {
+            categoryId = 7
+        }
+        binding.registCategory8.setOnClickListener {
+            categoryId = 8
         }
 
 
@@ -178,6 +221,10 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
         }
+
+
+        //API 연동
+
     }
 
     fun getImagePath(uri: Uri?): String {
@@ -199,13 +246,24 @@ class Regist_Add_Activity : AppCompatActivity() {
         }
     }
 
-    fun test() {
-        Log.d(TAG, "productname: ${productName.value.toString()}")
-        Log.d(TAG, "dayprice: ${day_price.value.toString()}")
-        Log.d(TAG, "time_price: ${time_price.value.toString()}")
-        Log.d(TAG, "deposit: ${deposit.value.toString()}")
-        Log.d(TAG, "product_text: ${product_text.value.toString()}")
-        Log.d(TAG, "lendingPeriod: ${lendingPeriod.value.toString()}")
-    }
+    fun registerProduct() {
+        val productInfo = ProductRegisterRequestBody(
+            categoryId,
+            productName.value.toString(),
+            product_text.value.toString(),
+            day_price.value?.toInt(),
+            time_price.value?.toInt(),
+            deposit.value?.toInt(),
+            lendingPeriod.value.toString()
+        )
 
+        Log.d(TAG, "유저정보: $productInfo")
+
+        Log.d(TAG, "이미지리스트 잘들어왔나요?: $imageList")
+
+        val retrofitWork = RegisterProduct(productInfo, imageList!!)
+
+        retrofitWork.registerProduct()
+
+    }
 }
