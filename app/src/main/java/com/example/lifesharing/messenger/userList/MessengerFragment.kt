@@ -1,4 +1,4 @@
-package com.example.lifesharing.messenger
+package com.example.lifesharing.messenger.userList
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,7 @@ import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.FragmentMessengerBinding
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
+import com.example.lifesharing.messenger.userChat.MessengerDetailWithDummy
 
 
 class MessengerFragment : Fragment(), MessengerRecyclerViewInterface {

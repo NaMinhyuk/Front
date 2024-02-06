@@ -1,15 +1,14 @@
-package com.example.lifesharing.messenger
+package com.example.lifesharing.messenger.userList
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
-import com.example.lifesharing.messenger.model.MessengerRoomItem
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
+import com.example.lifesharing.messenger.userList.MessengerRecyclerViewInterface
+import com.example.lifesharing.messenger.userList.MessengerViewHoler
 
 class MessengerRecyclerViewAdapter(messengerRecyclerViewInterface: MessengerRecyclerViewInterface): RecyclerView.Adapter<MessengerViewHoler>() {
 

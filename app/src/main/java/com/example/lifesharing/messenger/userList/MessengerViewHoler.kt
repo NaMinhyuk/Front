@@ -1,4 +1,4 @@
-package com.example.lifesharing.messenger
+package com.example.lifesharing.messenger.userList
 
 import android.util.Log
 import android.view.View
@@ -7,12 +7,12 @@ import com.bumptech.glide.Glide
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.FragmentChatRoomItemBinding
-import com.example.lifesharing.databinding.FragmentMessengerBinding
-import com.example.lifesharing.messenger.model.MessengerRoomItem
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
+import com.example.lifesharing.messenger.userList.MessengerRecyclerViewInterface
 
 class MessengerViewHoler(itemView: View,
-                         messengerRecyclerViewInterface: MessengerRecyclerViewInterface) //생성자 부분
+                         messengerRecyclerViewInterface: MessengerRecyclerViewInterface
+) //생성자 부분
     : RecyclerView.ViewHolder(itemView) ,
         View.OnClickListener // 상속부분
 {

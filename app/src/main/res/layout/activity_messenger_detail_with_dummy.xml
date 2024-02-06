@@ -7,7 +7,7 @@
 
         <variable
             name="activity"
-            type="com.example.lifesharing.messenger.MessengerDetailWithDummy" />
+            type="com.example.lifesharing.messenger.userChat.MessengerDetailWithDummy" />
 
     </data>
 
@@ -240,115 +240,59 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/messenger_add"/>
 
-            <EditText
-                android:id="@+id/messenger_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="50dp"
-                android:layout_marginStart="10dp"
-                android:layout_weight="85"
-                android:background="@drawable/messenger_message_input"
-                android:hint="  메세지 보내기"
-                android:paddingStart="10dp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/chat_edit_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_weight="100"
+                    android:background="@drawable/messenger_message_input"
+                    android:hint="  메세지 보내기"
+                    android:paddingStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+                <ImageView
+                    android:id="@+id/chat_send_btn"
+                    android:foregroundGravity="center_vertical"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginEnd="4dp"
+                    android:background="@drawable/chat_send_btn"
+                    android:padding="6dp"
+                    android:src="@drawable/chat_send_img"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/chat_edit_text"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.526" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </LinearLayout>
+
 
         <LinearLayout
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/product_detail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/product_detail">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="0dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/messenger_chat_recyclerview"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="캐논 카메라 빌리고 싶어요!!!"
-                android:textColor="#000"
-                android:background="@drawable/messenger_received_message"
-                />
+                >
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="240dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="답장 해주세요!"
-                android:textColor="#000"
-                android:background="@drawable/messenger_received_message"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="240dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="안녕하세요!"
-                android:textColor="#000"
-                android:background="@drawable/messenger_received_message"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginLeft="150dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="아 죄송합니다 이제 봤어요!!"
-                android:textColor="#fff"
-                android:background="@drawable/messenger_send_message"
-                />
-
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginLeft="240dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="안녕하세요!"
-                android:textColor="#fff"
-                android:background="@drawable/messenger_send_message"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="16dp"/>
-
-            <TextView
-                android:layout_marginLeft="240dp"
-                android:padding="10dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="안녕하세요!"
-                android:textColor="#fff"
-                android:background="@drawable/messenger_send_message"
-                />
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

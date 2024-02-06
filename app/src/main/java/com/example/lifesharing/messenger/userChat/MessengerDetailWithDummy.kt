@@ -1,16 +1,18 @@
-package com.example.lifesharing.messenger
+package com.example.lifesharing.messenger.userChat
 
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.DataBindingUtil
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
-import com.example.lifesharing.BuildConfig
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityMessengerDetailWithDummyBinding
+import com.example.lifesharing.messenger.model.ChatItem
 import com.example.lifesharing.service.work.ProductWork
+import okhttp3.OkHttpClient
 import org.json.JSONObject
 import ua.naiksoftware.stomp.Stomp
 import ua.naiksoftware.stomp.StompClient
@@ -29,13 +31,16 @@ class MessengerDetailWithDummy : AppCompatActivity() {
 
     lateinit var stompClient: StompClient
 
-
     lateinit var binding: ActivityMessengerDetailWithDummyBinding
+
+    private lateinit var messengerUserChatRecyclerViewAdapter: MessengerUserChatRecyclerViewAdapter
+
+    val userId = GlobalApplication.prefs.getString("user_id", "")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         stompClient = Stomp.over(Stomp.ConnectionProvider.OKHTTP, BASE_URL)
-
 
         super.onCreate(savedInstanceState)
 
@@ -43,6 +48,12 @@ class MessengerDetailWithDummy : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_messenger_detail_with_dummy)
         binding.activity = this
         binding.lifecycleOwner = this
+
+        messengerUserChatRecyclerViewAdapter = MessengerUserChatRecyclerViewAdapter(userId.toInt())
+        binding.messengerChatRecyclerview.apply {
+            layoutManager = LinearLayoutManager(this@MessengerDetailWithDummy, LinearLayoutManager.VERTICAL, false )
+            adapter = messengerUserChatRecyclerViewAdapter
+        }
 
         //Log.d(TAG, "onCreate: ${intent.extras!!.getString("opponentName")}")
         receiverName = intent.getStringExtra("opponentName").toString()
@@ -52,39 +63,55 @@ class MessengerDetailWithDummy : AppCompatActivity() {
 
         Log.d(TAG, "current Room Id : $roomId")
 
-        runStomp(roomId!!)
+        runStomp(roomId!!, userId.toInt())
 
         Log.d(TAG, "onCreate: $receiverName")
         Log.d(TAG, "onCreate: $productId")
 
+
         getProductData()
+
 
         binding.messengerDetailUsername.text = receiverName
 
         binding.messengerDetailBack.setOnClickListener{
             finish()
         }
+
+        binding.chatSendBtn.setOnClickListener {
+            sendStomp(binding.chatEditText.text.toString(), userId.toInt())
+            binding.chatEditText.text = null
+        }
     }
 
-    @SuppressLint("CheckResult")
-    fun runStomp(roomId: Int) {
+    fun runStomp(roomId: Int, userId: Int) {
+
         stompClient.connect()
 
+        stompClient.topic("/sub/chat/room/${roomId}").subscribe { topicMessage ->
+            Log.d(TAG, "runStomp: ${topicMessage.payload} 입니다!!")
 
-        stompClient.topic("/sub/chat/room/${roomId}").subscribe{ topicMessage ->
-            Log.d(TAG, "runStomp: ${topicMessage.payload}")
+            val sender = JSONObject(topicMessage.payload).getString("userId").toInt()
+            val content = JSONObject(topicMessage.payload).getString("message")
+
+            var newChat = ChatItem(sender, content)
+
+            messengerUserChatRecyclerViewAdapter.addItem(newChat)
+            runOnUiThread {
+                messengerUserChatRecyclerViewAdapter.notifyDataSetChanged()
+            }
         }
-        
+        // 여기서 메시지 수신 처리 가능 상대방이 보낸건지 내가 보낸건지에 따라 리사이클러뷰 조정하면 가능할 듯 하다.
         stompClient.lifecycle().subscribe{  lifecycleEvent ->
             when(lifecycleEvent.type) {
                 LifecycleEvent.Type.OPENED -> {
                     Log.d(TAG, "runStomp: opened")
                 }
-                
+
                 LifecycleEvent.Type.CLOSED -> {
                     Log.d(TAG, "runStomp: closed")
                 }
-                
+
                 LifecycleEvent.Type.ERROR -> {
                     Log.e(TAG, "${lifecycleEvent.exception.message}", )
                 }
@@ -93,11 +120,9 @@ class MessengerDetailWithDummy : AppCompatActivity() {
                 }
             }
         }
-
-        sendStomp("hi", 2, 102)
     }
 
-    fun sendStomp(msg: String, roomId: Int, userId: Int) {
+    fun sendStomp(msg: String, userId: Int) {
         val data = JSONObject()
         data.put("messageType", "CHAT")
         data.put("userId", userId.toString())
@@ -105,6 +130,14 @@ class MessengerDetailWithDummy : AppCompatActivity() {
 
         stompClient.send("/pub/chat/message", data.toString()).subscribe()
         Log.d(TAG, "sendStomp: $msg")
+
+        val newChat = ChatItem(userId, msg)
+
+        messengerUserChatRecyclerViewAdapter.addItem(newChat)
+        runOnUiThread {
+            messengerUserChatRecyclerViewAdapter.notifyDataSetChanged()
+        }
+
     }
 
     private fun getProductData() {

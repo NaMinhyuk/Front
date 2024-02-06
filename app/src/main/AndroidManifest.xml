@@ -19,7 +19,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".messenger.MessengerDetailWithDummy"
+            android:name=".messenger.userChat.MessengerDetailWithDummy"
             android:exported="false" />
         <activity
             android:name=".messenger.MessengerDetailActivity"
