@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/tos_back_iv"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:srcCompat="@drawable/back_ic"
+        app:tint="@color/gray_600"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/tos_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="106dp"
+        android:text="이용약관"
+        android:textColor="@color/gray_800"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/tos_back_iv"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/tos_line_view"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:background="@color/gray_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tos_title_tv"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/tos_line_view"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="328dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tos_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title 내용 따라갑니다."
+                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tos_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="제 1조 (목적)"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="제 2조 (이용약관의 효력 및 변경)"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+            <TextView
+                android:id="@+id/tos_tv16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
+                android:textColor="@color/gray_700"
+                android:textSize="14sp"
+                android:textStyle="normal"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

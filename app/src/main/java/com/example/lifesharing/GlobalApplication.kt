@@ -13,6 +13,8 @@ import com.example.lifesharing.common.response_body.Product
 import com.example.lifesharing.common.response_body.ProductIdResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
 import com.example.lifesharing.util.RequestPermissionsUtil
+import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
+import com.kakao.sdk.user.model.User
 
 class GlobalApplication : Application() {
 
@@ -22,6 +24,9 @@ class GlobalApplication : Application() {
         private var productData : Product?=null
 
         private var data : ArrayList<MessengerRoomListTempResult>? = null
+
+
+        private var userInfoData : UserInfoResultDTO?=null
 
         lateinit var prefs: PreferenceUtil
         //lateinit var permissionLoc : RequestPermissionsUtil 권한 죽이기 위해서
@@ -44,6 +49,14 @@ class GlobalApplication : Application() {
             productData = _productData
         }
 
+
+        fun getUserInfoData(): UserInfoResultDTO {
+            return userInfoData!!
+        }
+
+        fun setUserInfoData(userData: UserInfoResultDTO) {
+            userInfoData = userData
+        }
     }
 
 

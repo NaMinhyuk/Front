@@ -41,10 +41,10 @@ class LoginActivity : AppCompatActivity() {
                         binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
                         passwordFlag = false
                     }
-                    !passwordRegex(s.toString()) -> {
-                        binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
-                        passwordFlag = false
-                    }
+//                    !passwordRegex(s.toString()) -> {
+//                        binding.passwordInputLayout.error = "영문, 숫자, 특수문자 조합 8~16자를 입력해 주세요."
+//                        passwordFlag = false
+//                    }
                     else -> {
                         binding.passwordInputLayout.error = null
                         passwordFlag = true

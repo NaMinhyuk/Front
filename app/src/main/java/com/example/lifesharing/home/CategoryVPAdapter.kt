@@ -8,7 +8,7 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class CategoryVPAdapter(fragment: Fragment) : FragmentStateAdapter(fragment){
 
-    private val fragmentlist : ArrayList<Fragment> = ArrayList()
+    var fragmentlist : ArrayList<Fragment> = ArrayList()
 
     override fun getItemCount(): Int = fragmentlist.size
 

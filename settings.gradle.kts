@@ -15,5 +15,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "lifesharing"
+rootProject.name = "LifeSharing"
 include(":app")

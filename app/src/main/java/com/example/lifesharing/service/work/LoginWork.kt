@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.login.model.request_body.LoginRequestBody
+import com.example.lifesharing.mypage.mypage_api.MyPageUserInfo
 import com.example.lifesharing.service.api.RetrofitAPI
 import com.example.lifesharing.service.api.RetrofitAPIwithToken
 import kotlinx.coroutines.CompletableDeferred
@@ -43,6 +44,9 @@ class LoginWork(private val userInfo: LoginRequestBody) {
 
                         GlobalApplication.prefs.setString("access_token", accessToken!! )
                         GlobalApplication.prefs.setString("refresh_token", refreshToken!!)
+
+                        MyPageUserInfo().getMyPageUserInfo()
+
                         Log.d(TAG, "유저 id ${GlobalApplication.prefs.getString("user_id", userId.toString())} ")
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {

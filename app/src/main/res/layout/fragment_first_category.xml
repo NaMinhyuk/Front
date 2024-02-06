@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="328dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center">
+
+    <TableLayout
+        android:id="@+id/category_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TableRow>
+            <ImageView
+                android:id="@+id/home_category_digital_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_digital"/>
+
+            <ImageView
+                android:id="@+id/home_category_sound_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_sound"/>
+
+            <ImageView
+                android:id="@+id/home_category_game_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_game"/>
+
+            <ImageView
+                android:id="@+id/home_category_camping_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_camping"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="디지털기기"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="악기/음향"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="게임/취미"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="캠핑/레저"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_marginTop="5dp">
+
+            <ImageView
+                android:id="@+id/home_category_clothes_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_clothes"/>
+
+            <ImageView
+                android:id="@+id/home_category_shoes_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_shoes"/>
+
+            <ImageView
+                android:id="@+id/home_category_kitchen_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_kitchen"/>
+
+            <ImageView
+                android:id="@+id/home_category_furniture_iv"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/home_category_furniture"/>
+
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="의류"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="신발"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="생활/주방"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="13dp"
+                android:layout_marginEnd="13dp"
+                android:layout_weight="1"
+                android:textAlignment="center"
+                android:text="가구"
+                android:textSize="11sp"
+                android:textColor="@color/gray_900" />
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

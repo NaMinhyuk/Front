@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
         android:id="@+id/home_bar"
@@ -25,6 +25,7 @@
             android:textColor="@color/blue_300" />
 
         <ImageView
+            android:id="@+id/home_search_ic"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="130dp"
@@ -32,6 +33,7 @@
             app:srcCompat="@drawable/home_top_search"/>
 
         <ImageView
+            android:id="@+id/home_alarm_ic"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="13dp"
@@ -41,6 +43,7 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/home_sv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/home_bar"
@@ -69,48 +72,63 @@
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/home_category_vp"
-                android:layout_width="328dp"
-                android:layout_height="174dp"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"/>
+                android:layout_width="360dp"
+                android:layout_height="179dp"
+                android:layout_marginTop="16dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <ImageView
-                    android:id="@+id/indicator0_home_iv"
+                    android:id="@+id/indicator0_iv_main"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     app:srcCompat="@drawable/indicator_shape_blue" />
 
                 <ImageView
-                    android:id="@+id/indicator1_home_iv"
+                    android:id="@+id/indicator1_iv_main"
                     android:layout_width="6dp"
                     android:layout_height="6dp"
                     android:layout_marginStart="8dp"
-                    app:srcCompat="@drawable/indicator_shape_gray"/>
+                    app:srcCompat="@drawable/indicator_shape_gray" />
 
             </LinearLayout>
 
-            <TextView
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="23dp"
-                android:layout_marginStart="18dp"
                 android:layout_marginTop="40dp"
-                android:text="최신 등록 아이템"
-                android:textSize="18sp"
-                android:textStyle="normal"
-                android:textColor="@color/gray_900"/>
+                android:orientation="horizontal">
 
-            <FrameLayout
-                android:layout_width="328dp"
-                android:layout_height="617dp"
-                android:layout_marginTop="16dp"
-                android:layout_gravity="center"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="23dp"
+                    android:layout_marginStart="18dp"
+                    android:text="최신 등록 아이템"
+                    android:textSize="18sp"
+                    android:textStyle="normal"
+                    android:textColor="@color/gray_900"/>
+
+                <Spinner
+                    android:id="@+id/filterSpinner"
+                    android:layout_width="52dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginEnd="16dp"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/new_item_rv"
+                android:layout_width="360dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:listitem="@layout/home_new_regist_item"/>
 
         </LinearLayout>
 

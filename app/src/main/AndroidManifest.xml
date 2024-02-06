@@ -37,6 +37,37 @@
             android:name=".product_register.Regist_Add_Activity"
             android:exported="true" />
 
+
+        <activity
+            android:name=".Product_Menu_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Product_Detail_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".product.Product_Detail_Reserve_Activity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".product_register.Regist_Add_Activity"
+            android:exported="true"></activity>
+
+        <activity android:name=".search.SearchActivity" />
+
+        <activity android:name=".mypage.MyPageActivity"/>
+        <activity android:name=".mypage.MyProfileActivity"/>
+        <activity android:name=".mypage.WishListActivity"/>
+        <activity android:name=".mypage.UsageHistoryActivity"/>
+        <activity android:name=".mypage.RegistHistoryActivity"/>
+        <activity android:name=".mypage.MyReviewActivity"/>
+        <activity android:name=".mypage.NoticeActivity"/>
+        <activity android:name=".mypage.FAQ_Activity"/>
+        <activity android:name=".mypage.QnA_Activity"/>
+        <activity android:name=".mypage.WriteQnAActivity"/>
+        <activity android:name=".mypage.ToS_Activity"/>
+        <activity android:name=".mypage.ROP_Activity"/>
+        <activity android:name=".mypage.PrivacyPolicyActivity"/>
+
+
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />

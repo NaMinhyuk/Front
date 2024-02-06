@@ -31,6 +31,9 @@ class LoginViewModel(application: Application) : AndroidViewModel(application) {
         val token = GlobalApplication.prefs.getString("access_token", "")
 
         if (token != "") {
+
+            Log.d(TAG, "토큰 값 $token: ")
+
             showMainActivity.value = true
 
             val userId = GlobalApplication.prefs.getString("user_id", "")
