@@ -51,7 +51,7 @@ interface RetrofitService {
     @GET("product/home")
     fun getFilteredProducts(@Query("filter") filter: String) : Call<ProductResponse>
 
-    @GET("chats/room-list-temp/{user}")
+    @GET("chats/room-list/{user}")
     fun getMessengerRoomListTemp(
         @Path("user") userId: Int
     ) : Call<MessengerRoomListTempResponseBody>

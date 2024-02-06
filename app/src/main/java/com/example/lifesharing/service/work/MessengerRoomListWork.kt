@@ -40,7 +40,7 @@ class MessengerRoomListWork(private val userId: Int) {
                         GlobalApplication.setData(result?.result)
 
 
-                        Log.d(TAG, "onResponse: ${result?.result?.component1()}")
+                        Log.d(TAG, "messengerData: ${result?.result?.component1()}")
 
                         val userChatList = GlobalApplication.prefs.setString("user_chat_list",result?.result.toString())
 

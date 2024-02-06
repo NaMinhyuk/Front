@@ -36,7 +36,7 @@ class MessengerFragment : Fragment(), MessengerRecyclerViewInterface {
 
         // 어답터 인스턴스 생성
         messengerRecyclerViewAdapter = MessengerRecyclerViewAdapter(this)
-        messengerRecyclerViewAdapter.submitList(this.chatRoomList!!)
+        messengerRecyclerViewAdapter.submitList(chatRoomList!!)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_messenger, container, false)
 
         binding.messengerListRecyclerview.apply {

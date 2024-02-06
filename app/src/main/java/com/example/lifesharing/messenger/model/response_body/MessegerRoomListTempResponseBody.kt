@@ -16,5 +16,6 @@ data class MessengerRoomListTempResult(
     @SerializedName("productId") var productId: Int?=null,
     @SerializedName("opponentName") var opponentName: String?=null,
     @SerializedName("opponentAddress") var opponentAddress: String?=null,
+    @SerializedName("lastMessage") var lastMessage: String?=null,
     @SerializedName("updatedAt") var updatedAt: String?=null
 )
