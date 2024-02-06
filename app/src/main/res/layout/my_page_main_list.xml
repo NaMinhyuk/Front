@@ -24,7 +24,7 @@
         android:id="@+id/list_shortcut"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/my_page_shortcut_ic"
+        android:src="@drawable/mypage_shortcut_ic"
         app:layout_constraintStart_toEndOf="@+id/list_name"
         app:layout_constraintTop_toTopOf="@+id/list_name" />
 

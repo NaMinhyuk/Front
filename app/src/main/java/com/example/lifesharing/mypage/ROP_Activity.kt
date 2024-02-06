@@ -6,13 +6,13 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.R
 
-// Privacy Policy (개인정보 처리지침)
-class PrivacyPolicyActivity  : AppCompatActivity() {
+// Review Operation Policy (리뷰 운영 정책)
+class ROP_Activity  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_privacy_policy)
+        setContentView(R.layout.activity_rop)
 
-        val backIv = findViewById<ImageView>(R.id.privacy_back_iv)
+        val backIv = findViewById<ImageView>(R.id.rop_back_iv)
 
         backIv.setOnClickListener {
             // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드

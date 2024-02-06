@@ -20,7 +20,7 @@ class NewRegistItemAdapter(private val items: ArrayList<NewRegistItemData>) : Re
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflatedView =
-            LayoutInflater.from(parent.context).inflate(R.layout.new_regist_item, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.home_new_regist_item, parent, false)
         return ViewHolder(inflatedView)
     }
 
@@ -42,10 +42,10 @@ class NewRegistItemAdapter(private val items: ArrayList<NewRegistItemData>) : Re
         fun bind(item: NewRegistItemData) {
             Glide.with(itemView).load(item.img).into(image)
             location.text = item.location
-            review.text = item.reviewCount.toString() // 수정된 부분: reviewCount 필드를 사용
+            review.text = item.reviewCount.toString()
             name.text = item.name
             deposit.text = item.deposit.toString()
-            day_price.text = item.dayPrice.toString() // 수정된 부분: dayPrice 필드를 사용
+            day_price.text = item.dayPrice.toString()
         }
     }
 }

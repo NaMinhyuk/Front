@@ -24,6 +24,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    private var homeIconSelected = false
+    private var reserveIconSelected = false
+    private var registIconSelected = false
+    private var messengerIconSelected = false
+    private var mypageIconSelected = false
+
     private fun initBottomNavigation() {
 
         supportFragmentManager.beginTransaction()
@@ -38,6 +44,12 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
                     // 아이콘 변경
                     item.setIcon(R.drawable.btm_home_select_ic)
+                    homeIconSelected = true
+                    reserveIconSelected = false
+                    registIconSelected = false
+                    messengerIconSelected = false
+                    mypageIconSelected = false
+                    updateUnselectedIcons()
                     true
                 }
 
@@ -47,6 +59,12 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_reserve_select_ic)
+                    homeIconSelected = false
+                    reserveIconSelected = true
+                    registIconSelected = false
+                    messengerIconSelected = false
+                    mypageIconSelected = false
+                    updateUnselectedIcons()
                     true
                 }
 
@@ -56,6 +74,12 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_regist_select_ic)
+                    homeIconSelected = false
+                    reserveIconSelected = false
+                    registIconSelected = true
+                    messengerIconSelected = false
+                    mypageIconSelected = false
+                    updateUnselectedIcons()
                     true
                 }
 
@@ -65,6 +89,12 @@ class MainActivity : AppCompatActivity() {
                         .commitAllowingStateLoss()
 
                     item.setIcon(R.drawable.btm_messenger_select_ic)
+                    homeIconSelected = false
+                    reserveIconSelected = false
+                    registIconSelected = false
+                    messengerIconSelected = true
+                    mypageIconSelected = false
+                    updateUnselectedIcons()
                     true
                 }
 
@@ -72,21 +102,30 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, MyPageActivity::class.java)
                     startActivity(intent)
 
+                    homeIconSelected = false
+                    reserveIconSelected = false
+                    registIconSelected = false
+                    messengerIconSelected = false
+                    mypageIconSelected = true
+                    updateUnselectedIcons()
                     true
                 }
 
-                else -> {
-                    // 선택되지 않았을 때 각 Fragment에 따른 기본 아이콘으로 변경하는 로직
-                    when (item.itemId) {
-                        R.id.homeFragment -> item.setIcon(R.drawable.btm_home_ic)
-                        R.id.reservationFragment -> item.setIcon(R.drawable.btm_reserve_ic)
-                        R.id.registerFragment -> item.setIcon(R.drawable.btm_regist_ic)
-                        R.id.messengerFragment -> item.setIcon(R.drawable.btm_messenger_ic)
-                        R.id.mypageFragment -> item.setIcon(R.drawable.btm_my_page_ic)
-                    }
-                    false
-                }
+                else -> false
             }
         }
+    }
+
+    private fun updateUnselectedIcons() {
+        binding.mainBottomNavi.menu.findItem(R.id.homeFragment)
+            .setIcon(if (homeIconSelected) R.drawable.btm_home_select_ic else R.drawable.btm_home_ic)
+        binding.mainBottomNavi.menu.findItem(R.id.reservationFragment)
+            .setIcon(if (reserveIconSelected) R.drawable.btm_reserve_select_ic else R.drawable.btm_reserve_ic)
+        binding.mainBottomNavi.menu.findItem(R.id.registerFragment)
+            .setIcon(if (registIconSelected) R.drawable.btm_regist_select_ic else R.drawable.btm_regist_ic)
+        binding.mainBottomNavi.menu.findItem(R.id.messengerFragment)
+            .setIcon(if (messengerIconSelected) R.drawable.btm_messenger_select_ic else R.drawable.btm_messenger_ic)
+        binding.mainBottomNavi.menu.findItem(R.id.mypageFragment)
+            .setIcon(if (mypageIconSelected) R.drawable.btm_my_page_ic else R.drawable.btm_my_page_ic)
     }
 }

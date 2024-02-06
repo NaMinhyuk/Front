@@ -35,11 +35,15 @@
         <activity android:name=".mypage.MyPageActivity"/>
         <activity android:name=".mypage.MyProfileActivity"/>
         <activity android:name=".mypage.WishListActivity"/>
+        <activity android:name=".mypage.UsageHistoryActivity"/>
+        <activity android:name=".mypage.RegistHistoryActivity"/>
+        <activity android:name=".mypage.MyReviewActivity"/>
         <activity android:name=".mypage.NoticeActivity"/>
         <activity android:name=".mypage.FAQ_Activity"/>
         <activity android:name=".mypage.QnA_Activity"/>
-        <activity android:name=".mypage.Service_ToS_Activity"/>
-        <activity android:name=".mypage.ReviewOperationPolicyActivity"/>
+        <activity android:name=".mypage.WriteQnAActivity"/>
+        <activity android:name=".mypage.ToS_Activity"/>
+        <activity android:name=".mypage.ROP_Activity"/>
         <activity android:name=".mypage.PrivacyPolicyActivity"/>
 
 

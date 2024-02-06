@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/privacy_back_iv"
+        android:id="@+id/rop_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginTop="16dp"
@@ -17,32 +17,32 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
-        android:id="@+id/privacy_title_tv"
+        android:id="@+id/rop_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="80dp"
-        android:text="개인정보 처리방침"
+        android:layout_marginStart="95dp"
+        android:text="리뷰운영정책"
         android:textColor="@color/gray_800"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/privacy_back_iv"
+        app:layout_constraintStart_toEndOf="@+id/rop_back_iv"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <View
-        android:id="@+id/privacy_line_view"
+        android:id="@+id/rop_line_view"
         android:layout_width="360dp"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
         android:layout_centerInParent="true"
         android:background="@color/gray_200"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/privacy_title_tv"/>
+        app:layout_constraintTop_toBottomOf="@id/rop_title_tv"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/privacy_line_view"
+        app:layout_constraintTop_toBottomOf="@+id/rop_line_view"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -53,7 +53,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/privacy_tv1"
+                android:id="@+id/rop_tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Title 내용 따라갑니다."
@@ -62,7 +62,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/privacy_tv2"
+                android:id="@+id/rop_tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -72,7 +72,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv3"
+                android:id="@+id/rop_tv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -82,7 +82,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv4"
+                android:id="@+id/rop_tv4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
@@ -91,7 +91,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv5"
+                android:id="@+id/rop_tv5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
@@ -100,7 +100,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv6"
+                android:id="@+id/rop_tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
@@ -110,7 +110,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv7"
+                android:id="@+id/rop_tv7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -120,7 +120,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv8"
+                android:id="@+id/rop_tv8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -130,7 +130,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv9"
+                android:id="@+id/rop_tv9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
@@ -140,7 +140,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv10"
+                android:id="@+id/rop_tv10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -150,7 +150,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv11"
+                android:id="@+id/rop_tv11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
@@ -159,7 +159,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv12"
+                android:id="@+id/rop_tv12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -169,7 +169,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv13"
+                android:id="@+id/rop_tv13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
@@ -178,7 +178,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv14"
+                android:id="@+id/rop_tv14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -188,7 +188,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv15"
+                android:id="@+id/rop_tv15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -198,7 +198,7 @@
                 android:textStyle="normal"/>
 
             <TextView
-                android:id="@+id/privacy_tv16"
+                android:id="@+id/rop_tv16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."

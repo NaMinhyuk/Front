@@ -1,4 +1,4 @@
-package com.example.lifesharing.mypage_data
+package com.example.lifesharing.mypage.mypage_data
 
 import android.view.LayoutInflater
 import android.view.View

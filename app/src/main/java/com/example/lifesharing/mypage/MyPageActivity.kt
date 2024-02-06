@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
-import com.example.lifesharing.mypage_data.MyPageMainList
-import com.example.lifesharing.mypage_data.MyPageMainListAdapter
+import com.example.lifesharing.mypage.mypage_data.MyPageMainList
+import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
 
 class MyPageActivity : AppCompatActivity() {
 
@@ -46,14 +46,14 @@ class MyPageActivity : AppCompatActivity() {
                 when (item.list) {
                     "내 정보" -> startActivity(Intent(this@MyPageActivity, MyProfileActivity::class.java))
                     "찜 목록" -> startActivity(Intent(this@MyPageActivity, WishListActivity::class.java))
-                    /*"이용내역" -> startActivity(Intent(this@MyPageActivity, UsageHistoryActivity::class.java))
-                    "등록내역" -> startActivity(Intent(this@MyPageActivity, RegistrationHistoryActivity::class.java))
-                    "내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewsActivity::class.java))*/
+                    "이용내역" -> startActivity(Intent(this@MyPageActivity, UsageHistoryActivity::class.java))
+                    "등록내역" -> startActivity(Intent(this@MyPageActivity, RegistHistoryActivity::class.java))
+                    "내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewActivity::class.java))
                     "공지사항" -> startActivity(Intent(this@MyPageActivity, NoticeActivity::class.java))
                     "FAQ" -> startActivity(Intent(this@MyPageActivity, FAQ_Activity::class.java))
                     "1:1 문의" -> startActivity(Intent(this@MyPageActivity, QnA_Activity::class.java))
-                    "서비스 이용약관" -> startActivity(Intent(this@MyPageActivity, Service_ToS_Activity::class.java))
-                    "리뷰운영정책" -> startActivity(Intent(this@MyPageActivity, ReviewOperationPolicyActivity::class.java))
+                    "서비스 이용약관" -> startActivity(Intent(this@MyPageActivity, ToS_Activity::class.java))
+                    "리뷰운영정책" -> startActivity(Intent(this@MyPageActivity, ROP_Activity::class.java))
                     "개인정보 처리방침" -> startActivity(Intent(this@MyPageActivity, PrivacyPolicyActivity::class.java))
                 }
             }

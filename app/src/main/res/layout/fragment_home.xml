@@ -121,13 +121,14 @@
                     android:layout_marginEnd="16dp"/>
 
             </LinearLayout>
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/new_item_rv"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
-                tools:listitem="@layout/new_regist_item"/>
+                tools:listitem="@layout/home_new_regist_item"/>
 
         </LinearLayout>
 
