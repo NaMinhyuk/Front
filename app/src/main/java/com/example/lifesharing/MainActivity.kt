@@ -6,8 +6,6 @@ import android.os.Bundle
 import com.example.lifesharing.databinding.ActivityMainBinding
 import com.example.lifesharing.home.HomeFragment
 import com.example.lifesharing.messenger.userList.MessengerFragment
-import com.example.lifesharing.mypage.MyPageMainFragment
-import com.example.lifesharing.messenger.MessengerFragment
 import com.example.lifesharing.mypage.MyPageActivity
 import com.example.lifesharing.regist.RegistrationFragment
 import com.example.lifesharing.reservation.ReservationFragment

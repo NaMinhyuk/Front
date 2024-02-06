@@ -24,33 +24,21 @@
         <activity
             android:name=".messenger.MessengerDetailActivity"
             android:exported="false" />
-        <activity
-            android:name=".Product_Menu_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".Product_Detail_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".product.Product_Detail_Reserve_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".product_register.Regist_Add_Activity"
-            android:exported="true" />
-
 
         <activity
-            android:name=".Product_Menu_Activity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".Product_Detail_Activity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".product.Product_Detail_Reserve_Activity"
-            android:exported="true"></activity>
-        <activity
-            android:name=".product_register.Regist_Add_Activity"
-            android:exported="true"></activity>
+            android:name=".regist.Regist_Add_Activity"
+            android:exported="true" />
 
+        <activity android:name=".product.Product_Detail_Reserve_Activity" android:exported="true">
+
+        </activity>
+
+
+        <activity android:name=".Product_Menu_Activity" android:exported="true">
+        </activity>
+
+        <activity android:name=".Product_Detail_Activity" android:exported="true" >
+        </activity>
         <activity android:name=".search.SearchActivity" />
 
         <activity android:name=".mypage.MyPageActivity"/>
@@ -67,10 +55,37 @@
         <activity android:name=".mypage.ROP_Activity"/>
         <activity android:name=".mypage.PrivacyPolicyActivity"/>
 
+        <activity android:name=".product.Product_Pay_Activity" android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <activity android:name=".product.Product_Detail_Reserve_Finish_Activity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".profile.Profile_Activity" android:exported="true" >
+
+        </activity>
+
+        <activity android:name=".charge.Charge_Activity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".regist.Regist_SetTime_Activity" android:exported="true">
+        </activity>
+
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
             android:value="@string/kakao_app_key" />
+
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key" />
+        <meta-data android:name="com.kakao.vectormap.APP_KEY" android:value="@string/kakao_app_key"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="@string/kakao_app_key"/>
 
         <activity
             android:name=".login.LoginActivity"
@@ -91,13 +106,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
         </activity>
         <activity
             android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
