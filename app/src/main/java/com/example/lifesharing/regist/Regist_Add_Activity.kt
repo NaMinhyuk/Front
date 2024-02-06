@@ -96,6 +96,16 @@ class Regist_Add_Activity : AppCompatActivity() {
             } else {
                 Log.d(TAG, "onCreate: ")
             }
+
+            // Intent에서 값 가져오기
+            val receivedIntent = intent
+            val time = receivedIntent.getIntExtra("시간", 0) // 기본값은 0입니다.
+            val setting = receivedIntent.getStringExtra("설정")
+
+//            받아온 값 사용하기
+//            예를 들어, TextView에 설정된 시간과 설정 표시
+//            val textView = findViewById<TextView>(R.id.textView)
+//            textView.text = "설정된 시간: $time 시 $setting"
         }
 
 

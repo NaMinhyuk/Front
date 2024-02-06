@@ -46,6 +46,40 @@ class Regist_SetTime_Activity :AppCompatActivity() {
             setMonthView()
         }
 
+        val topview_array = arrayOf(0,0)
+        //상단의 날짜 둘중 하나만 클릭해도 색이 변경되어야 함.
+        binding.registSettimeTopBeforeMonth.setOnClickListener {
+            topview_array[0] = 1
+            color_before_time_blue()
+            if (topview_array[1] == 1){
+                topview_array[1] = 0
+                color_after_time_gray()
+            }
+        }
+        binding.registSettimeTopBeforeTime.setOnClickListener {
+            topview_array[0] = 1
+            color_before_time_blue()
+            if (topview_array[1] == 1){
+                topview_array[1] = 0
+                color_after_time_gray()
+            }
+        }
+        binding.registSettimeTopAfterTime.setOnClickListener {
+            topview_array[1] = 1
+            color_after_time_blue()
+            if(topview_array[0] ==1){
+                topview_array[0] = 0
+                color_before_time_gray()
+            }
+        }
+        binding.registSettimeTopAfterMonth.setOnClickListener {
+            topview_array[1] = 1
+            color_after_time_blue()
+            if(topview_array[0] ==1){
+                topview_array[0] = 0
+                color_before_time_gray()
+            }
+        }
 
         val morning_afternoon_Array = arrayOf(0,0)
         binding.registSettimeMorningBtn.setOnClickListener {
@@ -57,9 +91,11 @@ class Regist_SetTime_Activity :AppCompatActivity() {
             }
             binding.registSettimeMorningBtn.setImageResource(R.drawable.regist_add_clickbtn)
             binding.registSettimeMorningTv.setTextColor(Color.parseColor("#1277ED"))
-            val text = binding.registSettimeTopBeforeTime.toString().replace("오전","오후")
-            binding.registSettimeTopBeforeTime.text = text
 
+            val text = binding.registSettimeTopBeforeTime.text.toString()
+            Log.d(TAG, "${text}")
+            text.replace("오후","오전")
+            binding.registSettimeTopBeforeTime.text = text
         }
         binding.registSettimeAfternoonBtn.setOnClickListener {
             morning_afternoon_Array[1] = 1
@@ -70,17 +106,73 @@ class Regist_SetTime_Activity :AppCompatActivity() {
             }
             binding.registSettimeAfternoonBtn.setImageResource(R.drawable.regist_add_clickbtn)
             binding.registSettimeAfternoonTv.setTextColor(Color.parseColor("#1277ED"))
-            val text = binding.registSettimeTopBeforeTime.toString().replace("오후","오전")
+            val text = binding.registSettimeTopBeforeTime.text.toString()
+            Log.d(TAG, "${text}")
+            text.replace("오전","오후")
             binding.registSettimeTopBeforeTime.text = text
         }
 
+        val time_Array = arrayOf(0,0,0,0,0,0,0,0,0,0,0,0)
 
-        binding.registSettimeHour1Btn.setOnClickListener {
+        val time_btn_array = arrayOf(binding.registSettimeHour1Btn,binding.registSettimeHour2Btn,binding.registSettimeHour3Btn,
+            binding.registSettimeHour4Btn,binding.registSettimeHour5Btn,binding.registSettimeHour6Btn,binding.registSettimeHour7Btn,
+            binding.registSettimeHour8Btn,binding.registSettimeHour9Btn,binding.registSettimeHour10Btn,binding.registSettimeHour11Btn,
+            binding.registSettimeHour12Btn)
 
+        val time_text_array = arrayOf(binding.registSettime1Tv,binding.registSettimeHour2Tv,binding.registSettimeHour3Tv,
+            binding.registSettimeHour4Tv,binding.registSettimeHour5Tv,binding.registSettimeHour6Tv,binding.registSettimeHour7Tv,
+            binding.registSettimeHour8Tv,binding.registSettimeHour9Tv,binding.registSettimeHour10Tv,binding.registSettimeHour11Tv,
+            binding.registSettimeHour12Tv)
+
+
+        for (i in 0..11) {
+            time_btn_array[i].setOnClickListener {
+                time_Array[i] = 1
+                for (j in 0..11){
+                    if(i==j) continue
+                    else time_Array[j] = 0
+                }
+                for (j in 0..11) {
+                    if (time_Array[j] == 1) {
+                        time_btn_array[j].setImageResource(R.drawable.regist_add_clickbtn)
+                        time_text_array[j].setTextColor(Color.parseColor("#1277ED"))
+                    } else {
+                        time_btn_array[j].setImageResource(R.drawable.reserve_time_btn)
+                        time_text_array[j].setTextColor(ContextCompat.getColor(this,R.color.gray_800))
+                    }
+                }
+            }
         }
+
         binding.registSettimeBackBtn.setOnClickListener {
             finish()
         }
+        binding.registSettimeBottomTextbox.setOnClickListener {
+            // default 세팅
+            var time = 0
+            var set = "오전"
+
+            // 설정과 시간에 대한 정보 가져오기
+            if (morning_afternoon_Array[0] != 1) {
+                set = "오후"
+            }
+
+            for (i in 0..11) {
+                if (time_Array[i] == 1) {
+                    time = i+1
+                    break // 원하는 시간을 찾으면 루프를 중지.
+                }
+            }
+
+            // 시간과 설정을 Intent에 추가하여 전달
+            val intent = Intent(this, Regist_Add_Activity::class.java)
+            intent.putExtra("시간", time)
+            intent.putExtra("설정", set)
+
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     //화면에 날짜 보여주기
@@ -147,6 +239,24 @@ class Regist_SetTime_Activity :AppCompatActivity() {
         val tempCalendar = calendar.clone() as Calendar
         tempCalendar.set(Calendar.DAY_OF_MONTH, 1)
         return tempCalendar
+    }
+
+    fun color_before_time_blue () {
+        binding.registSettimeTopBeforeMonth.setTextColor(Color.parseColor("#1277ED"))
+        binding.registSettimeTopBeforeTime.setTextColor(Color.parseColor("#1277ED"))
+    }
+    fun color_after_time_blue () {
+        binding.registSettimeTopAfterMonth.setTextColor(Color.parseColor("#1277ED"))
+        binding.registSettimeTopAfterTime.setTextColor(Color.parseColor("#1277ED"))
+    }
+
+    fun color_before_time_gray () {
+        binding.registSettimeTopBeforeMonth.setTextColor(ContextCompat.getColor(this,R.color.gray_900))
+        binding.registSettimeTopBeforeTime.setTextColor(ContextCompat.getColor(this,R.color.gray_600))
+    }
+    fun color_after_time_gray () {
+        binding.registSettimeTopAfterMonth.setTextColor(ContextCompat.getColor(this,R.color.gray_900))
+        binding.registSettimeTopAfterTime.setTextColor(ContextCompat.getColor(this,R.color.gray_600))
     }
 
 }

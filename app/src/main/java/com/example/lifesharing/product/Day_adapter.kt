@@ -21,7 +21,7 @@ class Day_adapter(val tempMonth:Int, val dayList: MutableList<Date>) : RecyclerV
     override fun onBindViewHolder(holder: DayView, position: Int) {
 
         //초기화
-        var day_text: TextView = holder.layout.findViewById<TextView>(R.id.calendar_day)
+        var day_text: TextView = holder.layout.findViewById<TextView>(R.id.calendar_day_text)
 
 
         //날짜 표시
