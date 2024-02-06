@@ -24,19 +24,3 @@ data class ProductResultDTO(
     @SerializedName("reviewCount") val reviewCount: Int,
     @SerializedName("image_url") val imageUrl: String?=null
 )
-
-//data class Result(
-//    @SerializedName("ProductResultDTOList") val productResultDTOList: List<ProductResultDTOList>?=null
-//)
-//
-//
-//data class ProductResultDTOList(
-//    @SerializedName("productId") val productId: Int,
-//    @SerializedName("name") val name: String,
-//    @SerializedName("location") val location: String,
-//    @SerializedName("deposit") val deposit: Int,
-//    @SerializedName("dayPrice") val dayPrice: Int,
-//    @SerializedName("score") val score: Int,
-//    @SerializedName("reviewCount") val reviewCount: Int,
-//    @SerializedName("image_url") val imageUrl: String?=null
-//)

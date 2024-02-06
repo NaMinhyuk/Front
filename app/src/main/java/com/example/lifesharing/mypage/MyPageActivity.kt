@@ -11,7 +11,6 @@ import com.example.lifesharing.R
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
-import com.example.lifesharing.service.work.MyPageUserInfo
 
 class MyPageActivity : AppCompatActivity() {
 

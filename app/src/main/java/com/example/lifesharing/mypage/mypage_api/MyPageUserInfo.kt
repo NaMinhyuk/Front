@@ -1,4 +1,4 @@
-package com.example.lifesharing.service.work
+package com.example.lifesharing.mypage.mypage_api
 
 import android.util.Log
 import com.example.lifesharing.GlobalApplication
