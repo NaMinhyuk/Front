@@ -9,6 +9,7 @@ data class MessengerRoomListResponseBody(
     @SerializedName("result") var result: List<MessengerRoomListResult>?=null
 )
 
+
 data class MessengerRoomListResult(
     @SerializedName("roomId") var roomId: Int?=null,
     @SerializedName("senderId") var senderId: Int?=null,
