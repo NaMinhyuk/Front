@@ -8,9 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
+import com.example.lifesharing.databinding.ActivityMyPageBinding
+import com.example.lifesharing.login.LoginActivity
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
+import com.example.lifesharing.payments.TossPaymentsActivity
 
 class MyPageActivity : AppCompatActivity() {
 
@@ -19,15 +22,23 @@ class MyPageActivity : AppCompatActivity() {
 
     private lateinit var userInfoData : UserInfoResultDTO
 
+    private lateinit var binding: ActivityMyPageBinding
+
     val TAG = "로그"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_page)
+        binding = ActivityMyPageBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         userInfoData = GlobalApplication.getUserInfoData()
 
         Log.d(TAG, "userdata: ${userInfoData.nickname}")
+
+        binding.myPageProfileBt2.setOnClickListener {
+            startActivity(Intent(this, TossPaymentsActivity::class.java))
+        }
+
 
         // recyclerView
 

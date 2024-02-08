@@ -121,6 +121,8 @@
                     app:layout_constraintStart_toEndOf="@id/regist_title2"
                     android:layout_marginLeft="2dp" />
 
+
+
                 <ImageView
                     android:id="@+id/regist_category_1"
                     android:layout_width="wrap_content"

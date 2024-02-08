@@ -39,14 +39,9 @@ import kotlinx.coroutines.*
 class Regist_Add_Activity : AppCompatActivity() {
 
     val TAG:String = "로그"
-
-
     //private lateinit var pickMedia: ActivityResultLauncher<ActivityResultContracts.PickMultipleVisualMedia>
-
     var body: MultipartBody.Part?=null
-
     val imagePaths = mutableListOf<String>()
-
     var categoryId : Int?=null
 
     lateinit var pickMultipleMediaRequest: ActivityResultLauncher<PickVisualMediaRequest>
@@ -225,7 +220,6 @@ class Regist_Add_Activity : AppCompatActivity() {
         //API 연동
 
     }
-
     fun getImagePath(uri: Uri?): String {
         val proj: Array<String> = arrayOf(MediaStore.Images.Media.DATA)
         val cursor: Cursor? = contentResolver.query(uri!!, proj,null, null, null )

@@ -61,12 +61,15 @@ android {
 
 dependencies {
 
+    implementation("com.github.tosspayments:payment-sdk-android:0.1.14")
+
     implementation("com.google.android.datatransport:transport-runtime:3.2.0")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
-    platform("com.google.firebase:firebase-bom:32.7.0")
+    implementation("androidx.core:core-ktx:1.12.0")
+    platform("com.google.firebase:firebase-bom:32.7.1")
     implementation("com.kakao.sdk:v2-user:2.19.0")
-    implementation("com.google.firebase:firebase-auth-ktx:22.3.0")
+    implementation("com.google.firebase:firebase-auth-ktx:22.3.1")
     implementation("com.google.android.gms:play-services-auth:20.7.0")
     implementation("com.navercorp.nid:oauth-jdk8:5.9.0")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
@@ -100,8 +103,8 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     implementation("androidx.core:core-ktx:1.12.0")
 
-    implementation("androidx.navigation:navigation-fragment:2.5.3")
-    implementation("androidx.navigation:navigation-ui:2.5.3")
+    implementation("androidx.navigation:navigation-fragment:2.7.6")
+    implementation("androidx.navigation:navigation-ui:2.7.6")
     implementation("androidx.viewpager2:viewpager2:1.0.0")
 
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -114,13 +117,13 @@ dependencies {
     implementation("com.kakao.maps.open:android:2.6.0") //카카오맵 SDK
 
     implementation("com.android.volley:volley:1.2.1")
-    implementation("com.google.code.gson:gson:2.8.9")
+    implementation("com.google.code.gson:gson:2.10.1")
 
     implementation("androidx.activity:activity:1.8.2")
     implementation("androidx.activity:activity-ktx:1.8.2")
 
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
 }
 

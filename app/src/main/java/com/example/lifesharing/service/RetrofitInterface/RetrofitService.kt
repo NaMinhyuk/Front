@@ -57,6 +57,7 @@ interface RetrofitService {
         @Path("sender") senderId : Int
     ) : Call<MessengerRoomListResponseBody>
 
+
     @GET("product/home")
     fun getFilteredProducts(@Query("filter") filter: String) : Call<ProductResponse>
 
