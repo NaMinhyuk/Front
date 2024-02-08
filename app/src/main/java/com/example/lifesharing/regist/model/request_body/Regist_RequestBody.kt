@@ -13,10 +13,3 @@ data class ProductRegisterRequestBody(
     var lendingPeriod : String?=null,
 )
 
-
-var productName: MutableLiveData<String> = MutableLiveData("")
-var day_price: MutableLiveData<String> = MutableLiveData("")
-var time_price: MutableLiveData<String> = MutableLiveData("")
-var deposit : MutableLiveData<String> = MutableLiveData("")
-var lendingPeriod : MutableLiveData<String> = MutableLiveData("3.31(월)-4.6(금)(4일)")
-var product_text : MutableLiveData<String> = MutableLiveData("")

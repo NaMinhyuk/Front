@@ -55,6 +55,8 @@ class Regist_Add_Activity : AppCompatActivity() {
 
     var imageList : ArrayList<MultipartBody.Part> = ArrayList()
 
+    var serverImageList : ArrayList<MultipartBody.Part>?=null
+
     lateinit var binding: ActivityRegistAddBinding
 
     @RequiresApi(Build.VERSION_CODES.P)
@@ -92,7 +94,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
                         val file = File(imagePath)
                         val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
-                        body = MultipartBody.Part.createFormData("profile", file.name, requestFile)
+                        body = MultipartBody.Part.createFormData("files", file.name, requestFile)
 
                         Log.d(TAG, "body : $body")
                         imageList.add(body!!)
@@ -101,6 +103,8 @@ class Regist_Add_Activity : AppCompatActivity() {
 
                     }
                 }
+
+                serverImageList = imageList
 
                 Log.d(TAG, "onCreate:  ")
             } else {
@@ -252,9 +256,9 @@ class Regist_Add_Activity : AppCompatActivity() {
 
         Log.d(TAG, "유저정보: $productInfo")
 
-        Log.d(TAG, "이미지리스트 잘들어왔나요?: $imageList")
+        Log.d(TAG, "이미지리스트 잘들어왔나요?: $serverImageList")
 
-        val retrofitWork = RegisterProduct(productInfo, imageList!!)
+        val retrofitWork = RegisterProduct(serverImageList!!, productInfo)
 
         retrofitWork.registerProduct()
 

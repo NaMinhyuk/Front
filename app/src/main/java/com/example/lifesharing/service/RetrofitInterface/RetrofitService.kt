@@ -8,8 +8,6 @@ import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
-import com.example.lifesharing.product_register.data.ProductRegisterRequestBody
-import com.example.lifesharing.product_register.data.ProductRegisterResponseBody
 import okhttp3.MultipartBody
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
@@ -36,9 +34,9 @@ interface RetrofitService {
     @Multipart
     @POST("product/register")
     fun registerProduct(
-        @Part("request") request: ProductRegisterRequestBody,
-        @Part files: ArrayList<MultipartBody.Part>
-    ): Call<ProductRegisterResponseBody>
+        @Part files: List<MultipartBody.Part>,
+        @Part ("request") request: ProductRegisterRequestBody
+        ): Call<ProductRegisterResponseBody>
 
 
     // 여기서는 멀티파트라서 콘텐트 타입은 제거해주자~!
@@ -48,13 +46,6 @@ interface RetrofitService {
         @Part ("joinDTO") joinDTO: RegisterRequestBody,
         @Part multipartFile: MultipartBody.Part
     ): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
-
-    @Multipart
-    @POST("product/register")
-    fun registerProduct(
-        @Part ("request") request: ProductRegisterRequestBody,
-        @Part files: List<MultipartBody.Part>
-    ): Call<ProductRegisterResponseBody>
 
 
     @Headers("Content-Type: application/json")

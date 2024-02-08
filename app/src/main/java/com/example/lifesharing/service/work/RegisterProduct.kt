@@ -8,14 +8,14 @@ import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Response
 
-class RegisterProduct(private val productData: ProductRegisterRequestBody, private val imageList : ArrayList<MultipartBody.Part>) {
+class RegisterProduct(private val imageList : ArrayList<MultipartBody.Part>, private val productData: ProductRegisterRequestBody, ) {
 
     private val retrofitService = RetrofitAPIwithToken.retrofit()
 
     val TAG: String = "로그"
 
     fun registerProduct() {
-        retrofitService.registerProduct(productData, imageList)
+        retrofitService.registerProduct(imageList,productData )
             .enqueue(object : retrofit2.Callback<ProductRegisterResponseBody> {
                 override fun onResponse(
                     call: Call<ProductRegisterResponseBody>,
