@@ -513,6 +513,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
+                android:onClick="@{() -> activity.registerProduct()}"
                 android:id="@+id/regist_bottom_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

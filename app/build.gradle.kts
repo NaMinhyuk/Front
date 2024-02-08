@@ -118,6 +118,10 @@ dependencies {
 
     implementation("androidx.activity:activity:1.8.2")
     implementation("androidx.activity:activity-ktx:1.8.2")
+
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2")
+
 }
 
 

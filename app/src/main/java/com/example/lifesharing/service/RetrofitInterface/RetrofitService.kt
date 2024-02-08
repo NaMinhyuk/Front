@@ -10,6 +10,8 @@ import com.example.lifesharing.messenger.model.response_body.MessengerRoomListRe
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
 import okhttp3.MultipartBody
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
+import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
+import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -28,6 +30,13 @@ interface RetrofitService {
     @Multipart
     @POST("user/join")
     fun registerUserByEnqueue(@Body userInfo: RegisterRequestBody): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
+
+    @Multipart
+    @POST("product/register")
+    fun registerProduct(
+        @Part("request") request: ProductRegisterRequestBody,
+        @Part files: ArrayList<MultipartBody.Part>
+    ): Call<ProductRegisterResponseBody>
 
 
     // 여기서는 멀티파트라서 콘텐트 타입은 제거해주자~!

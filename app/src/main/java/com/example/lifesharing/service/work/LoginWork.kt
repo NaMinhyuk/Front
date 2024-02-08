@@ -58,8 +58,6 @@ class LoginWork(private val userInfo: LoginRequestBody) {
             }
         }
 
-
-
     }
 }
 
