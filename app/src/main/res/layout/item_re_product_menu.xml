@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="158dp"
+    android:layout_height="300dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
@@ -11,8 +11,7 @@
         android:src="@drawable/camara"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="34dp" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/location_image"
@@ -21,7 +20,7 @@
         android:src="@drawable/menu_location"
         app:layout_constraintTop_toBottomOf="@id/product_image"
         app:layout_constraintStart_toStartOf="@id/product_image"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginLeft="2dp" />
 
     <TextView
@@ -42,7 +41,7 @@
         android:src="@drawable/detail_star"
         app:layout_constraintStart_toStartOf="@id/location_image"
         app:layout_constraintTop_toBottomOf="@id/location_image"
-        android:layout_marginTop="2dp"/>
+        android:layout_marginTop="4dp"/>
 
     <ImageView
         android:id="@+id/star2_iv"
@@ -51,7 +50,7 @@
         android:src="@drawable/detail_star"
         app:layout_constraintStart_toEndOf="@id/star1_iv"
         app:layout_constraintTop_toBottomOf="@id/location_image"
-        android:layout_marginTop="2dp"/>
+        android:layout_marginTop="4dp"/>
 
     <ImageView
         android:id="@+id/star3_iv"
@@ -60,7 +59,7 @@
         android:src="@drawable/detail_star"
         app:layout_constraintStart_toEndOf="@id/star2_iv"
         app:layout_constraintTop_toBottomOf="@id/location_image"
-        android:layout_marginTop="2dp"/>
+        android:layout_marginTop="4dp"/>
     <ImageView
         android:id="@+id/star4_iv"
         android:layout_width="wrap_content"
@@ -68,7 +67,7 @@
         android:src="@drawable/detail_star"
         app:layout_constraintStart_toEndOf="@id/star3_iv"
         app:layout_constraintTop_toBottomOf="@id/location_image"
-        android:layout_marginTop="2dp"/>
+        android:layout_marginTop="4dp"/>
     <ImageView
         android:id="@+id/star5_iv"
         android:layout_width="wrap_content"
@@ -76,7 +75,7 @@
         android:src="@drawable/detail_star"
         app:layout_constraintStart_toEndOf="@id/star4_iv"
         app:layout_constraintTop_toBottomOf="@id/location_image"
-        android:layout_marginTop="2dp"/>
+        android:layout_marginTop="4dp"/>
 
     <TextView
         android:id="@+id/review_tv"
@@ -97,8 +96,7 @@
         android:textSize="14sp"
         android:textColor="@color/Gray800"
         app:layout_constraintTop_toBottomOf="@id/review_tv"
-        app:layout_constraintStart_toStartOf="@id/location_image"
-        android:layout_marginTop="4dp" />
+        app:layout_constraintStart_toStartOf="@id/location_image" />
 
     <TextView
         android:id="@+id/money_keep_tv"
@@ -153,5 +151,6 @@
         app:layout_constraintStart_toEndOf="@id/money_day_tv"
         app:layout_constraintTop_toTopOf="@id/day_tv"
         android:layout_marginLeft="2dp" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

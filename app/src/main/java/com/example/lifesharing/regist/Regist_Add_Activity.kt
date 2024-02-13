@@ -25,6 +25,7 @@ import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityRegistAddBinding
 import com.example.lifesharing.product.Product_Detail_Reserve_Activity
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
+import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
 import com.example.lifesharing.service.work.RegisterProduct
 import com.google.android.datatransport.runtime.firebase.transport.LogEventDropped
 import kotlinx.coroutines.delay
@@ -35,6 +36,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.File
 import kotlinx.coroutines.*
+import okhttp3.ResponseBody
 
 class Regist_Add_Activity : AppCompatActivity() {
 
@@ -71,8 +73,11 @@ class Regist_Add_Activity : AppCompatActivity() {
         binding.activity = this
         binding.lifecycleOwner = this
 
+        //카테고리 전역변수
+        val category_checkarray = arrayOf(0,0,0,0,0,0,0,0)
 
-        //송하영 단일 미디어 항목 코드
+
+        //송하영 단일 미디어 항목 코드 변형
         pickMultipleMediaRequest = registerForActivityResult(
             ActivityResultContracts.PickMultipleVisualMedia(5))
         { uris ->
@@ -98,7 +103,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
                         val file = File(imagePath)
                         val requestFile = file.asRequestBody("image/*".toMediaTypeOrNull())
-                        body = MultipartBody.Part.createFormData("profile", file.name, requestFile)
+                        body = MultipartBody.Part.createFormData("files", file.name, requestFile)
 
                         Log.d(TAG, "body : $body")
                         imageList.add(body!!)
@@ -151,81 +156,166 @@ class Regist_Add_Activity : AppCompatActivity() {
 
         //카테고리ID 지정
         binding.registCategory1.setOnClickListener {
-            categoryId = 1
-        }
-        binding.registCategory2.setOnClickListener {
-            categoryId = 2
-        }
-        binding.registCategory3.setOnClickListener {
-            categoryId = 3
-        }
-        binding.registCategory4.setOnClickListener {
-            categoryId = 4
-        }
-        binding.registCategory5.setOnClickListener {
-            categoryId = 5
-        }
-        binding.registCategory6.setOnClickListener {
-            categoryId = 6
-        }
-        binding.registCategory7.setOnClickListener {
-            categoryId = 7
-        }
-        binding.registCategory8.setOnClickListener {
-            categoryId = 8
-        }
-
-
-
-        val category_checkarray = arrayOf(0,0,0,0,0,0,0,0)
-
-        val categoryTextViews = listOf(
-            binding.registCategoryText1,
-            binding.registCategoryText2,
-            binding.registCategoryText3,
-            binding.registCategoryText4,
-            binding.registCategoryText5,
-            binding.registCategoryText6,
-            binding.registCategoryText7,
-            binding.registCategoryText8
-        )
-
-        val categoryImageViews = listOf(
-            binding.registCategory1,
-            binding.registCategory2,
-            binding.registCategory3,
-            binding.registCategory4,
-            binding.registCategory5,
-            binding.registCategory6,
-            binding.registCategory7,
-            binding.registCategory8
-        )
-
-
-
-
-        categoryTextViews.forEachIndexed { index, view ->
-            view.setOnClickListener {
-                if (category_checkarray[index] == 0) {
-                    view.setTextColor(Color.parseColor("#1277ED"))
-                    val imageName = "regist_category_click${index + 1}"
-                    val resID = resources.getIdentifier(imageName, "drawable", packageName)
-                    categoryImageViews[index].setImageResource(resID)
-                    category_checkarray[index] = 1
-                } else {
-                    view.setTextColor(Color.parseColor("#5C5D61"))
-                    val imageName = "regist_category_${index + 1}"
-                    val resID = resources.getIdentifier(imageName, "drawable", packageName)
-                    categoryImageViews[index].setImageResource(resID)
-                    category_checkarray[index] = 0
+            category_checkarray[0] = 1
+            for (i in 0..7) {
+                if (i == 0) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
                 }
             }
+            Log.d(TAG, "1 click ${categoryId}")
+            categoryId = 1
+            binding.registCategory1.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory1.setBackgroundResource(R.drawable.regist_category_click1)
+        }
+        binding.registCategory2.setOnClickListener {
+            category_checkarray[1] = 1
+            for (i in 0..7) {
+                if (i == 1) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "2 click ${categoryId}")
+            categoryId = 2
+            binding.registCategory2.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory2.setBackgroundResource(R.drawable.regist_category_click2)
+        }
+        binding.registCategory3.setOnClickListener {
+            category_checkarray[2] = 1
+            for (i in 0..7) {
+                if (i == 2) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "3 click ${categoryId}")
+            categoryId = 3
+            binding.registCategory3.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory3.setBackgroundResource(R.drawable.regist_category_click3)
+        }
+        binding.registCategory4.setOnClickListener {
+            category_checkarray[3] = 1
+            for (i in 0..7) {
+                if (i == 3) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "4 click ${categoryId}")
+            categoryId = 4
+            binding.registCategory4.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory4.setBackgroundResource(R.drawable.regist_category_click4)
+        }
+        binding.registCategory5.setOnClickListener {
+            category_checkarray[4] = 1
+            for (i in 0..7) {
+                if (i == 4) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "5 click ${categoryId}")
+            categoryId = 5
+            binding.registCategory5.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory5.setBackgroundResource(R.drawable.regist_category_click5)
+        }
+        binding.registCategory6.setOnClickListener {
+            category_checkarray[5] = 1
+            for (i in 0..7) {
+                if (i == 5) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "6 click ${categoryId}")
+            categoryId = 6
+            binding.registCategory6.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory6.setBackgroundResource(R.drawable.regist_category_click6)
+        }
+        binding.registCategory7.setOnClickListener {
+            category_checkarray[6] = 1
+            for (i in 0..7) {
+                if (i == 6) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "7 click ${categoryId}")
+            categoryId = 7
+            binding.registCategory7.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory7.setBackgroundResource(R.drawable.regist_category_click7)
+        }
+        binding.registCategory8.setOnClickListener {
+            category_checkarray[7] = 1
+            for (i in 0..7) {
+                if (i == 7) continue
+                else {
+                    category_checkarray[i] = 0
+                    resetCategory(i)
+                }
+            }
+            Log.d(TAG, "8 click ${categoryId}")
+            categoryId = 8
+            binding.registCategory8.setTextColor(Color.parseColor("#1277ED"))
+            binding.registCategory8.setBackgroundResource(R.drawable.regist_category_click8)
         }
 
 
-        //API 연동
-
     }
+
+    fun resetCategory(check : Int) {
+        when (check) {
+            0 -> {
+                binding.registCategory1.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory1.setBackgroundResource(R.drawable.regist_category_1)
+
+            }
+            1 -> {
+                binding.registCategory2.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory2.setBackgroundResource(R.drawable.regist_category_2)
+
+            }
+            2 -> {
+                binding.registCategory3.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory3.setBackgroundResource(R.drawable.regist_category_3)
+
+            }
+            3 -> {
+                binding.registCategory4.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory4.setBackgroundResource(R.drawable.regist_category_4)
+
+            }
+            4 -> {
+                binding.registCategory5.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory5.setBackgroundResource(R.drawable.regist_category_5)
+
+            }
+            5 -> {
+                binding.registCategory6.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory6.setBackgroundResource(R.drawable.regist_category_6)
+
+            }
+            6 -> {
+                binding.registCategory7.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory7.setBackgroundResource(R.drawable.regist_category_7)
+
+            }
+            7 -> {
+                binding.registCategory8.setTextColor(Color.parseColor("#5C5D61"))
+                binding.registCategory8.setBackgroundResource(R.drawable.regist_category_8)
+
+            }
+        }
+    }
+
 
     fun getImagePath(uri: Uri?): String {
         val proj: Array<String> = arrayOf(MediaStore.Images.Media.DATA)
@@ -261,7 +351,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
         Log.d(TAG, "이미지리스트 잘들어왔나요?: $imageList")
 
-        val retrofitWork = RegisterProduct(productInfo, imageList!!)
+        val retrofitWork = RegisterProduct(productInfo, imageList)
 
         retrofitWork.registerProduct()
 

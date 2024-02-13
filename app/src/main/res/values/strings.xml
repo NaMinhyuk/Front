@@ -4,6 +4,7 @@
     <string name="email_hint">이메일을 입력해주세요.</string>
     <string name="password_hint">비밀번호를 입력해주세요.</string>
     <string name="hello_blank_fragment">hello world</string>
+    <string name="search_title">검색</string>
 
     <string-array name="filter_options">
         <item>최신순</item>

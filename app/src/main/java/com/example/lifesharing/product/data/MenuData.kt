@@ -1,7 +1,9 @@
 package com.example.lifesharing.product.data
 
-data class MenuData(
-    val img : Int,
+import android.media.Image
+
+data class ProductMenuData(
+    val image : Int,
     val location : String,
     val review : String,
     val name : String,

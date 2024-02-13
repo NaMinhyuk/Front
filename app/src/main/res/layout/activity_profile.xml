@@ -25,6 +25,7 @@
         android:layout_marginRight="20dp" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_header_cl"
         android:layout_width="328dp"
         android:layout_height="76dp"
         app:layout_constraintTop_toBottomOf="@id/profile_header_backbtn"
@@ -40,6 +41,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
+            android:id="@+id/profile_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="김댕댕님 대여물품"
@@ -49,8 +51,109 @@
             app:layout_constraintStart_toEndOf="@id/profile_image"
             android:layout_marginTop="8dp"
             android:layout_marginLeft="16dp" />
+        <TextView
+            android:id="@+id/profile_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="무거동"
+            android:textColor="@color/gray_500"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="@id/profile_title"
+            app:layout_constraintBottom_toBottomOf="@id/profile_title"
+            app:layout_constraintStart_toEndOf="@id/profile_title"
+            android:layout_marginLeft="4dp" />
+
+
+        <ImageView
+            android:id="@+id/profile_star1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_star"
+            app:layout_constraintTop_toBottomOf="@id/profile_title"
+            app:layout_constraintStart_toStartOf="@id/profile_title" />
+
+        <ImageView
+            android:id="@+id/profile_star2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_star"
+            app:layout_constraintStart_toEndOf="@id/profile_star1"
+            app:layout_constraintTop_toTopOf="@id/profile_star1"
+            android:layout_marginLeft="2dp"/>
+
+        <ImageView
+            android:id="@+id/profile_star3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_star"
+            app:layout_constraintStart_toEndOf="@id/profile_star2"
+            app:layout_constraintTop_toTopOf="@id/profile_star2"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:id="@+id/profile_star4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_star"
+            app:layout_constraintStart_toEndOf="@id/profile_star3"
+            app:layout_constraintTop_toTopOf="@id/profile_star3"
+            android:layout_marginLeft="2dp"/>
+        <ImageView
+            android:id="@+id/profile_star5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/detail_star"
+            app:layout_constraintStart_toEndOf="@id/profile_star4"
+            app:layout_constraintTop_toTopOf="@id/profile_star4"
+            android:layout_marginLeft="2dp"/>
+        <TextView
+            android:id="@+id/profile_star_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="(758)"
+            android:textColor="@color/gray_400"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@id/profile_star5"
+            app:layout_constraintTop_toTopOf="@id/profile_star5"
+            app:layout_constraintBottom_toBottomOf="@id/profile_star5"
+            android:layout_marginLeft="2dp"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/profile_body_tl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/profile_header_cl"
+        app:layout_constraintStart_toStartOf="parent">
+        
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록제품 99+"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대여중 99+"/>
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="리뷰 99+"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/profile_menu_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/profile_body_tl"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:layout_marginLeft="16dp"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
