@@ -106,7 +106,6 @@ class Regist_Add_Activity : AppCompatActivity() {
 
                 serverImageList = imageList
 
-                Log.d(TAG, "onCreate:  ")
             } else {
                 Log.d(TAG, "onCreate: ")
             }

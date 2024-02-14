@@ -38,17 +38,18 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:layout_width="47dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="13dp"
-                        android:background="@drawable/baseline_arrow_back_ios_24" />
+                        android:background="@drawable/back_ic" />
 
                     <View
-                        android:layout_width="80dp"
+                        android:layout_width="95dp"
                         android:layout_height="0dp" />
 
                     <TextView
+                        android:id="@+id/register_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -62,14 +63,32 @@
                     android:layout_width="0dp"
                     android:layout_height="32dp" />
 
-                <ImageView
-                    android:id="@+id/user_profile"
-                    android:layout_width="106dp"
-                    android:layout_height="106dp"
-                    android:layout_gravity="center"
-                    android:background="@drawable/box_border"
-                    android:onClick="@{() -> activity.pickImage()}"
-                    android:src="@drawable/login_input_profile_1" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/my_user_profile"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
+                        android:src="@drawable/mypage_myprofile_ex_img"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:onClick="@{() -> activity.pickImage()}"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginStart="84dp"
+                        android:layout_marginTop="84dp"
+                        android:src="@drawable/mypage_myprofile_change_ic"
+                        app:layout_constraintStart_toStartOf="@id/my_user_profile"
+                        app:layout_constraintTop_toTopOf="@+id/my_user_profile" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <View
                     android:layout_width="0dp"

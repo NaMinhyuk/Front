@@ -10,6 +10,8 @@ import com.example.lifesharing.messenger.model.response_body.MessengerRoomListRe
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
 import okhttp3.MultipartBody
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
+import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
+import com.example.lifesharing.mypage.review.model.response_body.ReviewResponseBody
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
 import retrofit2.Call
@@ -51,6 +53,21 @@ interface RetrofitService {
     @Headers("Content-Type: application/json")
     @POST("user/login")
     suspend fun loginUser(@Body userInfo: LoginRequestBody): Response<LoginResponseBody>
+
+    @Headers("Content-Type: applcation/json")
+    @POST("payments/{productId}/toss/reserver")
+    fun registerReservation()
+
+    @Multipart
+    @POST("reviews/write/{reservationId}")
+    fun registerReview(
+        @Path("reservationId") reservationId : Int,
+        @Part ("request") request: ReviewRequestBody,
+        @Part files: List<MultipartBody.Part>,
+    ): Call<ReviewResponseBody>
+
+
+
 
     @GET("chats/room-list/{sender}")
     fun getMessengerRoomList(

@@ -99,7 +99,7 @@ class RegisterActivity : AppCompatActivity() {
                         imagePath!!.toUri()
                     )
                 )
-                binding.userProfile.setImageBitmap(bitmap)
+                binding.myUserProfile.setImageBitmap(bitmap)
 
                 var imagePath: String = getImagePath(uri)
 
