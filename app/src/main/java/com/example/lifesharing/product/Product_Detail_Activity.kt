@@ -4,9 +4,17 @@ import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewTreeObserver
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
+import androidx.lifecycle.Observer
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
 import com.example.lifesharing.product.Product_Detail_Reserve_Activity
+import com.example.lifesharing.product.data.DeetailReviewItemData
+import com.example.lifesharing.product.data.DetailProductItemData
+import com.example.lifesharing.product.model.response_body.Detail_ResponseBody
+import com.example.lifesharing.service.work.DetailProduct
 import com.kakao.vectormap.KakaoMap
 import com.kakao.vectormap.KakaoMap.OnMapViewInfoChangeListener
 import com.kakao.vectormap.KakaoMapReadyCallback
@@ -18,6 +26,7 @@ import com.kakao.vectormap.MapViewInfo
 
 class Product_Detail_Activity : AppCompatActivity() {
     lateinit var kakaoMap : MapView
+    lateinit var viewModel : DetailProduct
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -33,6 +42,44 @@ class Product_Detail_Activity : AppCompatActivity() {
             val intent = Intent(this, Product_Detail_Reserve_Activity::class.java)
             startActivity(intent)
         }
+        viewModel.DetailProductList.observe(this,Observer { products ->
+            val newDetailProducts = products.map { product ->
+                DetailProductItemData(
+                    productId = product.productId,
+                    categoryId = product.categoryId,
+                    userId = product.userId,
+                    categoryName = product.categoryName,
+                    imageUrl = product.imageUrl ?: R.drawable.camara.toString(),
+                    name = product.name,
+                    score = product.score,
+                    reviewCount = product.reviewCount,
+                    deposit = product.deposit,
+                    dayPrice = product.dayPrice,
+                    hourPrice = product.hourPrice,
+                    isLiked = product.isLiked,
+                    content = product.content,
+                    userNickname = product.userNickname,
+                    userImage = product.userImage ?: R.drawable.detail_profile_image.toString()
+                )
+            }
+        })
+        viewModel.DetailReviewList.observe(this,Observer{products->
+            val newDetailReviews = products.map{ product ->
+                DeetailReviewItemData(
+                    reviewId = product.reviewId,
+                    userId = product.reviewId,
+                    nickName = product.nickName,
+                    profileUrl =product.profileUrl ,
+                    createdAt = product.createdAt,
+                    lentDay =product.lentDay,
+                    imageList = product.imageList,
+                    score = product.score,
+                    content = product.content
+                )
+            }
+        })
+
+
 
         val mapView = MapView(this)
 //        binding.detailMap.addView(mapView)
@@ -80,5 +127,9 @@ class Product_Detail_Activity : AppCompatActivity() {
 //        { tab, position ->
 //            vpMainBanner.setCurrentItem(tab.position)
 //        }.attach()
+    }
+    fun detailProduct() {
+        val retrofitWork = DetailProduct()
+        retrofitWork.detailProduct()
     }
 }
