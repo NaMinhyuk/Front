@@ -5,13 +5,15 @@ import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
-import com.example.lifesharing.mypage.mypage_api.NoticeDataResponse
+import com.example.lifesharing.mypage.mypage_api.InquiryResponse
+import com.example.lifesharing.mypage.mypage_api.NoticeResponse
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
+import com.example.lifesharing.mypage.mypage_api.ViewInquiryAnswerResponse
+import com.example.lifesharing.mypage.mypage_api.ViewWishListResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
-import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
 import retrofit2.http.Query
@@ -21,7 +23,6 @@ interface RetrofitService {
     @Headers("Content-Type: application/json")
     @POST("user/join")
     fun registerUserByEnqueue(@Body userInfo: RegisterRequestBody): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
-
 
     @Headers("Content-Type: application/json")
     @POST("user/login")
@@ -33,7 +34,16 @@ interface RetrofitService {
     @GET("user/my-page")
     fun getUserProfile(): Call<UserInfoResponse>
 
+    @GET("heart/list")
+    fun getWishList(): Call<ViewWishListResponse>
+
     @GET("notice")
-    fun getNoticeList(@Query("page") page: Int): Call<NoticeDataResponse>
+    fun getNoticeList(@Query("lastNoticeId") lastNoticeId: Long?): Call<NoticeResponse>
+
+    @GET("user/inquiry")
+    fun getInquiryList(@Query("lastInquiryId") lastInquiryId: Long) : Call<InquiryResponse>
+
+    @GET("user/inquiry")
+    fun getViewInquiryAnswer(@Query("inquiryId") inquiryId : Long) : Call<ViewInquiryAnswerResponse>
 
 }

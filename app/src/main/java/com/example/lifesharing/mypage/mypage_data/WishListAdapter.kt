@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.lifesharing.R
 
-class WishListAdapter (val WishListItem: ArrayList<WishListData>) : RecyclerView.Adapter<WishListAdapter.WishViewHolder>() {
+class WishListAdapter ( private val wishItem: ArrayList<WishListData>) : RecyclerView.Adapter<WishListAdapter.WishViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WishViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.my_page_wish_item, parent, false)
@@ -17,12 +17,18 @@ class WishListAdapter (val WishListItem: ArrayList<WishListData>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: WishViewHolder, position: Int) {
-        val item = WishListItem[position]
+        val item = wishItem[position]
         holder.bind(item)
     }
 
     override fun getItemCount(): Int {
-        return WishListItem.count()
+        return wishItem.count()
+    }
+
+    fun setItems(wishNewItems: ArrayList<WishListData>) {
+        wishItem.clear()
+        wishItem.addAll(wishNewItems)
+        notifyDataSetChanged()
     }
 
 

@@ -1,9 +1,9 @@
 package com.example.lifesharing.mypage.mypage_data
 
 data class WishListData(
-    val img: Int,
+    val img: String,
     val location: String,
-    val reviewCount: String,
+    val reviewCount: Int,
     val name: String,
     val deposit: Int,
     val dayPrice: Int

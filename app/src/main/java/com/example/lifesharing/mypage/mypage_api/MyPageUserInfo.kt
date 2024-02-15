@@ -34,7 +34,7 @@ class MyPageUserInfo {
                 }
 
                 override fun onFailure(call: Call<UserInfoResponse>, t: Throwable) {
-                    Log.e(TAG, "onFailure: ${t.message}", )
+                    Log.e(TAG, "사용자정보가져오기 실패: ${t.message}", )
                 }
 
             })

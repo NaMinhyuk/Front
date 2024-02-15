@@ -18,6 +18,7 @@ import com.example.lifesharing.databinding.FragmentHomeBinding
 import com.example.lifesharing.home.home_data.NewRegistItemAdapter
 import com.example.lifesharing.home.home_data.NewRegistItemData
 import com.example.lifesharing.home.home_data.ProductViewModel
+import com.example.lifesharing.mypage.NoticeActivity
 import com.example.lifesharing.search.SearchActivity
 
 class HomeFragment: Fragment(){
@@ -45,12 +46,10 @@ class HomeFragment: Fragment(){
         }
 
         // button connection (알람 아이콘)
-        /*
         binding.homeAlarmIc.setOnClickListener{
-            val intent = Intent(requireContext(), SearchActivity::class.java)
+            val intent = Intent(requireContext(), NoticeActivity::class.java)
             startActivity(intent)
         }
-        */
 
         // banner
         val bannerAdapter = BannerVPAdapter(this)
@@ -82,7 +81,7 @@ class HomeFragment: Fragment(){
             val newRegistItems = products.map { product ->
                 // ProductResultDTO를 NewRegistItemData로 변환
                 NewRegistItemData(
-                    img = product.imageUrl ?: R.drawable.camara.toString(), // 이미지 URL이 null이면 기본 카메라 사진
+                    img = product.imageUrl ?: R.drawable.camera.toString(), // 이미지 URL이 null이면 기본 카메라 사진
                     location = product.location,
                     reviewCount = product.reviewCount,
                     name = product.name,
