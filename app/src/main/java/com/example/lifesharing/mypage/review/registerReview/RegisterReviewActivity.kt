@@ -1,4 +1,4 @@
-package com.example.lifesharing.mypage.review
+package com.example.lifesharing.mypage.review.registerReview
 
 import android.database.Cursor
 import android.graphics.Bitmap
@@ -16,7 +16,6 @@ import androidx.annotation.RequiresApi
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.MutableLiveData
 import com.example.lifesharing.R
-import com.example.lifesharing.databinding.ActivityRegisterBinding
 import com.example.lifesharing.databinding.ActivityRegisterReviewBinding
 import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
 import com.example.lifesharing.service.work.RegisterReviewWork

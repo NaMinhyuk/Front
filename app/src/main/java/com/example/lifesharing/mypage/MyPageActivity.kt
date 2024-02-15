@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityMyPageBinding
-import com.example.lifesharing.login.LoginActivity
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
+import com.example.lifesharing.mypage.review.myReviewList.MyReviewActivity
 import com.example.lifesharing.payments.TossPaymentsActivity
+import com.example.lifesharing.service.work.GetReviewListWork
 
 class MyPageActivity : AppCompatActivity() {
 
@@ -28,6 +29,9 @@ class MyPageActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        GetReviewListWork().getReviewList()
+
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -72,7 +76,9 @@ class MyPageActivity : AppCompatActivity() {
                     "찜 목록" -> startActivity(Intent(this@MyPageActivity, WishListActivity::class.java))
                     "이용내역" -> startActivity(Intent(this@MyPageActivity, UsageHistoryActivity::class.java))
                     "등록내역" -> startActivity(Intent(this@MyPageActivity, RegistHistoryActivity::class.java))
-                    "내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewActivity::class.java))
+                    "내가 쓴 리뷰" -> {
+                        startActivity(Intent(this@MyPageActivity, MyReviewActivity::class.java))
+                    }
                     "공지사항" -> startActivity(Intent(this@MyPageActivity, NoticeActivity::class.java))
                     "FAQ" -> startActivity(Intent(this@MyPageActivity, FAQ_Activity::class.java))
                     "1:1 문의" -> startActivity(Intent(this@MyPageActivity, QnA_Activity::class.java))

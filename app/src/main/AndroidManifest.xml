@@ -56,7 +56,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="34">
         <activity
-            android:name=".mypage.review.RegisterReviewActivity"
+            android:name=".mypage.review.registerReview.RegisterReviewActivity"
             android:exported="false" />
         <activity
             android:name=".payments.TossPaymentsActivity"
@@ -85,7 +85,7 @@
         <activity android:name=".mypage.WishListActivity" />
         <activity android:name=".mypage.UsageHistoryActivity" />
         <activity android:name=".mypage.RegistHistoryActivity" />
-        <activity android:name=".mypage.MyReviewActivity" />
+        <activity android:name=".mypage.review.myReviewList.MyReviewActivity" />
         <activity android:name=".mypage.NoticeActivity" />
         <activity android:name=".mypage.FAQ_Activity" />
         <activity android:name=".mypage.QnA_Activity" />

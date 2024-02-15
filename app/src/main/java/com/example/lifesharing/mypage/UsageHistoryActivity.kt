@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.R
-import com.example.lifesharing.mypage.review.RegisterReviewActivity
+import com.example.lifesharing.mypage.review.registerReview.RegisterReviewActivity
 
 
 // Usage History (이용내역)

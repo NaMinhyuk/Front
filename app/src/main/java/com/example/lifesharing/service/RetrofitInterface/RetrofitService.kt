@@ -11,6 +11,7 @@ import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTe
 import okhttp3.MultipartBody
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
+import com.example.lifesharing.mypage.review.model.response_body.GetReviewResponseBody
 import com.example.lifesharing.mypage.review.model.response_body.ReviewResponseBody
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
@@ -65,6 +66,9 @@ interface RetrofitService {
         @Part ("request") request: ReviewRequestBody,
         @Part files: List<MultipartBody.Part>,
     ): Call<ReviewResponseBody>
+
+    @GET("reviews/list")
+    fun getReviewList() : Call<GetReviewResponseBody>
 
 
 

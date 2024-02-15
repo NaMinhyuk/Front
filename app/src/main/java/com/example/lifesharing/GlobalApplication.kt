@@ -14,6 +14,7 @@ import com.example.lifesharing.common.response_body.ProductIdResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
 import com.example.lifesharing.util.RequestPermissionsUtil
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
+import com.example.lifesharing.mypage.review.model.response_body.ReviewListDTOList
 import com.kakao.sdk.user.model.User
 
 class GlobalApplication : Application() {
@@ -21,18 +22,35 @@ class GlobalApplication : Application() {
 
     companion object {
 
-        private var productData : Product?=null
+        private var productData: Product? = null
 
-        private var data : ArrayList<MessengerRoomListTempResult>? = null
+        private var data: ArrayList<MessengerRoomListTempResult>? = null
 
+        private var myReviewCount: Int? = null
 
-        private var userInfoData : UserInfoResultDTO?=null
+        private var myReviewData: ArrayList<ReviewListDTOList>? = null
+
+        private var userInfoData: UserInfoResultDTO? = null
 
         lateinit var prefs: PreferenceUtil
-        //lateinit var permissionLoc : RequestPermissionsUtil 권한 죽이기 위해서
         lateinit var instance: GlobalApplication
             private set
 
+        fun getMyReviewCount() : Int? {
+            return myReviewCount
+        }
+
+        fun setMyReviewCount(reviewCount : Int) {
+            myReviewCount = reviewCount
+        }
+
+        fun getMyReviewData() : ArrayList<ReviewListDTOList>? {
+            return myReviewData
+        }
+
+        fun setMyReviewData(reviewData : ArrayList<ReviewListDTOList>) {
+            myReviewData = reviewData
+        }
         fun getData(): ArrayList<MessengerRoomListTempResult>? {
             return data
         }
@@ -58,7 +76,6 @@ class GlobalApplication : Application() {
             userInfoData = userData
         }
     }
-
 
 
     override fun onCreate() {

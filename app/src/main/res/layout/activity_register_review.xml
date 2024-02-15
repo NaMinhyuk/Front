@@ -7,13 +7,13 @@
 
         <variable
             name="activity"
-            type="com.example.lifesharing.mypage.review.RegisterReviewActivity" />
+            type="com.example.lifesharing.mypage.review.registerReview.RegisterReviewActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".mypage.review.RegisterReviewActivity">
+        tools:context=".mypage.review.registerReview.RegisterReviewActivity">
 
         <ScrollView
             android:layout_width="match_parent"
