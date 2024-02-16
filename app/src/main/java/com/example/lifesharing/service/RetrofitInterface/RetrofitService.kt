@@ -6,8 +6,10 @@ import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.product.model.response_body.Detail_ResponseBody
+import com.example.lifesharing.product.model.response_body.ProductMenuResponseBody
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
+import com.example.lifesharing.reservation.ReservationResponseBody
 import com.example.lifesharing.service.work.DetailProduct
 import okhttp3.MultipartBody
 import retrofit2.Call
@@ -41,6 +43,12 @@ interface RetrofitService {
     @GET("product/home")
     fun getFilteredProducts(@Query("filter") filter: String) : Call<ProductResponse>
 
-    @GET("product/detail?")
-    fun getProductDetails(@Query("productId") productId: Long) : Call<Detail_ResponseBody>
+    @GET("product/detail")
+    fun getProductDetails(@Query("productId") productId: Int) : Call<Detail_ResponseBody>
+
+    @GET("reservations/list")
+    fun getReservations(@Query("filter") filter: String): Call<ReservationResponseBody>
+
+    @GET("product/category")
+    fun getProductMenu(@Query("categoryId") categoryId: Int): Call<ProductMenuResponseBody>
 }

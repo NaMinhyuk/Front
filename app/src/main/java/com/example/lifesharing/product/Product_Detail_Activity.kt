@@ -1,34 +1,31 @@
 package com.example.lifesharing
 
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.ViewTreeObserver
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
 import com.example.lifesharing.product.Product_Detail_Reserve_Activity
 import com.example.lifesharing.product.data.DeetailReviewItemData
 import com.example.lifesharing.product.data.DetailProductItemData
-import com.example.lifesharing.product.model.response_body.Detail_ResponseBody
+import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.service.work.DetailProduct
-import com.kakao.vectormap.KakaoMap
-import com.kakao.vectormap.KakaoMap.OnMapViewInfoChangeListener
-import com.kakao.vectormap.KakaoMapReadyCallback
-import com.kakao.vectormap.MapLifeCycleCallback
-import com.kakao.vectormap.MapType
 import com.kakao.vectormap.MapView
-import com.kakao.vectormap.MapViewInfo
 
 
 class Product_Detail_Activity : AppCompatActivity() {
     lateinit var kakaoMap : MapView
-    lateinit var viewModel : DetailProduct
+    val TAG :String = "로그"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val viewModel = DetailProduct()
+
+        //API 연동
+        viewModel.detailProductAPI()
+
+        Log.d(TAG, "API 연동 확인: detailProduct() 호출됨")
 
         val binding = ActivityProductDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -42,14 +39,16 @@ class Product_Detail_Activity : AppCompatActivity() {
             val intent = Intent(this, Product_Detail_Reserve_Activity::class.java)
             startActivity(intent)
         }
+
+
+        /* fragment일때 mutable live data 접근
         viewModel.DetailProductList.observe(this,Observer { products ->
             val newDetailProducts = products.map { product ->
                 DetailProductItemData(
                     productId = product.productId,
-                    categoryId = product.categoryId,
                     userId = product.userId,
-                    categoryName = product.categoryName,
-                    imageUrl = product.imageUrl ?: R.drawable.camara.toString(),
+                    categoryList = product.categoryList,
+                    imageUrl = product.imageUrl,
                     name = product.name,
                     score = product.score,
                     reviewCount = product.reviewCount,
@@ -59,7 +58,7 @@ class Product_Detail_Activity : AppCompatActivity() {
                     isLiked = product.isLiked,
                     content = product.content,
                     userNickname = product.userNickname,
-                    userImage = product.userImage ?: R.drawable.detail_profile_image.toString()
+                    userImage = product.userImage,
                 )
             }
         })
@@ -78,6 +77,7 @@ class Product_Detail_Activity : AppCompatActivity() {
                 )
             }
         })
+        */
 
 
 
@@ -127,9 +127,5 @@ class Product_Detail_Activity : AppCompatActivity() {
 //        { tab, position ->
 //            vpMainBanner.setCurrentItem(tab.position)
 //        }.attach()
-    }
-    fun detailProduct() {
-        val retrofitWork = DetailProduct()
-        retrofitWork.detailProduct()
     }
 }

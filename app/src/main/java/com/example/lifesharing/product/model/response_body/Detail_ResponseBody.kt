@@ -12,11 +12,11 @@ data class Detail_ResponseBody(
 )
 data class DetailResult(
     @SerializedName("productId") var productId:Long?=null,
-    @SerializedName("categoryId") var categoryId:Long?=null,
     @SerializedName("userId") var userId:Long?=null,
-    @SerializedName("categoryName") var categoryName:String?=null,
-    @SerializedName("location") var location: DetailLocation? = DetailLocation(),
-    @SerializedName("imageUrl") var imageUrl:String? =null,
+    @SerializedName("categoryList") var categoryList: List<String>?=null,
+    @SerializedName("location") var location: String?=null,
+    @SerializedName("detailLocation") var detailLocation: String?=null,
+    @SerializedName("imageUrl") var imageUrl:List<String>? =null,
     @SerializedName("name") var name:String? = null,
     @SerializedName("score") var score:Int? =null,
     @SerializedName("reviewCount") var reviewCount:Int?=null,
@@ -28,10 +28,6 @@ data class DetailResult(
     @SerializedName("userNickname") var userNickname: String?=null,
     @SerializedName("userImage") var userImage:String?=null,
     @SerializedName("reviewList") var userList: List<DetailReviewList>? = null,
-)
-
-data class DetailLocation(
-    @SerializedName("detailLocation") var detailLocation: String? =null
 )
 
 data class DetailReviewList(

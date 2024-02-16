@@ -14,16 +14,21 @@ class DetailProduct() {
     val DetailProductList : MutableLiveData<List<DetailResult>> = MutableLiveData()
     val DetailReviewList : MutableLiveData<List<DetailReviewList>> =MutableLiveData()
     val TAG : String = "로그"
+    val productId = 10044
 
-    fun detailProduct() {
+
+    fun detailProductAPI() {
         //productId 부분을 인텐트로 받아와야 할거같음 현재 등록되어있는 값만 준 상태
-        retrofitService.getProductDetails(productId = 10044).enqueue(object : retrofit2.Callback<Detail_ResponseBody> {
-            override fun onResponse(call: Call<Detail_ResponseBody>, response: Response<Detail_ResponseBody>) {
+        retrofitService.getProductDetails(productId).enqueue(object : retrofit2.Callback<Detail_ResponseBody> {
+            override fun onResponse(
+                call: Call<Detail_ResponseBody>,
+                response: Response<Detail_ResponseBody>
+            ) {
                 val result = response.body()
                 if(response.isSuccessful) {
                     Log.d(TAG, "상품 정보 를 받아왔나요? $result")
                 }else {
-                    Log.e(TAG, "통신실패 원인은 ${response.message()}", )
+                    Log.e(TAG, "통신실패 원인은 ${response}", )
                 }
             }
 
@@ -33,4 +38,5 @@ class DetailProduct() {
 
         })
     }
+
 }

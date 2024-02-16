@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="328dp"
+    android:layout_height="78dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/reservation_item_image"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:src="@drawable/pay_camera"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/reservation_item_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pay_location"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reservation_item_image"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="2dp"/>
+
+    <TextView
+        android:id="@+id/reservation_item_location_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="울산 무거동"
+        android:textSize="11sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/reservation_item_location"
+        android:layout_marginLeft="2dp"/>
+
+    <TextView
+        android:id="@+id/reservation_item_title"
+        android:layout_width="170dp"
+        android:layout_height="44dp"
+        android:text="Canon [렌즈포함] EOS"
+        android:textColor="@color/gray_900"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/reservation_item_location"
+        app:layout_constraintStart_toStartOf="@id/reservation_item_location"
+        android:layout_marginTop="2dp" />
+
+    <ImageView
+        android:id="@+id/reservation_item_checking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/reservation_bluebtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reservation_item_subtitle1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="대여"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintTop_toBottomOf="@id/reservation_item_checking"
+        app:layout_constraintStart_toEndOf="@id/reservation_item_title"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="13dp"/>
+
+    <TextView
+        android:id="@+id/reservation_item_subtitle1_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3.31 (금)"
+        android:textSize="14sp"
+        android:textColor="@color/gray_700"
+        app:layout_constraintTop_toTopOf="@id/reservation_item_subtitle1"
+        app:layout_constraintStart_toEndOf="@id/reservation_item_subtitle1"
+        app:layout_constraintBottom_toBottomOf="@id/reservation_item_subtitle1"
+        android:layout_marginLeft="4dp" />
+
+    <TextView
+        android:id="@+id/reservation_item_subtitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반납"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintStart_toStartOf="@id/reservation_item_subtitle1"
+        app:layout_constraintTop_toBottomOf="@id/reservation_item_subtitle1"
+        android:layout_marginTop="4dp" />
+
+    <TextView
+        android:id="@+id/reservation_item_subtitle2_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4.6 (일)"
+        android:textSize="16sp"
+        android:textColor="#1277ED"
+        app:layout_constraintTop_toTopOf="@id/reservation_item_subtitle2"
+        app:layout_constraintStart_toEndOf="@id/reservation_item_subtitle2"
+        app:layout_constraintBottom_toBottomOf="@id/reservation_item_subtitle2"
+        android:layout_marginLeft="4dp"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

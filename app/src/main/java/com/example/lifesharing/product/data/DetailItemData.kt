@@ -1,13 +1,15 @@
 package com.example.lifesharing.product.data
 
+import com.example.lifesharing.product.model.response_body.DetailReviewList
 import java.time.LocalDateTime
 
 data class DetailProductItemData(
     val productId: Long?=null,
-    val categoryId: Long?=null,
     val userId: Long?=null,
-    val categoryName: String?=null,
-    val imageUrl: String?=null,
+    val categoryList: List<String>?=null,
+    val location: String?=null,
+    val detailLocation:String?=null,
+    val imageUrl: List<String>?=null,
     val name: String?=null,
     val score: Int?=null,
     val reviewCount: Int?=null,
