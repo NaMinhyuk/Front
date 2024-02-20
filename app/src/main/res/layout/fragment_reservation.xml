@@ -169,34 +169,40 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <ImageView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/reservation_list"
                 app:layout_constraintTop_toBottomOf="@id/reservation_calendarCL"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+<!--개발 미구현-->
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/reservation_calendarCL"-->
+<!--                app:layout_constraintStart_toStartOf="parent">-->
 
-                <TextView
-                    android:id="@+id/reservation_title2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="대여목록"
-                    android:textSize="18sp"
-                    android:textColor="@color/gray_900"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginTop="40dp" />
+<!--                <TextView-->
+<!--                    android:id="@+id/reservation_title2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="대여목록"-->
+<!--                    android:textSize="18sp"-->
+<!--                    android:textColor="@color/gray_900"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    android:layout_marginLeft="16dp"-->
+<!--                    android:layout_marginTop="40dp" />-->
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/reservation_title2_rv"
-                    android:layout_width="328dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/reservation_title2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"/>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:id="@+id/reservation_title2_rv"-->
+<!--                    android:layout_width="328dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:layout_constraintTop_toBottomOf="@id/reservation_title2"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 
 

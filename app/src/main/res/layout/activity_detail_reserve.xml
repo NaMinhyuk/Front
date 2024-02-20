@@ -108,132 +108,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-<!--            <TextView-->
-<!--                android:id="@+id/detail_reserve_cal_month_tv"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="2024년 1월"-->
-<!--                android:textSize="16sp"-->
-<!--                android:textColor="@color/Gray900"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                android:layout_marginTop="42.5dp"-->
-<!--                android:layout_marginLeft="16dp"/>-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/detail_reserve_cal_before_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/reserve_cal_back_btn"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                android:layout_marginTop="40dp"-->
-<!--                android:layout_marginRight="56dp" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/detail_reserve_cal_after_btn"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/reserve_cal_foward_btn"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                android:layout_marginTop="40dp"-->
-<!--                android:layout_marginRight="16dp" />-->
-
-<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--                android:id="@+id/detail_reserve_cal_day_cl"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content">-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/sunday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="일"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    android:layout_marginTop="80dp"-->
-<!--                    android:layout_marginLeft="35dp" />-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/monday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="월"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/sunday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-
-<!--                <TextView-->
-<!--                    android:id="@+id/tuesday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="화"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/monday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/wednesday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="수"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/tuesday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/thursday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="목"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/wednesday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/friday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="금"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/thursday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-<!--                <TextView-->
-<!--                    android:id="@+id/saturday"-->
-<!--                    android:layout_width="46dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:text="토"-->
-<!--                    android:textSize="13sp"-->
-<!--                    android:textColor="@color/Gray700"-->
-<!--                    app:layout_constraintTop_toTopOf="parent"-->
-<!--                    app:layout_constraintStart_toEndOf="@id/friday"-->
-<!--                    android:layout_marginTop="80dp"/>-->
-
-<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
-
-
-<!--            <androidx.recyclerview.widget.RecyclerView-->
-<!--                android:id="@+id/cal_rv"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/detail_reserve_cal_day_cl">-->
-
-<!--            </androidx.recyclerview.widget.RecyclerView>-->
             <ImageView
                 android:id="@+id/cal_rv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/reserve_test_calendar"
+                android:src="@drawable/reserve_cal_test"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -554,7 +433,7 @@
             android:id="@+id/reserve_bottom_textbox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/reserve_bottom_textbox"
+            android:src="@drawable/reserve_bottom_textbox_after"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -565,9 +444,9 @@
             android:id="@+id/reserve_bottom_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1일 대여 요청하기"
+            android:text="4일 17시간 대여 요청하기"
             android:textSize="16sp"
-            android:textColor="@color/Gray600"
+            android:textColor="@color/white"
             app:layout_constraintTop_toTopOf="@id/reserve_bottom_textbox"
             app:layout_constraintBottom_toBottomOf="@id/reserve_bottom_textbox"
             app:layout_constraintStart_toStartOf="@id/reserve_bottom_textbox"

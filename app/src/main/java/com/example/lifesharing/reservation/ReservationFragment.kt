@@ -20,6 +20,7 @@ import com.example.lifesharing.regist.CalendarAdapter
 import com.example.lifesharing.regist.CalendarClick
 import com.example.lifesharing.reservation.data.NewReervationItemAdapter
 import com.example.lifesharing.reservation.data.NewReservationItemData
+import com.example.lifesharing.search.SearchActivity
 import com.example.lifesharing.service.work.DetailProduct
 import com.example.lifesharing.service.work.Reservation
 import java.util.Calendar
@@ -30,7 +31,7 @@ class ReservationFragment : Fragment() {
 
     lateinit var binding: FragmentReservationBinding
 
-    private lateinit var reservationRV: RecyclerView
+
     private lateinit var viewModel : Reservation
     private lateinit var NewReervationItemAdapter : NewReervationItemAdapter
 
@@ -41,6 +42,9 @@ class ReservationFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        val reservationRV: RecyclerView
+
         binding = FragmentReservationBinding.inflate(inflater, container, false)
 
         val reservationDataList = listOf(
@@ -52,7 +56,10 @@ class ReservationFragment : Fragment() {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)
         }
-
+        binding.reservationSearchbtn.setOnClickListener {
+            val intent = Intent(requireContext(), SearchActivity::class.java)
+            startActivity(intent)
+        }
 
         viewModel = ViewModelProvider(this).get(Reservation::class.java)
         viewModel.filteredProducts.observe(viewLifecycleOwner, Observer { products->
@@ -82,10 +89,10 @@ class ReservationFragment : Fragment() {
         //화면설정
         setMonthView()
 
-        reservationRV = binding.reservationTitle2Rv
-        reservationRV.layoutManager = LinearLayoutManager(requireContext())
+//        reservationRV = binding.reservationTitle2Rv
+//        reservationRV.layoutManager = LinearLayoutManager(requireContext())
 
-        reservationRV.adapter = adapter
+//        reservationRV.adapter = adapter
 
         binding.calendarPreBtn.setOnClickListener {
             CalendarClick.selectDate.add(Calendar.MONTH, -1)

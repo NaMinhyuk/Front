@@ -140,13 +140,18 @@ class Regist_Add_Activity : AppCompatActivity() {
         binding.registSetTimeBtn.setOnClickListener {
             val intent = Intent(this, Regist_SetTime_Activity::class.java)
             startActivity(intent)
+            binding.registSetTimeText.setText("3.31 - 4.6 (4일)")
+            binding.registSetTimeText.setTextColor(Color.parseColor("#1F2021"))
         }
 
         binding.registImageIv.setOnClickListener {
             pickImage()
+
         }
         binding.registBottomBtn.setOnClickListener {
             registerProduct()
+            val intent = Intent(this, Regist_Finish_Activity::class.java)
+            startActivity(intent)
         }
 
         binding.registImage1Xbtn.setOnClickListener {

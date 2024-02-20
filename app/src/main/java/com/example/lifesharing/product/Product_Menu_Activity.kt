@@ -2,19 +2,23 @@ package com.example.lifesharing
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.lifesharing.product.data.MenuAdapter
 import com.example.lifesharing.databinding.ActivityProductMenuBinding
 import com.example.lifesharing.product.data.ProductMenuData
-import com.example.lifesharing.service.work.DetailProduct
+import com.example.lifesharing.product.model.response_body.ProductMenuResponseBody
+import com.example.lifesharing.product.model.response_body.ProductMenuResultDTO
 import com.example.lifesharing.service.work.MenuProduct
+import okhttp3.ResponseBody
+import java.util.ArrayList
 
 class Product_Menu_Activity : AppCompatActivity() {
 
     lateinit var menuAdapter: MenuAdapter
     val datas = mutableListOf<ProductMenuData>()
-
-
+    val TAG:String = "로그"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,27 +35,24 @@ class Product_Menu_Activity : AppCompatActivity() {
         menuAdapter = MenuAdapter(this)
         binding.productMenuRv.adapter = menuAdapter
 
-        val viewModel = MenuProduct()
-
-        //API 연동
-        viewModel.menuProductAPI()
+        //api 연동
         menuProductAPICALL()
 
 
 
+        var menuDataToAPI :ArrayList<ProductMenuResultDTO> =
+            GlobalApplication.getMenuDetailProductDataList()
 
-        datas.apply {
-            add(ProductMenuData(image = R.drawable.camara,location = "이건아니야", review = "(100)", name = "Canon [렌즈 포함] EOS R8CanonCanon [렌즈.." , money_keep = 500000, money_day = 10000))
-            add(ProductMenuData( image = R.drawable.camara,location = "살려줘", review = "(0)", name = "Canon [렌즈 포함] EOS R8CanonCanon [렌즈.." , money_keep = 500000, money_day = 10000))
-            add(ProductMenuData(image = R.drawable.camara,location = "울산 북구", review = "(0)", name = "Canon [렌즈 포함] EOS R8CanonCanon [렌즈.." , money_keep = 500000, money_day = 10000))
-            add(ProductMenuData(image = R.drawable.camara,location = "울산 삼산", review = "(0)", name = "Canon [렌즈 포함] EOS R8CanonCanon [렌즈.." , money_keep = 500000, money_day = 10000))
-            add(ProductMenuData(image = R.drawable.camara,location = "울산 삼산", review = "(0)", name = "Canon [렌즈 포함] EOS R8CanonCanon [렌즈.." , money_keep = 500000, money_day = 10000))
+        menuAdapter.submitList(menuDataToAPI)
 
+        Log.d(TAG, "menudatatoapi $menuDataToAPI")
 
-            menuAdapter.datas = datas
-            menuAdapter.notifyDataSetChanged()
+        binding.productMenuRv.apply {
+            layoutManager = GridLayoutManager(this@Product_Menu_Activity,2)
+            adapter = menuAdapter
 
         }
+
     }
     fun menuProductAPICALL() {
         val retrofitWork = MenuProduct()

@@ -4,7 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.time.LocalDateTime
 
 data class ProductRegisterResponseBody(
-    @SerializedName("isSuccess") val isSuccess: Boolean?,
+    @SerializedName("isSuccess") var isSuccess: Boolean?,
     @SerializedName("code") var code: String?,
     @SerializedName("message") var message: String,
     @SerializedName("result") var result: RegistResult?= RegistResult(),

@@ -12,5 +12,10 @@ class Product_Pay_GoChat:AppCompatActivity() {
         val binding = ActivityProductPayGochatBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.payGochatIv.setOnClickListener {
+            //val intent = Intent(this, gochat::class.java)
+            startActivity(intent)
+        }
+
     }
 }

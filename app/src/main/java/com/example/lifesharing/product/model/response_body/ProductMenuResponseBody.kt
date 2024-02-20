@@ -6,14 +6,14 @@ data class ProductMenuResponseBody (
     @SerializedName("isSuccess") val isSuccess: Boolean?=null,
     @SerializedName("code") val code: String?=null,
     @SerializedName("message") val message: String?=null,
-    @SerializedName("result") val ProductResultDTOList: ProductResultDTOList?=null,
+    @SerializedName("result") val ProductMenuResultDTOList: ProductMenuResultDTOList?=null,
 )
 
-data class ProductResultDTOList(
-    @SerializedName("productResultDTOList") val productResultDTO: List<ProductResultDTO>?=null,
+data class ProductMenuResultDTOList(
+    @SerializedName("productResultDTOList") val ProductMenuResultDTO: ArrayList<ProductMenuResultDTO>?=null,
 )
 
-data class ProductResultDTO(
+data class ProductMenuResultDTO(
     @SerializedName("productId") val productId: Int?=null,
     @SerializedName("name") val name: String?=null,
     @SerializedName("location") val location: String?=null,

@@ -351,10 +351,33 @@
                     android:id="@+id/regist_set_time_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/regist_cal_btn"
+                    android:src="@drawable/regist_add_calbtn"
                     app:layout_constraintTop_toBottomOf="@id/regist_title6"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/regist_set_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기간 설정"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_700"
+                    app:layout_constraintTop_toTopOf="@id/regist_set_time_btn"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_set_time_btn"
+                    app:layout_constraintStart_toStartOf="@id/regist_set_time_btn"
+                    android:layout_marginLeft="40dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_add_calbtn_next"
+                    app:layout_constraintTop_toTopOf="@id/regist_set_time_btn"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_set_time_btn"
+                    app:layout_constraintEnd_toEndOf="@id/regist_set_time_btn"
+                    android:layout_marginRight="8dp"/>
+
+
 
                 <TextView
                     android:id="@+id/regist_title7"
@@ -460,7 +483,7 @@
                 android:id="@+id/regist_bottom_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/regist_bottom"
+                android:src="@drawable/regist_bottombtn_after"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

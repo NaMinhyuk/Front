@@ -5,13 +5,16 @@ import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
+import com.example.lifesharing.product.model.request_body.ProductPayRequestBody
 import com.example.lifesharing.product.model.response_body.Detail_ResponseBody
 import com.example.lifesharing.product.model.response_body.ProductMenuResponseBody
+import com.example.lifesharing.product.model.response_body.ProductPayResponseBody
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
 import com.example.lifesharing.reservation.ReservationResponseBody
 import com.example.lifesharing.service.work.DetailProduct
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -20,6 +23,7 @@ import retrofit2.http.Headers
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface RetrofitService {
@@ -51,4 +55,11 @@ interface RetrofitService {
 
     @GET("product/category")
     fun getProductMenu(@Query("categoryId") categoryId: Int): Call<ProductMenuResponseBody>
+
+    @POST("payments/{productId}/toss/reserve")
+    fun postPaymentDetails(@Path("productId") productId: Int,
+                           @Body requestBody: ProductPayRequestBody)
+    : Call<ProductPayResponseBody>
+
+
 }
