@@ -71,7 +71,7 @@
                         android:id="@+id/my_user_profile"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
-                        android:src="@drawable/mypage_myprofile_ex_img"
+                        android:src="@drawable/register_default_img"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -118,8 +118,8 @@
                     android:inputType="textEmailAddress"
                     android:padding="12dp"
                     android:text="@={activity.email}"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
+                    android:textColor="@color/gray_900"
+                    android:textColorHint="#B5B6BD"
                     android:textSize="14sp" />
 
                 <View
@@ -131,7 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="비밀번호"
-                    android:textColor="#000"
+                    android:textColor="@color/gray_900"
                     android:textSize="14sp" />
 
                 <View
@@ -149,8 +149,8 @@
                     android:inputType="textPassword"
                     android:padding="12dp"
                     android:text="@={activity.password}"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
+                    android:textColor="@color/gray_900"
+                    android:textColorHint="@color/gray_400"
                     android:textSize="14sp" />
 
                 <View
@@ -180,8 +180,8 @@
                     android:inputType="textPassword"
                     android:padding="12dp"
                     android:text="@={activity.checkPassword}"
-                    android:textColor="#000"
-                    android:textColorHint="#000"
+                    android:textColor="@color/gray_900"
+                    android:textColorHint="@color/gray_400"
                     android:textSize="14sp" />
 
                 <View
@@ -215,8 +215,8 @@
                         android:inputType="textPassword"
                         android:padding="12dp"
                         android:text="@={activity.name}"
-                        android:textColor="#000"
-                        android:textColorHint="#000"
+                        android:textColor="@color/gray_900"
+                        android:textColorHint="@color/gray_400"
                         android:textSize="14sp" />
 
                     <View
@@ -224,6 +224,8 @@
                         android:layout_height="0dp" />
 
                     <Button
+                        android:onClick="@{() -> activity.nicknameCheck()}"
+                        android:id="@+id/register_nickname_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/register_check_btn"
@@ -240,7 +242,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="영어와 한글만 입력해 주세요"
-                    android:textColor="#000"
+                    android:textColor="@color/gray_700"
                     android:textSize="12sp" />
 
                 <View
@@ -274,8 +276,8 @@
                         android:inputType="textPassword"
                         android:padding="12dp"
                         android:text="@={activity.phone}"
-                        android:textColor="#000"
-                        android:textColorHint="#000"
+                        android:textColor="@color/gray_900"
+                        android:textColorHint="@color/gray_400"
                         android:textSize="14sp" />
 
 
@@ -323,8 +325,8 @@
                         android:inputType="textPassword"
                         android:padding="12dp"
                         android:text="@={activity.verifiedNumber}"
-                        android:textColor="#000"
-                        android:textColorHint="#000"
+                        android:textColor="@color/gray_900"
+                        android:textColorHint="@color/gray_400"
                         android:textSize="14sp" />
 
                     <View
@@ -332,10 +334,11 @@
                         android:layout_height="0dp" />
 
                     <Button
+                        android:onClick="@{() -> activity.nicknameCheck()}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/register_check_btn"
-                        android:text="인증 요청"
+                        android:text="확인"
                         android:textColor="@color/gray_400" />
 
                 </LinearLayout>
@@ -383,6 +386,9 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:onClick="@{() -> activity.checkAll()}"
+
+                        android:id="@+id/register_all_check"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/frame_10595" />
@@ -424,6 +430,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:onClick="@{() -> activity.check1()}"
+                        android:id="@+id/register_check1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/check" />
@@ -467,6 +475,8 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:onClick="@{() -> activity.check2()}"
+                        android:id="@+id/register_check2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:src="@drawable/check" />
@@ -500,6 +510,7 @@
 
 
                 <Button
+                    android:id="@+id/register_button"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/location_auth"

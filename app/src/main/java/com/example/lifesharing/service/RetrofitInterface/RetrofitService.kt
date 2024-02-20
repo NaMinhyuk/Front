@@ -71,8 +71,6 @@ interface RetrofitService {
     fun getReviewList() : Call<GetReviewResponseBody>
 
 
-
-
     @GET("chats/room-list/{sender}")
     fun getMessengerRoomList(
         @Path("sender") senderId : Int
@@ -94,5 +92,15 @@ interface RetrofitService {
 
     @GET("user/my-page")
     fun getUserProfile(): Call<UserInfoResponse>
+
+    @POST("social/kakao/login")
+    suspend fun getKakaoUser(
+        @Query("idToken") idToken: String
+    ) : Response<LoginResponseBody>
+
+    @POST("social/google/login")
+    suspend fun getGoogleUser(
+        @Query("idToken") idToken: String
+    ) : Response<LoginResponseBody>
 
 }

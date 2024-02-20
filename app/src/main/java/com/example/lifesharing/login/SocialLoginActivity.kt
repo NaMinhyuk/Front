@@ -11,6 +11,7 @@ import com.example.lifesharing.MainActivity
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivitySocialLoginBinding
 import com.example.lifesharing.login.viewModel.SocialLoginViewModel
+import com.example.lifesharing.service.work.GoogleLoginWork
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
 import com.navercorp.nid.NaverIdLoginSDK
@@ -21,7 +22,7 @@ class SocialLoginActivity : AppCompatActivity() {
     lateinit var binding: ActivitySocialLoginBinding
     val socialLoginViewModel : SocialLoginViewModel by viewModels()
 
-    val TAG1: String = "구글"
+    val TAG: String = "로"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,7 +69,9 @@ class SocialLoginActivity : AppCompatActivity() {
         account.idToken // 로그인한 사용자 정보를 암호화한 값
         socialLoginViewModel.firebaseAuthWithGoogle(account.idToken)
 
-        Log.d(TAG1, "${account.idToken} ")
+        GoogleLoginWork(account.idToken!!).googleLoginWorkCoroutine()
+
+        Log.d(TAG, "${account.idToken} ")
     }
 
     fun naverLogin() {

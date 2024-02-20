@@ -34,9 +34,10 @@ class RegisterReviewActivity : AppCompatActivity() {
     var content : MutableLiveData<String> = MutableLiveData("")
 
     var contentLength : MutableLiveData<String> = MutableLiveData("")
-    var body: MultipartBody.Part?=null
 
     lateinit var binding : ActivityRegisterReviewBinding
+
+    var body: MultipartBody.Part?=null
 
     lateinit var pickMultipleMediaRequest: ActivityResultLauncher<PickVisualMediaRequest>
 

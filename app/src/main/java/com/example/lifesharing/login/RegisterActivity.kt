@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.database.Cursor
 import android.graphics.Bitmap
+import android.graphics.Color
 import android.graphics.ImageDecoder
 import android.graphics.Path
 import android.location.Address
@@ -152,9 +153,18 @@ class RegisterActivity : AppCompatActivity() {
 
     }
 
+    fun nicknameCheck() {
+        binding.registerNicknameCheck.setBackgroundResource(R.drawable.register_location_btn)
+        binding.registerNicknameCheck.setTextColor(Color.parseColor("#1277ED"))
+    }
+
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     @SuppressLint("MissingPermission")
     fun getLocation() {
+        binding.registerLocationBtn.setBackgroundResource(R.drawable.register_location_btn)
+        binding.registerLocationBtn.text = "위치 인증 완료"
+        binding.registerLocationBtn.setTextColor(Color.parseColor("#1277ED"))
+
         RequestPermissionsUtil(this).requestLocation()
 
         val fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
@@ -193,6 +203,22 @@ class RegisterActivity : AppCompatActivity() {
             Toast.makeText(this, "주소를 가져 올 수 없습니다.", Toast.LENGTH_SHORT).show()
             null
         }
+    }
+
+    fun checkAll() {
+        binding.registerAllCheck.setImageResource(R.drawable.register_all_check)
+        binding.registerCheck1.setImageResource(R.drawable.register_check_color)
+        binding.registerCheck2.setImageResource(R.drawable.register_check_color)
+        binding.registerButton.setBackgroundResource(R.drawable.register_colored_btn)
+        binding.registerButton.setTextColor(Color.parseColor("#ffffff"))
+    }
+
+    fun check1() {
+        binding.registerCheck1.setImageResource(R.drawable.register_check_color)
+    }
+
+    fun check2() {
+        binding.registerCheck2.setImageResource(R.drawable.register_check_color)
     }
 
 

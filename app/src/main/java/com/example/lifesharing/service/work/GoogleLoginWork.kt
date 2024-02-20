@@ -1,32 +1,26 @@
 package com.example.lifesharing.service.work
 
-import android.app.Application
 import android.util.Log
-import androidx.lifecycle.AndroidViewModel
 import com.example.lifesharing.GlobalApplication
-import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.mypage.mypage_api.MyPageUserInfo
 import com.example.lifesharing.service.api.RetrofitAPI
-import com.example.lifesharing.service.api.RetrofitAPIwithToken
-import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-
-class LoginWork(private val userInfo: LoginRequestBody) {
+class GoogleLoginWork(val idToken: String) {
 
     val TAG: String = "로그"
 
     private val service = RetrofitAPI.emgMedService
 
-    fun loginWorkWithCoroutine() {
+    fun googleLoginWorkCoroutine() {
 
         CoroutineScope(Dispatchers.IO).launch {
             // POST request를 보내고 reponse를 받음
             try {
-                val response = service.loginUser(userInfo)
+                val response = service.getGoogleUser(idToken)
                 withContext(Dispatchers.Main) {
                     if (response.isSuccessful) {
                         val result = response.body()
@@ -48,7 +42,7 @@ class LoginWork(private val userInfo: LoginRequestBody) {
                         Log.d(TAG, "유저 id ${GlobalApplication.prefs.getString("user_id", userId.toString())} ")
                         Log.d(TAG, "로그인 액세스 토큰 ${GlobalApplication.prefs.getString("access_token", "")}")
                     } else {
-                        Log.d("로그인 실패", response.code().toString())
+                        Log.d("로그인 실패", response.body().toString())
                     }
                 }
             } catch (e: Exception) {
@@ -57,5 +51,6 @@ class LoginWork(private val userInfo: LoginRequestBody) {
         }
 
     }
-}
 
+
+}
