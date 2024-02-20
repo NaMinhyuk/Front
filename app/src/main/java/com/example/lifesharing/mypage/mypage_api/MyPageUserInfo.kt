@@ -25,6 +25,7 @@ class MyPageUserInfo {
                     try {
                         GlobalApplication.setUserInfoData(result!!.UserInfoResultDTO)
                         Log.d(TAG, "getUserInfo $result")
+
                     } catch(e: Exception) {
                         Log.e(TAG, " ${e.message} ", )
                     }

@@ -6,9 +6,11 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.lifesharing.GlobalApplication
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityMyPageBinding
+import com.example.lifesharing.mypage.mypage_api.MyPageUserInfo
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
@@ -23,9 +25,10 @@ class MyPageActivity : AppCompatActivity() {
 
     private lateinit var userInfoData : UserInfoResultDTO
 
-    private lateinit var binding: ActivityMyPageBinding
-
     val TAG = "로그"
+
+    private lateinit var binding: ActivityMyPageBinding
+    private lateinit var myPageUserInfo: MyPageUserInfo
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +38,14 @@ class MyPageActivity : AppCompatActivity() {
         binding = ActivityMyPageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        userInfoData = GlobalApplication.getUserInfoData()
+        // api
 
-        Log.d(TAG, "userdata: ${userInfoData.nickname}")
+        val userInfoData = GlobalApplication.getUserInfoData()
+        displayUserInfo(userInfoData)
+        logUserInfo(userInfoData)
+
+        /*userInfoData = GlobalApplication.getUserInfoData()
+        Log.d(TAG, "userdata: ${userInfoData.nickname}")*/
 
         binding.myPageProfileBt2.setOnClickListener {
             startActivity(Intent(this, TossPaymentsActivity::class.java))
@@ -94,5 +102,27 @@ class MyPageActivity : AppCompatActivity() {
 
         // 어댑터에 데이터 변경을 알리고 갱신
         adapter.notifyDataSetChanged()
+    }
+
+    private fun displayUserInfo(userInfoData: UserInfoResultDTO) {
+
+        binding.myPageProfileTv1.text = userInfoData.nickname
+        binding.myPageProfileTv2.text = userInfoData.area
+        binding.myPageProfileTv4.text = userInfoData.point.toString()
+
+        // 점수
+        val score = userInfoData.score.toFloatOrNull()
+        if (score != null) {
+            binding.myPageStarNum.text = score.toInt().toString()
+        }
+
+        // 프로필 사진
+        Glide.with(this).load(userInfoData.profileUrl).into(binding.myPageProfileIv1)
+
+    }
+
+    // 디버그용 로그 출력
+    private fun logUserInfo(userInfoData: UserInfoResultDTO) {
+        Log.d(TAG, "userdata: ${userInfoData.nickname}")
     }
 }

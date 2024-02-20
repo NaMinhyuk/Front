@@ -9,6 +9,7 @@ import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
 import okhttp3.MultipartBody
+import com.example.lifesharing.mypage.mypage_api.NoticeDataResponse
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
 import com.example.lifesharing.mypage.review.model.response_body.GetReviewResponseBody
@@ -92,6 +93,9 @@ interface RetrofitService {
 
     @GET("user/my-page")
     fun getUserProfile(): Call<UserInfoResponse>
+
+    @GET("notice")
+    fun getNoticeList(@Query("page") page: Int): Call<NoticeDataResponse>
 
     @POST("social/kakao/login")
     suspend fun getKakaoUser(

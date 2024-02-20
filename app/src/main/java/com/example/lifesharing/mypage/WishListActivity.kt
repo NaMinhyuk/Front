@@ -36,6 +36,15 @@ class WishListActivity  : AppCompatActivity() {
 
         WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 무거동", reviewCount = "(100)", name = "카메라" , deposit = 500000, dayPrice = 10000))
         WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+
+
 
         // 어댑터 생성 및 설정
         adapter = WishListAdapter(WishListItem)

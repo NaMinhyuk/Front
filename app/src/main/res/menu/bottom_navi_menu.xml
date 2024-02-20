@@ -5,7 +5,7 @@
 
     <item
         android:id="@+id/homeFragment"
-        android:icon="@drawable/btm_home_ic"
+        android:icon="@drawable/btm_home_select_ic"
         android:enabled="true"
         android:title="홈"
         app:showAsAction="always"
