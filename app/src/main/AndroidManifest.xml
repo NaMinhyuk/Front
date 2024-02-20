@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -95,27 +94,36 @@
         <activity android:name=".mypage.PrivacyPolicyActivity" />
         <activity
             android:name=".product.Product_Pay_Activity"
-            android:exported="true">
-
-            <!-- <intent-filter> -->
-            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            android:exported="true"/>
 
 
-            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-            <!-- </intent-filter> -->
+        <activity android:name=".product.Product_Detail_Reserve_Finish_Activity" android:exported="true">
+
         </activity>
-        <activity
-            android:name=".product.Product_Detail_Reserve_Finish_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".profile.Profile_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".charge.Charge_Activity"
-            android:exported="true" />
-        <activity
-            android:name=".regist.Regist_SetTime_Activity"
-            android:exported="true" />
+        <activity android:name=".product.Product_Pay_GoChat" android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
+        <activity android:name=".profile.Profile_Activity" android:exported="true" >
+
+        </activity>
+
+        <activity android:name=".charge.Charge_Activity" android:exported="true">
+
+        </activity>
+
+        <activity android:name=".regist.Regist_SetTime_Activity" android:exported="true">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"

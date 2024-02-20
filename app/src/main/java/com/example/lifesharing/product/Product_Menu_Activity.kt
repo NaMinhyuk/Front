@@ -2,48 +2,60 @@ package com.example.lifesharing
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.lifesharing.product.data.MenuAdapter
-import com.example.lifesharing.product.data.MenuData
 import com.example.lifesharing.databinding.ActivityProductMenuBinding
+import com.example.lifesharing.product.data.ProductMenuData
+import com.example.lifesharing.product.model.response_body.ProductMenuResponseBody
+import com.example.lifesharing.product.model.response_body.ProductMenuResultDTO
+import com.example.lifesharing.service.work.MenuProduct
+import okhttp3.ResponseBody
+import java.util.ArrayList
 
 class Product_Menu_Activity : AppCompatActivity() {
 
     lateinit var menuAdapter: MenuAdapter
-    val datas = mutableListOf<MenuData>()
+    val datas = mutableListOf<ProductMenuData>()
+    val TAG:String = "로그"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_product_menu)
-
         val binding = ActivityProductMenuBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         binding.backButton.setOnClickListener{
+            finish()
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-
-        initRecycler()
-    }
-
-    private fun initRecycler() {
-        val binding = ActivityProductMenuBinding.inflate(layoutInflater)
-        setContentView(binding.root)
-
         menuAdapter = MenuAdapter(this)
-        binding.menuRv.adapter = menuAdapter
+        binding.productMenuRv.adapter = menuAdapter
+
+        //api 연동
+        menuProductAPICALL()
 
 
-        datas.apply {
-            add(MenuData(img = R.drawable.camara, location = "울산 무거동", review = "(100)", name = "카메라" , money_keep = 500000, money_day = 10000))
-            add(MenuData(img = R.drawable.camara, location = "울산 삼산", review = "(0)", name = "카메라" , money_keep = 500000, money_day = 10000))
 
+        var menuDataToAPI :ArrayList<ProductMenuResultDTO> =
+            GlobalApplication.getMenuDetailProductDataList()
 
-            menuAdapter.datas = datas
-            menuAdapter.notifyDataSetChanged()
+        menuAdapter.submitList(menuDataToAPI)
+
+        Log.d(TAG, "menudatatoapi $menuDataToAPI")
+
+        binding.productMenuRv.apply {
+            layoutManager = GridLayoutManager(this@Product_Menu_Activity,2)
+            adapter = menuAdapter
 
         }
+
+    }
+    fun menuProductAPICALL() {
+        val retrofitWork = MenuProduct()
+        retrofitWork.menuProductAPI()
     }
 }

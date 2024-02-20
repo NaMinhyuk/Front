@@ -123,175 +123,117 @@
 
 
 
-                <ImageView
+                <TextView
                     android:id="@+id/regist_category_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_1"
-                    app:layout_constraintTop_toBottomOf="@id/regist_title2"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="16dp" />
-
-                <TextView
-                    android:id="@+id/regist_category_text1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:background="@drawable/regist_category_1"
                     android:text="디지털기기"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_1"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_1"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_1"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_1" />
+                    app:layout_constraintTop_toBottomOf="@id/regist_title2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center"/>
 
-
-                <ImageView
-                    android:id="@+id/regist_category_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_2"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_1"
-                    app:layout_constraintStart_toEndOf="@id/regist_category_1"
-                    android:layout_marginLeft="8dp" />
 
                 <TextView
-                    android:id="@+id/regist_category_text2"
+                    android:id="@+id/regist_category_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="악기/음향"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_2"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_2"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_2"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_2" />
+                    android:background="@drawable/regist_category_2"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_1"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_1"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"/>
 
-                <ImageView
-                    android:id="@+id/regist_category_3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_3"
-                    app:layout_constraintTop_toBottomOf="@id/regist_category_1"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="8dp" />
+
 
                 <TextView
-                    android:id="@+id/regist_category_text3"
+                    android:id="@+id/regist_category_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="게임/취미"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_3"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_3"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_3"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_3" />
+                    android:background="@drawable/regist_category_3"
+                    app:layout_constraintTop_toBottomOf="@id/regist_category_1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"/>
 
 
-                <ImageView
-                    android:id="@+id/regist_category_4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_4"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_3"
-                    app:layout_constraintStart_toEndOf="@id/regist_category_3"
-                    android:layout_marginLeft="8dp" />
 
                 <TextView
-                    android:id="@+id/regist_category_text4"
+                    android:id="@+id/regist_category_4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="캠핑/레저"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_4"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_4"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_4"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_4" />
+                    android:background="@drawable/regist_category_4"
+                    app:layout_constraintTop_toTopOf="@id/regist_category_3"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_3"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"/>
 
-                <ImageView
-                    android:id="@+id/regist_category_5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_5"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_4"
-                    app:layout_constraintStart_toEndOf="@id/regist_category_4"
-                    android:layout_marginLeft="8dp" />
 
                 <TextView
-                    android:id="@+id/regist_category_text5"
+                    android:id="@+id/regist_category_5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="의류"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_5"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_5"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_5"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_5" />
-
-                <ImageView
-                    android:id="@+id/regist_category_6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_6"
-                    app:layout_constraintTop_toBottomOf="@id/regist_category_3"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_marginTop="8dp" />
+                    app:layout_constraintTop_toTopOf="@id/regist_category_4"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_4"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/regist_category_5"
+                    android:gravity="center"/>
 
                 <TextView
-                    android:id="@+id/regist_category_text6"
+                    android:id="@+id/regist_category_6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="신발"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_6"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_6"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_6" />
+                    app:layout_constraintTop_toBottomOf="@id/regist_category_3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/regist_category_6"
+                    android:gravity="center"/>
 
-                <ImageView
-                    android:id="@+id/regist_category_7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_7"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                    app:layout_constraintStart_toEndOf="@id/regist_category_6"
-                    android:layout_marginLeft="8dp" />
 
                 <TextView
-                    android:id="@+id/regist_category_text7"
+                    android:id="@+id/regist_category_7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="생활/주방"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_7"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_7"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_7"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_7" />
-
-                <ImageView
-                    android:id="@+id/regist_category_8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/regist_category_8"
                     app:layout_constraintTop_toTopOf="@id/regist_category_6"
-                    app:layout_constraintStart_toEndOf="@id/regist_category_7"
-                    android:layout_marginLeft="8dp" />
+                    app:layout_constraintStart_toEndOf="@id/regist_category_6"
+                    android:layout_marginLeft="8dp"
+                    android:background="@drawable/regist_category_7"
+                    android:gravity="center"/>
+
 
                 <TextView
-                    android:id="@+id/regist_category_text8"
+                    android:id="@+id/regist_category_8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="가구"
                     android:textSize="16sp"
                     android:textColor="@color/Gray700"
-                    app:layout_constraintStart_toStartOf="@id/regist_category_8"
-                    app:layout_constraintEnd_toEndOf="@id/regist_category_8"
-                    app:layout_constraintTop_toTopOf="@id/regist_category_8"
-                    app:layout_constraintBottom_toBottomOf="@id/regist_category_8" />
+                    app:layout_constraintTop_toTopOf="@id/regist_category_6"
+                    app:layout_constraintStart_toEndOf="@id/regist_category_7"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center"
+                    android:background="@drawable/regist_category_8"/>
 
                 <TextView
                     android:id="@+id/regist_title3"
@@ -414,6 +356,29 @@
                     app:layout_constraintTop_toBottomOf="@id/regist_title6"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginTop="16dp" />
+
+                <TextView
+                    android:id="@+id/regist_set_time_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기간 설정"
+                    android:textSize="14sp"
+                    android:textColor="@color/gray_700"
+                    app:layout_constraintTop_toTopOf="@id/regist_set_time_btn"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_set_time_btn"
+                    app:layout_constraintStart_toStartOf="@id/regist_set_time_btn"
+                    android:layout_marginLeft="40dp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/regist_cal_btn"
+                    app:layout_constraintTop_toTopOf="@id/regist_set_time_btn"
+                    app:layout_constraintBottom_toBottomOf="@id/regist_set_time_btn"
+                    app:layout_constraintEnd_toEndOf="@id/regist_set_time_btn"
+                    android:layout_marginRight="8dp"/>
+
+
 
                 <TextView
                     android:id="@+id/regist_title7"

@@ -35,21 +35,23 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="14dp"
         android:focusable="false"
-        app:queryBackground="@color/gray_500"
+        app:queryBackground="@color/gray_100"
+        android:backgroundTint="@null"
         app:queryHint="찾는 상품을 검색해 보세요"
         app:layout_constraintTop_toBottomOf="@+id/search_title_tv"
         app:layout_constraintStart_toStartOf="parent"
         android:background="@color/gray_100"/>
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:hint="찾는 상품을 검색해 보세요"
-        android:textColor="@color/gray_500"
-        android:textSize="14sp"
-        app:layout_constraintTop_toTopOf="@id/search_bar"
-        app:layout_constraintBottom_toBottomOf="@id/search_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        android:background="@null"
-        android:layout_marginLeft="60dp" />
+
+<!--    <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="50dp"-->
+<!--        android:hint="찾는 상품을 검색해 보세요"-->
+<!--        android:textColor="@color/gray_500"-->
+<!--        android:textSize="14sp"-->
+<!--        app:layout_constraintTop_toTopOf="@id/search_bar"-->
+<!--        app:layout_constraintBottom_toBottomOf="@id/search_bar"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        android:background="@null"-->
+<!--        android:layout_marginLeft="60dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

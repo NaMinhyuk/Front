@@ -14,8 +14,15 @@ import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
 import com.example.lifesharing.mypage.review.model.response_body.GetReviewResponseBody
 import com.example.lifesharing.mypage.review.model.response_body.ReviewResponseBody
+import com.example.lifesharing.product.model.request_body.ProductPayRequestBody
+import com.example.lifesharing.product.model.response_body.Detail_ResponseBody
+import com.example.lifesharing.product.model.response_body.ProductMenuResponseBody
+import com.example.lifesharing.product.model.response_body.ProductPayResponseBody
 import com.example.lifesharing.regist.model.request_body.ProductRegisterRequestBody
 import com.example.lifesharing.regist.model.response_body.ProductRegisterResponseBody
+import com.example.lifesharing.reservation.ReservationResponseBody
+import com.example.lifesharing.service.work.DetailProduct
+import okhttp3.RequestBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -24,13 +31,12 @@ import retrofit2.http.Headers
 import retrofit2.http.Multipart
 import retrofit2.http.POST
 import retrofit2.http.Part
-import retrofit2.http.PartMap
 import retrofit2.http.Path
+import retrofit2.http.PartMap
 import retrofit2.http.Query
 
 interface RetrofitService {
 
-    @Headers("Content-Type: application/json")
     @Multipart
     @POST("user/join")
     fun registerUserByEnqueue(@Body userInfo: RegisterRequestBody): Call<RegisterResponseBody> // call은 흐름처리 기능 제공
@@ -80,6 +86,22 @@ interface RetrofitService {
 
     @GET("product/home")
     fun getFilteredProducts(@Query("filter") filter: String) : Call<ProductResponse>
+
+    @GET("product/detail")
+    fun getProductDetails(@Query("productId") productId: Int) : Call<Detail_ResponseBody>
+
+    @GET("reservations/list")
+    fun getReservations(@Query("filter") filter: String): Call<ReservationResponseBody>
+
+    @GET("product/category")
+    fun getProductMenu(@Query("categoryId") categoryId: Int): Call<ProductMenuResponseBody>
+
+    @POST("payments/{productId}/toss/reserve")
+    fun postPaymentDetails(@Path("productId") productId: Int,
+                           @Body requestBody: ProductPayRequestBody)
+    : Call<ProductPayResponseBody>
+
+
 
     @GET("chats/room-list/{user}")
     fun getMessengerRoomListTemp(

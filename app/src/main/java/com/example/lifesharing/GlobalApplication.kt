@@ -16,6 +16,7 @@ import com.example.lifesharing.util.RequestPermissionsUtil
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.review.model.response_body.ReviewListDTOList
 import com.kakao.sdk.user.model.User
+import com.example.lifesharing.product.model.response_body.ProductMenuResultDTO
 
 class GlobalApplication : Application() {
 
@@ -33,24 +34,32 @@ class GlobalApplication : Application() {
         private var userInfoData: UserInfoResultDTO? = null
 
         lateinit var prefs: PreferenceUtil
-        lateinit var instance: GlobalApplication
-            private set
+        private var menuDetailProductDataList: ArrayList<ProductMenuResultDTO>? = null
 
-        fun getMyReviewCount() : Int? {
+        fun getMenuDetailProductDataList(): ArrayList<ProductMenuResultDTO> {
+            return menuDetailProductDataList!!
+        }
+
+        fun setMenuDetailProductDataList(menuData: ArrayList<ProductMenuResultDTO>) {
+            menuDetailProductDataList = menuData
+        }
+
+        fun getMyReviewCount(): Int? {
             return myReviewCount
         }
 
-        fun setMyReviewCount(reviewCount : Int) {
+        fun setMyReviewCount(reviewCount: Int) {
             myReviewCount = reviewCount
         }
 
-        fun getMyReviewData() : ArrayList<ReviewListDTOList>? {
+        fun getMyReviewData(): ArrayList<ReviewListDTOList>? {
             return myReviewData
         }
 
-        fun setMyReviewData(reviewData : ArrayList<ReviewListDTOList>) {
+        fun setMyReviewData(reviewData: ArrayList<ReviewListDTOList>) {
             myReviewData = reviewData
         }
+
         fun getData(): ArrayList<MessengerRoomListTempResult>? {
             return data
         }
@@ -77,6 +86,9 @@ class GlobalApplication : Application() {
         }
     }
 
+    lateinit var instance: GlobalApplication
+        private set
+
 
     override fun onCreate() {
         super.onCreate()
@@ -91,4 +103,8 @@ class GlobalApplication : Application() {
         KakaoSdk.init(this, KAKAO_NATIVE_APP_KEY)
     }
 
+
 }
+
+
+

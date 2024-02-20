@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_menu"
         android:layout_width="360dp"
@@ -56,34 +57,47 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-<!--            <androidx.viewpager2.widget.ViewPager2-->
-<!--                android:id="@+id/vp_main_banner"-->
-<!--                android:layout_width="360dp"-->
-<!--                android:layout_height="360dp"-->
-<!--                android:orientation="horizontal"-->
-<!--                app:layout_constraintDimensionRatio="1:1"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-<!--변경지점-->
-            <ImageView
+            <RelativeLayout
                 android:id="@+id/vp_main_banner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/reserve_test_photo"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
-
-            <com.google.android.material.tabs.TabLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:scrollIndicators="none"
+                android:layout_width="360dp"
+                android:layout_height="360dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/vp_main_banner"
-                android:background="@drawable/selector_tab_white"
-                app:tabGravity="center"
-                app:tabIndicator="@null"
-                android:paddingEnd="@dimen/dot_padding"
-                android:paddingStart="@dimen/dot_padding" />
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/detail_vieapager2"
+                    android:layout_width="match_parent"
+                    android:layout_height="360dp"
+                    android:layout_centerInParent="true" />
+                <LinearLayout
+                    android:id="@+id/detail_slideDotLL"
+                    android:layout_marginTop="-16dp"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/detail_vieapager2"
+                    android:gravity="center"/>
+
+            </RelativeLayout>
+
+
+
+
+<!--변경지점-->
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:scrollIndicators="none"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintBottom_toBottomOf="@id/vp_main_banner"-->
+<!--                android:background="@drawable/selector_tab_white"-->
+<!--                app:tabGravity="center"-->
+<!--                app:tabIndicator="@null"-->
+<!--                android:paddingEnd="@dimen/dot_padding"-->
+<!--                android:paddingStart="@dimen/dot_padding" />-->
 
             <TextView
                 android:id="@+id/detail_title"
@@ -249,6 +263,16 @@
                 android:layout_marginLeft="2dp" />
 
             <ImageView
+                android:id="@+id/product_detail_heart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/detail_heart"
+                app:layout_constraintTop_toTopOf="@id/text_dum1"
+                app:layout_constraintBottom_toBottomOf="@id/text_dum2"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginRight="16dp"/>
+
+            <ImageView
                 android:id="@+id/divider"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -337,17 +361,10 @@
 <!--                android:id="@+id/detail_map"-->
 <!--                android:layout_width="328dp"-->
 <!--                android:layout_height="160dp"-->
-<!--                app:layout_constraintStart_toStartOf="@id/text_dum3"-->
 <!--                app:layout_constraintTop_toBottomOf="@id/text_dum3"-->
-<!--                android:layout_marginTop="16dp" />-->
+<!--                app:layout_constraintStart_toStartOf="@id/text_dum3" >-->
 
-<!--            <com.kakao.vectormap.MapView-->
-<!--                android:id="@+id/detail_map"-->
-<!--                android:layout_width="328dp"-->
-<!--                android:layout_height="160dp"-->
-<!--                app:layout_constraintStart_toStartOf="@id/text_dum3"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/text_dum3"-->
-<!--                android:layout_marginTop="16dp"/>-->
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
             <TextView
                 android:id="@+id/detail_map_location_tv"
@@ -391,8 +408,46 @@
                 android:textSize="16sp"
                 app:layout_constraintTop_toTopOf="@id/detail_review_tv"
                 app:layout_constraintEnd_toStartOf="@id/review_count_tv"
-                android:layout_marginRight="4dp"
-                android:paddingBottom="200dp" />
+                android:layout_marginRight="4dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/gray_200"
+                app:layout_constraintBottom_toBottomOf="@id/review_count_tv"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/detail_test1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/review_test1"
+                app:layout_constraintTop_toBottomOf="@id/review_count_tv"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageView
+                android:id="@+id/detail_test2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/review_test2"
+                app:layout_constraintTop_toBottomOf="@id/detail_test1"
+                android:layout_marginTop="32dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/review_test3"
+                app:layout_constraintTop_toBottomOf="@id/detail_test2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="32dp"
+                android:paddingBottom="150dp"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

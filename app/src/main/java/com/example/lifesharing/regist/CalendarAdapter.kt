@@ -64,17 +64,19 @@ class CalendarAdapter(private val dayList: ArrayList<Date>):
         if(iYear == selectYear && iMonth == selectMonth) { //같으면 진하게
             holder.dayText.setTextColor(Color.parseColor("#1F2021"))
 
-            //현재 일자 비교해서 배경색 변경 배경색이 회색이 된다.
-            if(selectDay ==dayNo){
-                holder.itemView.setBackgroundColor(Color.LTGRAY)
-            }
+//            //현재 일자 비교해서 배경색 변경 배경색이 회색이 된다.
+//            if(selectDay ==dayNo){
+//                holder.itemView.setBackgroundColor(Color.LTGRAY)
+//            }
         } else {
             holder.dayText.setTextColor(Color.parseColor("#BDBDBD"))
         }
-        //현재 날짜 배경색상 변경
-        if (CalendarClick.selectDate.get(Calendar.DAY_OF_MONTH) == dayNo) {
-            holder.itemView.setBackgroundColor(Color.LTGRAY)
-        }
+
+
+//        //현재 날짜 배경색상 변경
+//        if (CalendarClick.selectDate.get(Calendar.DAY_OF_MONTH) == dayNo) {
+//            holder.itemView.setBackgroundColor(Color.LTGRAY)
+//        }
 
 
 
@@ -84,7 +86,8 @@ class CalendarAdapter(private val dayList: ArrayList<Date>):
 
             val yearMonDay = "$iYear 년 $iMonth 월 $iDay 일"
 
-            Toast.makeText(holder.itemView.context, yearMonDay, Toast.LENGTH_SHORT).show()
+//            //Toast 메세지를 통해 현재 날짜를 출력
+//            Toast.makeText(holder.itemView.context, yearMonDay, Toast.LENGTH_SHORT).show()
         }
     }
 
