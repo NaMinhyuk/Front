@@ -92,9 +92,13 @@
         <activity android:name=".mypage.ToS_Activity" />
         <activity android:name=".mypage.ROP_Activity" />
         <activity android:name=".mypage.PrivacyPolicyActivity" />
+        <activity android:name=".mypage.RegistrationHistoryActivity" />
         <activity
             android:name=".product.Product_Pay_Activity"
             android:exported="true"/>
+
+        <activity android:name=".mypage.WriteQnACompleteActivity"/>
+        <activity android:name=".mypage.QnA_Answer_Activity"/>
 
 
         <activity android:name=".product.Product_Detail_Reserve_Finish_Activity" android:exported="true">

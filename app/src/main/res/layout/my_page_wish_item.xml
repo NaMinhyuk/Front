@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="280dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/wish_item_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="34dp"
-        android:src="@drawable/camara"
+        android:layout_width="158dp"
+        android:layout_height="158dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/camera"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/wish_location_ic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="13dp"
+        android:layout_height="13dp"
         android:layout_marginTop="10dp"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="3dp"
         android:src="@drawable/menu_location"
         app:tint="@color/gray_500"
         app:layout_constraintTop_toBottomOf="@id/wish_item_img"
@@ -30,10 +30,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginStart="2dp"
         android:text="울산 무거동"
         android:textSize="11sp"
         android:textColor="@color/gray_500"
-        app:layout_constraintTop_toBottomOf="@id/wish_item_img"
+        app:layout_constraintBottom_toBottomOf="@id/wish_location_ic"
         app:layout_constraintStart_toEndOf="@id/wish_location_ic"/>
 
     <ImageView
@@ -76,8 +77,8 @@
         android:id="@+id/wish_star_iv_5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/detail_star"
         android:layout_marginTop="2dp"
+        android:src="@drawable/detail_star"
         app:layout_constraintStart_toEndOf="@id/wish_star_iv_4"
         app:layout_constraintTop_toBottomOf="@id/wish_location_ic"/>
 
@@ -85,17 +86,17 @@
         android:id="@+id/wish_review_num_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
         android:text="(0)"
         android:textSize="11sp"
         android:textColor="@color/blue_300"
         app:layout_constraintTop_toTopOf="@id/wish_star_iv_5"
-        app:layout_constraintStart_toEndOf="@id/wish_star_iv_5"
-        android:layout_marginLeft="2dp" />
+        app:layout_constraintStart_toEndOf="@id/wish_star_iv_5" />
 
     <TextView
         android:id="@+id/wish_item_name_tv"
         android:layout_width="156dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:text="Canon[렌즈 포함] EOS R8CanonCanon[렌즈포함] EOS R8CanonCanon"
         android:textSize="14sp"
@@ -139,7 +140,7 @@
         android:id="@+id/wish_day_price_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
         android:text="10,000"
         android:textSize="16sp"
         android:textColor="@color/gray_900"
@@ -149,7 +150,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="2dp"
+        android:layout_marginStart="2dp"
         android:text="원"
         android:textColor="@color/gray_800"
         android:textSize="12sp"

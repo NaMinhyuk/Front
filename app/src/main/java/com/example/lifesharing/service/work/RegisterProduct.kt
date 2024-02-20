@@ -15,7 +15,7 @@ class RegisterProduct(private val imageList : ArrayList<MultipartBody.Part>, pri
     val TAG: String = "로그"
 
     fun registerProduct() {
-        retrofitService.registerProduct(imageList,productData )
+        retrofitService.registerProduct(imageList,productData)
             .enqueue(object : retrofit2.Callback<ProductRegisterResponseBody> {
                 override fun onResponse(
                     call: Call<ProductRegisterResponseBody>,

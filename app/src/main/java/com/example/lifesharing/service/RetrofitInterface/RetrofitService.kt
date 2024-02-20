@@ -9,7 +9,10 @@ import com.example.lifesharing.login.model.response_body.RegisterResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResponseBody
 import okhttp3.MultipartBody
-import com.example.lifesharing.mypage.mypage_api.NoticeDataResponse
+import com.example.lifesharing.mypage.mypage_api.InquiryRegisterRequestBody
+import com.example.lifesharing.mypage.mypage_api.InquiryRegisterResponseBody
+import com.example.lifesharing.mypage.mypage_api.InquiryResponse
+import com.example.lifesharing.mypage.mypage_api.NoticeResponse
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.mypage.review.model.request_body.ReviewRequestBody
 import com.example.lifesharing.mypage.review.model.response_body.GetReviewResponseBody
@@ -23,6 +26,8 @@ import com.example.lifesharing.regist.model.response_body.ProductRegisterRespons
 import com.example.lifesharing.reservation.ReservationResponseBody
 import com.example.lifesharing.service.work.DetailProduct
 import okhttp3.RequestBody
+import com.example.lifesharing.mypage.mypage_api.ViewInquiryAnswerResponse
+import com.example.lifesharing.mypage.mypage_api.ViewWishListResponse
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
@@ -116,8 +121,24 @@ interface RetrofitService {
     @GET("user/my-page")
     fun getUserProfile(): Call<UserInfoResponse>
 
+    @GET("heart/list")
+    fun getWishList(): Call<ViewWishListResponse>
+
     @GET("notice")
-    fun getNoticeList(@Query("page") page: Int): Call<NoticeDataResponse>
+    fun getNoticeList(@Query("lastNoticeId") lastNoticeId: Long?): Call<NoticeResponse>
+
+    @Multipart
+    @POST("user/inquiry")
+    fun registerQna(
+        @Part ("inquiryDTO") request: InquiryRegisterRequestBody,
+        @Part multipartFiles: List<MultipartBody.Part>
+    ): Call<InquiryRegisterResponseBody>
+
+    @GET("user/inquires")
+    fun getInquiryList(@Query("size") size: Int) : Call<InquiryResponse>
+
+    @GET("user/inquiry")
+    fun getViewInquiryAnswer(@Query("inquiryId") inquiryId : Long) : Call<ViewInquiryAnswerResponse>
 
     @POST("social/kakao/login")
     suspend fun getKakaoUser(

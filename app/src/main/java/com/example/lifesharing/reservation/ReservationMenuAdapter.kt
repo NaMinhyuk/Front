@@ -36,7 +36,7 @@ class ReservationMenuAdapter(private val reservationDataList: List<ReservationDa
         holder.subtitle2TextView.text = currentItem.subtitle2
 
         // 이미지 리소스를 설정합니다.
-        holder.imageView.setImageResource(R.drawable.camara)
+        holder.imageView.setImageResource(R.drawable.camera)
     }
 
     override fun getItemCount(): Int {

@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import okhttp3.MultipartBody
 
 data class ProductRegisterRequestBody(
-    var categoryId : Int?=null,
+    var categoryId : String?=null,
     var name : String?=null,
     var content : String?=null,
     var dayPrice : Int?=null,

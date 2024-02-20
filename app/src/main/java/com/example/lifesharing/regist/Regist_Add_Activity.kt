@@ -49,7 +49,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
     val imagePaths = mutableListOf<String>()
 
-    var categoryId : Int?=null
+    var categoryId : String?=null
 
     lateinit var pickMultipleMediaRequest: ActivityResultLauncher<PickVisualMediaRequest>
 
@@ -111,7 +111,6 @@ class Regist_Add_Activity : AppCompatActivity() {
                         imageList.add(body!!)
 
                         Log.d(TAG, "이미지리스트 들어왔나여ㅛ? $imageList")
-
                     }
                 }
 
@@ -173,7 +172,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "1 click ${categoryId}")
-            categoryId = 1
+            categoryId = "1"
             binding.registCategory1.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory1.setBackgroundResource(R.drawable.regist_category_click1)
         }
@@ -187,7 +186,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "2 click ${categoryId}")
-            categoryId = 2
+            categoryId = "2"
             binding.registCategory2.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory2.setBackgroundResource(R.drawable.regist_category_click2)
         }
@@ -201,7 +200,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "3 click ${categoryId}")
-            categoryId = 3
+            categoryId = "3"
             binding.registCategory3.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory3.setBackgroundResource(R.drawable.regist_category_click3)
         }
@@ -215,7 +214,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "4 click ${categoryId}")
-            categoryId = 4
+            categoryId = "4"
             binding.registCategory4.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory4.setBackgroundResource(R.drawable.regist_category_click4)
         }
@@ -229,7 +228,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "5 click ${categoryId}")
-            categoryId = 5
+            categoryId = "5"
             binding.registCategory5.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory5.setBackgroundResource(R.drawable.regist_category_click5)
         }
@@ -243,7 +242,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "6 click ${categoryId}")
-            categoryId = 6
+            categoryId = "6"
             binding.registCategory6.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory6.setBackgroundResource(R.drawable.regist_category_click6)
         }
@@ -257,7 +256,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "7 click ${categoryId}")
-            categoryId = 7
+            categoryId = "7"
             binding.registCategory7.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory7.setBackgroundResource(R.drawable.regist_category_click7)
         }
@@ -271,7 +270,7 @@ class Regist_Add_Activity : AppCompatActivity() {
                 }
             }
             Log.d(TAG, "8 click ${categoryId}")
-            categoryId = 8
+            categoryId = "8"
             binding.registCategory8.setTextColor(Color.parseColor("#1277ED"))
             binding.registCategory8.setBackgroundResource(R.drawable.regist_category_click8)
         }
@@ -359,7 +358,7 @@ class Regist_Add_Activity : AppCompatActivity() {
 
         Log.d(TAG, "이미지리스트 잘들어왔나요?: $serverImageList")
 
-        val retrofitWork = RegisterProduct(imageList, productInfo)
+        val retrofitWork = RegisterProduct(serverImageList!!, productInfo)
 
         retrofitWork.registerProduct()
 

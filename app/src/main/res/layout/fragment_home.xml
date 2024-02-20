@@ -7,7 +7,7 @@
 
     <LinearLayout
         android:id="@+id/home_bar"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="58dp"
         android:orientation="horizontal"
         android:backgroundTint="@color/white"
@@ -56,7 +56,7 @@
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/home_banner_vp"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="227dp"
                 android:layout_gravity="center" />
 
@@ -72,7 +72,7 @@
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/home_category_vp"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="179dp"
                 android:layout_marginTop="16dp" />
 
@@ -124,7 +124,7 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/new_item_rv"
-                android:layout_width="360dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"

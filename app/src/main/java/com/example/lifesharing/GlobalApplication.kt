@@ -13,6 +13,7 @@ import com.example.lifesharing.common.response_body.Product
 import com.example.lifesharing.common.response_body.ProductIdResponseBody
 import com.example.lifesharing.messenger.model.response_body.MessengerRoomListTempResult
 import com.example.lifesharing.util.RequestPermissionsUtil
+import com.example.lifesharing.mypage.mypage_api.InquiryDTO
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.example.lifesharing.mypage.review.model.response_body.ReviewListDTOList
 import com.kakao.sdk.user.model.User
@@ -20,8 +21,10 @@ import com.example.lifesharing.product.model.response_body.ProductMenuResultDTO
 
 class GlobalApplication : Application() {
 
-
     companion object {
+
+        lateinit var instance: GlobalApplication
+            private set
 
         private var productData: Product? = null
 
@@ -77,6 +80,17 @@ class GlobalApplication : Application() {
         }
 
 
+        private var qnaListData: ArrayList<InquiryDTO>?=null
+
+        fun getQnaListData(): ArrayList<InquiryDTO> {
+            return qnaListData!!
+        }
+
+        fun setQnaListData(data : ArrayList<InquiryDTO>) {
+            qnaListData = data
+        }
+
+
         fun getUserInfoData(): UserInfoResultDTO {
             return userInfoData!!
         }
@@ -86,8 +100,7 @@ class GlobalApplication : Application() {
         }
     }
 
-    lateinit var instance: GlobalApplication
-        private set
+
 
 
     override fun onCreate() {
@@ -103,8 +116,4 @@ class GlobalApplication : Application() {
         KakaoSdk.init(this, KAKAO_NATIVE_APP_KEY)
     }
 
-
 }
-
-
-
