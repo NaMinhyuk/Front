@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.Product_Detail_Activity
 import com.example.lifesharing.databinding.ActivityWishListBinding
+import com.example.lifesharing.search.SearchActivity
 
 class WishListActivity  : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,20 @@ class WishListActivity  : AppCompatActivity() {
         binding.wishlistImg4.setOnClickListener {
             val intent = Intent(this, Product_Detail_Activity::class.java)
             startActivity(intent)
+        }
+
+
+
+
+
+
+
+        binding.mypickSearchbtn.setOnClickListener {
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+        }
+        binding.mypickBackbtn.setOnClickListener {
+            finish()
         }
 
     }

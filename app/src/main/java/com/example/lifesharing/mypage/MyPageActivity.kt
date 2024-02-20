@@ -46,9 +46,9 @@ class MyPageActivity : AppCompatActivity() {
                 when (item.list) {
                     "내 정보" -> startActivity(Intent(this@MyPageActivity, MyProfileActivity::class.java))
                     "찜 목록" -> startActivity(Intent(this@MyPageActivity, WishListActivity::class.java))
-                    /*"이용내역" -> startActivity(Intent(this@MyPageActivity, UsageHistoryActivity::class.java))
+                    "이용내역" -> startActivity(Intent(this@MyPageActivity, UseageActivity::class.java))
                     "등록내역" -> startActivity(Intent(this@MyPageActivity, RegistrationHistoryActivity::class.java))
-                    "내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewsActivity::class.java))*/
+                    //"내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewsActivity::class.java))
                     "공지사항" -> startActivity(Intent(this@MyPageActivity, NoticeActivity::class.java))
                     "FAQ" -> startActivity(Intent(this@MyPageActivity, FAQ_Activity::class.java))
                     "1:1 문의" -> startActivity(Intent(this@MyPageActivity, QnA_Activity::class.java))
