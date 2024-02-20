@@ -5,17 +5,22 @@ import com.example.lifesharing.login.model.request_body.LoginRequestBody
 import com.example.lifesharing.login.model.request_body.RegisterRequestBody
 import com.example.lifesharing.login.model.response_body.LoginResponseBody
 import com.example.lifesharing.login.model.response_body.RegisterResponseBody
+import com.example.lifesharing.mypage.mypage_api.InquiryRegisterRequestBody
+import com.example.lifesharing.mypage.mypage_api.InquiryRegisterResponseBody
 import com.example.lifesharing.mypage.mypage_api.InquiryResponse
 import com.example.lifesharing.mypage.mypage_api.NoticeResponse
 import com.example.lifesharing.mypage.mypage_api.UserInfoResponse
 import com.example.lifesharing.mypage.mypage_api.ViewInquiryAnswerResponse
 import com.example.lifesharing.mypage.mypage_api.ViewWishListResponse
+import okhttp3.MultipartBody
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.Headers
+import retrofit2.http.Multipart
 import retrofit2.http.POST
+import retrofit2.http.Part
 import retrofit2.http.Query
 
 interface RetrofitService {
@@ -40,8 +45,15 @@ interface RetrofitService {
     @GET("notice")
     fun getNoticeList(@Query("lastNoticeId") lastNoticeId: Long?): Call<NoticeResponse>
 
-    @GET("user/inquiry")
-    fun getInquiryList(@Query("lastInquiryId") lastInquiryId: Long) : Call<InquiryResponse>
+    @Multipart
+    @POST("user/inquiry")
+    fun registerQna(
+        @Part ("inquiryDTO") request: InquiryRegisterRequestBody,
+        @Part multipartFiles: List<MultipartBody.Part>
+    ): Call<InquiryRegisterResponseBody>
+
+    @GET("user/inquires")
+    fun getInquiryList(@Query("size") size: Int) : Call<InquiryResponse>
 
     @GET("user/inquiry")
     fun getViewInquiryAnswer(@Query("inquiryId") inquiryId : Long) : Call<ViewInquiryAnswerResponse>

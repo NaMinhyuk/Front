@@ -6,6 +6,7 @@ import com.example.lifesharing.sharedPref.PreferenceUtil
 import com.kakao.sdk.common.KakaoSdk
 import com.navercorp.nid.NaverIdLoginSDK
 import com.example.lifesharing.BuildConfig.*
+import com.example.lifesharing.mypage.mypage_api.InquiryDTO
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
 import com.kakao.sdk.user.model.User
 
@@ -16,6 +17,17 @@ class GlobalApplication : Application() {
         private var userInfoData : UserInfoResultDTO?=null
 
         lateinit var prefs: PreferenceUtil
+
+        private var qnaListData: ArrayList<InquiryDTO>?=null
+
+        fun getQnaListData(): ArrayList<InquiryDTO> {
+            return qnaListData!!
+        }
+
+        fun setQnaListData(data : ArrayList<InquiryDTO>) {
+            qnaListData = data
+        }
+
 
         fun getUserInfoData(): UserInfoResultDTO {
             return userInfoData!!

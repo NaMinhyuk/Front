@@ -46,6 +46,9 @@
         <activity android:name=".mypage.ROP_Activity"/>
         <activity android:name=".mypage.PrivacyPolicyActivity"/>
 
+        <activity android:name=".mypage.WriteQnACompleteActivity"/>
+        <activity android:name=".mypage.QnA_Answer_Activity"/>
+
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"

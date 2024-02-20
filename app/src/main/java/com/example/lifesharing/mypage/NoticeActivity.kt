@@ -11,9 +11,11 @@ import com.example.lifesharing.mypage.mypage_data.NoticeListAdapter
 import com.example.lifesharing.mypage.mypage_data.NoticeListData
 
 // Notice (공지사항)
-class NoticeActivity  : AppCompatActivity() {
+class NoticeActivity  : AppCompatActivity(), NoticeListAdapter.OnItemClickListener {
+
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: NoticeListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_notice)
@@ -27,7 +29,7 @@ class NoticeActivity  : AppCompatActivity() {
         }
 
         recyclerView = findViewById(R.id.my_page_notice_rv)
-        adapter = NoticeListAdapter(getSampleNoticeData()) // 더미 데이터로 어댑터 초기화
+        adapter = NoticeListAdapter(getSampleNoticeData(), this) // 클릭 리스너 전달
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
@@ -35,9 +37,21 @@ class NoticeActivity  : AppCompatActivity() {
     // 더미 데이터
     private fun getSampleNoticeData(): List<NoticeListData> {
         val sampleData = mutableListOf<NoticeListData>()
-        sampleData.add(NoticeListData("공지1", 20240216, "이것은 첫 번째 공지입니다."))
-        sampleData.add(NoticeListData("공지2", 20240217, "이것은 두 번째 공지입니다."))
-        sampleData.add(NoticeListData("공지3", 20240218, "이것은 세 번째 공지입니다."))
+        sampleData.add(NoticeListData("첫 번째 공지 예시 타이틀", "24.02.01", "이것은 첫 번째 공지입니다."))
+        sampleData.add(NoticeListData("두 번째 공지 예시 타이틀", "24.02.02", "이것은 두 번째 공지입니다."))
+        sampleData.add(NoticeListData("세 번째 공지 예시 타이틀", "24.02.03", "이것은 세 번째 공지입니다."))
         return sampleData
+    }
+
+    override fun onItemClick(position: Int) {
+        // 선택한 항목의 데이터를 가져옴
+        val selectedItem = adapter.getItemAtPosition(position)
+
+        // NoticeDetailActivity로 이동하는 인텐트 생성
+        val intent = Intent(this, NoticeDetailActivity::class.java)
+        intent.putExtra("title", selectedItem.title)
+        intent.putExtra("date", selectedItem.date)
+        intent.putExtra("content", selectedItem.content)
+        startActivity(intent)
     }
 }

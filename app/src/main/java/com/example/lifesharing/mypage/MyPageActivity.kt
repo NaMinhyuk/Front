@@ -12,8 +12,11 @@ import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityMyPageBinding
 import com.example.lifesharing.mypage.mypage_api.MyPageUserInfo
 import com.example.lifesharing.mypage.mypage_api.UserInfoResultDTO
+import com.example.lifesharing.mypage.mypage_api.ViewQnAList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainList
 import com.example.lifesharing.mypage.mypage_data.MyPageMainListAdapter
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
 class MyPageActivity : AppCompatActivity() {
 
@@ -37,6 +40,7 @@ class MyPageActivity : AppCompatActivity() {
         displayUserInfo(userInfoData)
         logUserInfo(userInfoData)
 
+
         /*userInfoData = GlobalApplication.getUserInfoData()
         Log.d(TAG, "userdata: ${userInfoData.nickname}")*/
 
@@ -56,7 +60,7 @@ class MyPageActivity : AppCompatActivity() {
         itemList.add(MyPageMainList("FAQ"))
         itemList.add(MyPageMainList("1:1 문의"))
         itemList.add(MyPageMainList("서비스 이용약관"))
-        itemList.add(MyPageMainList("리뷰운영정책"))
+        itemList.add(MyPageMainList("마켓팅 수신 동의"))
         itemList.add(MyPageMainList("개인정보 처리방침"))
 
         // 어댑터 생성 및 설정
@@ -75,9 +79,15 @@ class MyPageActivity : AppCompatActivity() {
                     "내가 쓴 리뷰" -> startActivity(Intent(this@MyPageActivity, MyReviewActivity::class.java))
                     "공지사항" -> startActivity(Intent(this@MyPageActivity, NoticeActivity::class.java))
                     "FAQ" -> startActivity(Intent(this@MyPageActivity, FAQ_Activity::class.java))
-                    "1:1 문의" -> startActivity(Intent(this@MyPageActivity, QnA_Activity::class.java))
+                    "1:1 문의" -> {
+                        ViewQnAList().getInquiryList()
+                        runBlocking {
+                            delay(1000)
+                        }
+                        startActivity(Intent(this@MyPageActivity, QnA_Activity::class.java))
+                    }
                     "서비스 이용약관" -> startActivity(Intent(this@MyPageActivity, ToS_Activity::class.java))
-                    "리뷰운영정책" -> startActivity(Intent(this@MyPageActivity, ROP_Activity::class.java))
+                    "마켓팅 수신 동의" -> startActivity(Intent(this@MyPageActivity, ROP_Activity::class.java))
                     "개인정보 처리방침" -> startActivity(Intent(this@MyPageActivity, PrivacyPolicyActivity::class.java))
                 }
             }

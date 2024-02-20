@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/white">
+    
+    <ImageView
+        android:id="@+id/usage_list_iv1"
+        android:layout_width="72dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/my_page_usage_ic1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/usage_list_iv2"
+        android:layout_width="75dp"
+        android:layout_height="18dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/my_page_usage_ic2"
+        app:layout_constraintTop_toTopOf="@id/usage_list_iv1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/usage_list_img"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/camera"
+        app:layout_constraintTop_toBottomOf="@id/usage_list_iv1"
+        app:layout_constraintStart_toStartOf="@id/usage_list_iv1"/>
+    
+    <ImageView
+        android:id="@+id/usage_list_iv3"
+        android:layout_width="70dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/my_page_usage_ic3"
+        app:layout_constraintTop_toTopOf="@id/usage_list_img"
+        app:layout_constraintStart_toEndOf="@id/usage_list_img"/>
+
+    <TextView
+        android:id="@+id/usage_list_product_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Canon [렌즈 포함] EOS 8Canon..."
+        android:textColor="@color/gray_800"
+        android:textSize="14sp"
+        app:layout_constraintTop_toBottomOf="@id/usage_list_iv3"
+        app:layout_constraintStart_toStartOf="@id/usage_list_iv3"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="3일 17시간"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintEnd_toStartOf="@id/usage_list_tv2"
+        app:layout_constraintBottom_toBottomOf="@id/usage_list_tv2"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="250,000"
+        android:textSize="14sp"
+        android:textColor="@color/gray_800"
+        app:layout_constraintEnd_toStartOf="@id/usage_list_tv3"
+        app:layout_constraintBottom_toBottomOf="@id/usage_list_tv3"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="원"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintEnd_toStartOf="@id/usage_list_tv4"
+        app:layout_constraintBottom_toBottomOf="@id/usage_list_tv4"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="보증금"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintEnd_toStartOf="@id/usage_list_tv5"
+        app:layout_constraintBottom_toBottomOf="@id/usage_list_tv5"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:text="500,000"
+        android:textSize="14sp"
+        android:textColor="@color/blue_300"
+        app:layout_constraintEnd_toStartOf="@id/usage_list_tv6"
+        app:layout_constraintBottom_toBottomOf="@id/usage_list_tv6"/>
+
+    <TextView
+        android:id="@+id/usage_list_tv6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="18dp"
+        android:text="원"
+        android:textSize="12sp"
+        android:textColor="@color/gray_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usage_list_product_tv"/>
+
+    <View
+        android:id="@+id/usage_list_view"
+        android:layout_width="328dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_centerInParent="true"
+        android:background="@color/gray_200"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/usage_list_tv6"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

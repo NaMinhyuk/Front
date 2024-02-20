@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/faq_list_tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Q."
+        android:textColor="@color/blue_300"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    
+    <TextView
+        android:id="@+id/faq_list_tv2"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="FAQ 타이틀 예시 텍스트입니다."
+        android:textColor="@color/gray_900"
+        android:textSize="14sp"
+        app:layout_constraintTop_toTopOf="@id/faq_list_tv1"
+        app:layout_constraintStart_toEndOf="@id/faq_list_tv1"/>
+    
+    <ImageView
+        android:id="@+id/faq_list_arrow"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/arrow_down_ic"
+        app:layout_constraintTop_toTopOf="@id/faq_list_tv1"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+        android:id="@+id/faq_list_view"
+        android:layout_width="360dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:background="@color/gray_200"
+        app:layout_constraintTop_toBottomOf="@id/faq_list_tv1"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

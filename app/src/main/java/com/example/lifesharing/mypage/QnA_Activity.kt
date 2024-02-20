@@ -2,6 +2,7 @@ package com.example.lifesharing.mypage
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import com.google.android.material.tabs.TabLayout
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +23,14 @@ class QnA_Activity  : AppCompatActivity() {
         backIv.setOnClickListener {
             // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드
             val intent = Intent(this, MyPageActivity::class.java)
+            startActivity(intent)
+        }
+
+        val writeBtn = findViewById<Button>(R.id.go_write_qna_btn)
+
+        writeBtn.setOnClickListener{
+
+            val intent = Intent(this, WriteQnAActivity ::class.java)
             startActivity(intent)
         }
 

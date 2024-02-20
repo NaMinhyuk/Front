@@ -8,8 +8,8 @@
 
     <FrameLayout
         android:id="@+id/my_page_profile_fl"
-        android:layout_width="360dp"
-        android:layout_height="332dp"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
         android:background="@color/gray_100">
 
         <ImageView
@@ -204,7 +204,7 @@
     </FrameLayout>
 
     <ScrollView
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
