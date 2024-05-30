@@ -33,6 +33,7 @@
     <color name="gray_100">#F2F3F5</color>
     <color name="gray_50">#F7F8FA</color>
 
+    <color name="blue_500">#141277ED</color>
     <color name="blue_400">#0C62C8</color>
     <color name="blue_300">#1277ED</color>
     <color name="blue_200">#60A2EF</color>
@@ -40,5 +41,14 @@
 
     <color name="error">#EF2B2A</color>
     <color name="success">#08C152</color>
+
+    <color name="received_message_backgroud">#fff</color>
+    <color name="send_message_background">#496B9F</color>
+
+    <color name="red_100">#ED6112</color>
+    <color name="red_200">#1FED6112</color>
+    <color name="red_300">#FFE6E3</color>
+    <color name="red_500">#E13017</color>
+
 
 </resources>

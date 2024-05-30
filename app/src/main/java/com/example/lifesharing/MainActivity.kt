@@ -3,12 +3,14 @@ package com.example.lifesharing
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.example.lifesharing.databinding.ActivityMainBinding
 import com.example.lifesharing.home.HomeFragment
-import com.example.lifesharing.messenger.MessengerFragment
+import com.example.lifesharing.messenger.userList.MessengerFragment
 import com.example.lifesharing.mypage.MyPageActivity
 import com.example.lifesharing.regist.RegistrationFragment
 import com.example.lifesharing.reservation.ReservationFragment
+import com.google.firebase.messaging.FirebaseMessaging
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,7 +23,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBottomNavigation()
-
     }
 
     private var homeIconSelected = false
@@ -102,7 +103,6 @@ class MainActivity : AppCompatActivity() {
                     val intent = Intent(this@MainActivity, MyPageActivity::class.java)
                     startActivity(intent)
 
-
                     homeIconSelected = false
                     reserveIconSelected = false
                     registIconSelected = false
@@ -128,5 +128,15 @@ class MainActivity : AppCompatActivity() {
             .setIcon(if (messengerIconSelected) R.drawable.btm_messenger_select_ic else R.drawable.btm_messenger_ic)
         binding.mainBottomNavi.menu.findItem(R.id.mypageFragment)
             .setIcon(if (mypageIconSelected) R.drawable.btm_my_page_ic else R.drawable.btm_my_page_ic)
+    }
+
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        if (intent.getBooleanExtra("navigateToHome", false)) {
+            // FragmentManager를 사용하여 HomeFragment를 표시
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.main_frame, HomeFragment())
+            transaction.commit()
+        }
     }
 }

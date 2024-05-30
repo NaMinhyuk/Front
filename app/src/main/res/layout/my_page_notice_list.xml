@@ -15,9 +15,10 @@
         android:text="공지사항 타이틀 예시입니다."
         android:textColor="@color/gray_900"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-..
+
     <TextView
         android:id="@+id/notice_date_tv"
         android:layout_width="wrap_content"

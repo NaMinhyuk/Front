@@ -17,7 +17,7 @@
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
-    
+
     <TextView
         android:id="@+id/faq_list_tv2"
         android:layout_width="280dp"
@@ -28,7 +28,7 @@
         android:textSize="14sp"
         app:layout_constraintTop_toTopOf="@id/faq_list_tv1"
         app:layout_constraintStart_toEndOf="@id/faq_list_tv1"/>
-    
+
     <ImageView
         android:id="@+id/faq_list_arrow"
         android:layout_width="24dp"
@@ -42,11 +42,12 @@
         android:id="@+id/faq_list_view"
         android:layout_width="360dp"
         android:layout_height="1dp"
-        android:layout_marginTop="20dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:background="@color/gray_200"
-        app:layout_constraintTop_toBottomOf="@id/faq_list_tv1"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/faq_list_tv1" />
 
     <ImageView
         android:id="@+id/faq_list_detail_iv"
@@ -57,7 +58,7 @@
         app:layout_constraintTop_toBottomOf="@id/faq_list_view"
         app:layout_constraintStart_toStartOf="parent"
         android:visibility="gone"/>
-    
+
     <TextView
         android:id="@+id/faq_list_detail_tv"
         android:layout_width="match_parent"

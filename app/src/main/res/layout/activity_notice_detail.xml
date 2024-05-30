@@ -110,13 +110,13 @@
         android:id="@+id/notice_detail_go_list_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="165dp"
         android:layout_marginTop="3dp"
         android:text="목록"
         android:textColor="@color/gray_900"
         android:textSize="13sp"
-        app:layout_constraintTop_toTopOf="@id/notice_detail_previous_ic"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/notice_detail_previous_ic" />
 
     <TextView
         android:id="@+id/notice_detail_next_tv"

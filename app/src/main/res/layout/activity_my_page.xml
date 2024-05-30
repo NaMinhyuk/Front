@@ -9,30 +9,27 @@
     <FrameLayout
         android:id="@+id/my_page_profile_fl"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:background="@color/gray_100">
-
-        <ImageView
-            android:id="@+id/my_page_profile_box"
-            android:layout_width="328dp"
-            android:layout_height="246dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="24dp"
-            android:src="@drawable/mypage_main_profile" />
+        android:layout_height="332dp"
+        android:background="@color/gray_100"
+        android:layout_gravity="center">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mypage_back_whiteround">
 
             <ImageView
-                android:id="@+id/my_page_profile_iv1"
+                android:id="@+id/my_page_image"
                 android:layout_width="67dp"
                 android:layout_height="67dp"
                 android:layout_marginStart="40dp"
-                android:layout_marginTop="87dp"
+                android:layout_marginTop="40dp"
                 android:src="@drawable/mypage_profile_person"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/my_page_profile_iv2"
@@ -41,101 +38,82 @@
                 android:layout_marginStart="42dp"
                 android:layout_marginTop="41dp"
                 android:src="@drawable/mypage_profile_change_img"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_iv1"
-                app:layout_constraintStart_toStartOf="@id/my_page_profile_iv1"/>
+                app:layout_constraintStart_toStartOf="@id/my_page_image"
+                app:layout_constraintTop_toTopOf="@id/my_page_image" />
 
             <TextView
-                android:id="@+id/my_page_profile_tv1"
-                android:layout_width="58dp"
+                android:id="@+id/my_page_nickname"
+                android:layout_width="wrap_content"
                 android:layout_height="26dp"
-                android:layout_marginTop="6dp"
                 android:layout_marginStart="13dp"
+                android:layout_marginTop="6dp"
                 android:text="김댕댕"
                 android:textColor="@color/black"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textSize="20sp"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_iv1"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_iv1"/>
+                app:layout_constraintStart_toEndOf="@id/my_page_image"
+                app:layout_constraintTop_toTopOf="@id/my_page_image" />
 
             <TextView
-                android:id="@+id/my_page_profile_tv2"
+                android:id="@+id/my_page_user_location"
                 android:layout_width="34dp"
                 android:layout_height="18dp"
-                android:layout_marginTop="6dp"
+                android:layout_marginStart="3dp"
                 android:text="무거동"
                 android:textColor="@color/gray_500"
                 android:textSize="12sp"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_tv1"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_tv1"/>
+                app:layout_constraintBottom_toBottomOf="@+id/my_page_nickname"
+                app:layout_constraintStart_toEndOf="@id/my_page_nickname"
+                app:layout_constraintTop_toTopOf="@id/my_page_nickname" />
 
-            <ImageView
-                android:id="@+id/my_page_star1"
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/detail_star"
-                app:layout_constraintStart_toStartOf="@id/my_page_profile_tv1"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_tv1"/>
+                android:isIndicator="true"
+                android:numStars="4"
+                android:rating="0"
+                android:stepSize="1"
+                android:progressTint="@color/Blue300"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/my_page_nickname"
+                app:layout_constraintTop_toBottomOf="@+id/my_page_nickname" />
 
-            <ImageView
-                android:id="@+id/my_page_star2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/detail_star"
-                app:layout_constraintStart_toEndOf="@id/my_page_star1"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_tv1"/>
 
-            <ImageView
-                android:id="@+id/my_page_star3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/detail_star"
-                app:layout_constraintStart_toEndOf="@id/my_page_star2"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_tv1"/>
-            
-            <ImageView
-                android:id="@+id/my_page_star4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:src="@drawable/detail_star"
-                app:layout_constraintStart_toEndOf="@id/my_page_star3"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_tv1"/>
-            
             <TextView
                 android:id="@+id/my_page_star_num"
-                android:layout_width="32dp"
-                android:layout_height="15dp"
-                android:layout_marginStart="1dp"
-                android:text="(758)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(0)"
                 android:textColor="@color/gray_500"
                 android:textSize="11dp"
-                app:layout_constraintStart_toEndOf="@id/my_page_star4"
-                app:layout_constraintTop_toTopOf="@id/my_page_star4"/>
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingBar"
+                app:layout_constraintStart_toEndOf="@+id/ratingBar"
+                app:layout_constraintTop_toTopOf="@+id/ratingBar" />
 
             <View
                 android:id="@+id/my_page_profile_iv3"
-                android:layout_width="282dp"
+                android:layout_width="320dp"
                 android:layout_height="1dp"
-                android:layout_marginStart="39dp"
-                android:layout_marginTop="20dp"
                 android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
                 android:background="@color/gray_200"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_iv1"
-                app:layout_constraintStart_toStartOf="parent"/>
-            
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/my_page_image" />
+
             <ImageView
                 android:id="@+id/my_page_profile_iv4"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginTop="22dp"
                 android:layout_marginStart="38dp"
-                app:tint="@color/blue_300"
+                android:layout_marginTop="28dp"
                 android:src="@drawable/mypage_profile_coin"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/my_page_profile_iv3"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:tint="@color/blue_300" />
 
             <TextView
                 android:id="@+id/my_page_profile_tv3"
@@ -144,60 +122,61 @@
                 android:layout_marginStart="2dp"
                 android:text="보유 포인트"
                 android:textColor="@color/blue_300"
-                android:textSize="15sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_iv4"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_iv4"/>
+                app:layout_constraintStart_toEndOf="@id/my_page_profile_iv4"
+                app:layout_constraintTop_toTopOf="@id/my_page_profile_iv4" />
 
             <TextView
-                android:id="@+id/my_page_profile_tv4"
+                android:id="@+id/my_page_user_point"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="18dp"
-                android:layout_marginStart="76dp"
+                android:layout_marginEnd="50dp"
                 android:text="160,000"
-                android:textSize="24dp"
                 android:textColor="@color/black"
+                android:textSize="24dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_iv3"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_tv3"/>
+                app:layout_constraintBottom_toBottomOf="@+id/my_page_profile_tv3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/my_page_profile_tv3" />
+
             <TextView
                 android:id="@+id/my_page_profile_tv5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="1dp"
                 android:text="P"
-                android:textSize="24dp"
                 android:textColor="@color/black"
+                android:textSize="24dp"
                 android:textStyle="bold"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_tv4"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_tv4"/>
+                app:layout_constraintStart_toEndOf="@id/my_page_user_point"
+                app:layout_constraintTop_toTopOf="@id/my_page_user_point" />
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/my_page_profile_bt1"
                 android:layout_width="145dp"
                 android:layout_height="54dp"
-                android:layout_marginTop="19dp"
-                android:layout_marginStart="35dp"
+                android:layout_marginTop="25dp"
                 android:backgroundTint="@color/gray_100"
                 android:text="인출"
+                android:textColor="@color/gray_600"
                 android:textSize="14dp"
                 android:textStyle="normal"
-                android:textColor="@color/gray_600"
-                app:layout_constraintTop_toBottomOf="@id/my_page_profile_iv4"
-                app:layout_constraintStart_toStartOf="parent"/>
+                app:layout_constraintStart_toStartOf="@+id/my_page_profile_iv4"
+                app:layout_constraintTop_toBottomOf="@id/my_page_profile_iv4" />
 
-            <Button
+            <android.widget.Button
                 android:id="@+id/my_page_profile_bt2"
                 android:layout_width="145dp"
                 android:layout_height="54dp"
                 android:backgroundTint="@color/blue_300"
                 android:text="충전"
+                android:textColor="@color/white"
                 android:textSize="14dp"
                 android:textStyle="normal"
-                android:textColor="@color/white"
-                app:layout_constraintTop_toTopOf="@id/my_page_profile_bt1"
-                app:layout_constraintStart_toEndOf="@id/my_page_profile_bt1"/>
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/my_page_profile_bt1"
+                app:layout_constraintTop_toTopOf="@id/my_page_profile_bt1" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -214,10 +193,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/my_page_main_rv"
-                tools:listitem="@layout/my_page_main_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/my_page_main_list" />
 
         </LinearLayout>
     </ScrollView>

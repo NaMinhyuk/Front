@@ -5,19 +5,20 @@ import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.lifesharing.R
+import com.example.lifesharing.databinding.ActivityPrivacyPolicyBinding
 
 // Privacy Policy (개인정보 처리지침)
 class PrivacyPolicyActivity  : AppCompatActivity() {
+
+    private lateinit var binding: ActivityPrivacyPolicyBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityPrivacyPolicyBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_privacy_policy)
+        setContentView(binding.root)
 
-        val backIv = findViewById<ImageView>(R.id.privacy_back_iv)
-
-        backIv.setOnClickListener {
-            // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
+        // 뒤로가기
+        binding.privacyBackIv.setOnClickListener {
+            finish()
         }
     }
 }

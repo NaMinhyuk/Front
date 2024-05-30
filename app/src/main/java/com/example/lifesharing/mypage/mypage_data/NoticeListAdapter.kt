@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
 
-
 class NoticeListAdapter(private var noticeList: List<NoticeListData>, private val itemClickListener: OnItemClickListener) : RecyclerView.Adapter<NoticeListAdapter.NoticeViewHolder>() {
 
     interface OnItemClickListener {

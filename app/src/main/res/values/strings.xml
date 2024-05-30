@@ -1,15 +1,27 @@
 <resources>
     <string name="app_name">lifesharing</string>
-    <string name="kakao_app_key">74e2c1e2edf1abbd90419c9de3c7102c</string>
+    <string name="kakao_app_key">fc1682205cf1b8b49fe8e8cdead6d313</string>
     <string name="email_hint">이메일을 입력해주세요.</string>
     <string name="password_hint">비밀번호를 입력해주세요.</string>
-    <string name="hello_blank_fragment">hello world</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="register">회원가입</string>
 
     <string-array name="filter_options">
         <item>최신순</item>
         <item>인기순</item>
         <item>리뷰순</item>
     </string-array>
+
+    <string-array name="res_filter_options">
+        <item>전체</item>
+        <item>MY</item>
+        <item>대여</item>
+    </string-array>
+
+    <string name="res_filter_title">
+        <item>전체 대여 목록</item>
+    </string>
+
 
     <string-array name="mypage_main_list">
         <item>내 정보</item>
@@ -21,8 +33,35 @@
         <item>FAQ</item>
         <item>1:1 문의</item>
         <item>서비스 이용약관</item>
-        <item>마켓팅 수신 동의</item>
+        <item>리뷰운영정책</item>
         <item>개인정보 처리방침</item>
     </string-array>
+    
+    <string-array name="custom_weekdays">
+        <item>일</item>
+        <item>월</item>
+        <item>화</item>
+        <item>수</item>
+        <item>목</item>
+        <item>금</item>
+        <item>토</item>
+    </string-array>
 
+    <string-array name="custom_months">
+        <item>1월</item>
+        <item>2월</item>
+        <item>3월</item>
+        <item>4월</item>
+        <item>5월</item>
+        <item>6월</item>
+        <item>7월</item>
+        <item>8월</item>
+        <item>9월</item>
+        <item>10월</item>
+        <item>11월</item>
+        <item>12월</item>
+    </string-array>
+
+    <string name="qna_reply_no">아직 답변이 오지 않았습니다.\n 빠른 시일내에 답변해 드리겠습니다.\n문의 이메일 example@gmail.com</string>
+    <string name="search_result_empty">검색 결과가 없습니다.</string>
 </resources>

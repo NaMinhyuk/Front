@@ -45,41 +45,41 @@
             android:layout_height="0dp"
             android:layout_weight="0.85" />
 
-        <Button
+        <android.widget.Button
             android:onClick="@{()-> viewModel.kakaoLogin()}"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/kakao_login_button"
             android:drawableLeft="@drawable/kakao_logo"
-            android:paddingLeft="140dp"
+            android:paddingLeft="111dp"
             android:text="   카카오로 로그인"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="#402D33"
             android:textSize="14sp" />
 
-        <Button
+        <android.widget.Button
             android:onClick="@{()-> activity.naverLogin()}"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/naver_logo_btn"
             android:drawableLeft="@drawable/naver_logo"
-            android:paddingLeft="140dp"
+            android:paddingLeft="111dp"
             android:text="   네이버로 로그인"
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textColor="#FFF"
             android:textSize="14sp" />
 
-        <Button
+        <android.widget.Button
             android:onClick="@{(view)-> viewModel.googleLogin(view)}"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/google_logo_btn"
             android:drawableLeft="@drawable/google_logo"
-            android:paddingLeft="140dp"
+            android:paddingLeft="111dp"
             android:text="   Google로 로그인"
             android:textAlignment="textStart"
             android:textAllCaps="false"
@@ -94,45 +94,39 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="20dp"
-            android:weightSum="3"
             android:orientation="horizontal">
 
             <TextView
                 android:onClick="@{()-> viewModel.registerPage()}"
-                android:layout_marginStart="40dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
+                android:textColor="@color/gray_700"
                 android:text="회원가입"
                 android:gravity="center"
                 android:textSize="14sp" />
 
-            <View
-                android:layout_width="2dp"
-                android:layout_height="14dp"
-                android:background="#D7D8E8" />
 
             <TextView
                 android:onClick="@{()-> viewModel.resetPassword()}"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="30dp"
                 android:layout_weight="1"
+                android:textColor="@color/gray_700"
                 android:text="비밀번호 초기화"
+                android:gravity="center"
                 android:textSize="14sp" />
 
-            <View
-                android:layout_width="2dp"
-                android:layout_height="14dp"
-                android:background="#D7D8E8" />
+
 
             <TextView
                 android:onClick="@{()-> viewModel.loginToEmail()}"
-                android:layout_marginStart="20dp"
                 android:layout_weight="1"
-                android:layout_width="wrap_content"
+                android:textColor="@color/gray_700"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14sp"
+                android:gravity="center"
                 android:text="이메일로 로그인" />
 
         </LinearLayout>

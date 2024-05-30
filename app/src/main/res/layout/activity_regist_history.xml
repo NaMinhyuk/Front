@@ -10,9 +10,9 @@
         android:id="@+id/reg_his_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
-        app:srcCompat="@drawable/back_ic"
+        android:src="@drawable/back_ic"
         app:tint="@color/gray_600"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -21,20 +21,20 @@
         android:id="@+id/reg_his_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="106dp"
         android:text="등록내역"
         android:textColor="@color/gray_800"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/reg_his_back_iv"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="@+id/reg_his_back_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/reg_his_back_iv" />
 
     <ImageView
         android:id="@+id/reg_his_search_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="32dp"
         android:src="@drawable/search_ic"
         app:tint="@color/gray_600"
@@ -43,12 +43,38 @@
 
     <View
         android:id="@+id/reg_his_line_view"
-        android:layout_width="360dp"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
         android:background="@color/gray_200"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/reg_his_title_tv"/>
+        app:layout_constraintTop_toBottomOf="@id/reg_his_title_tv" />
+
+    <TextView
+        android:id="@+id/product_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="총 7건"
+        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@+id/reg_his_line_view"
+        app:layout_constraintTop_toBottomOf="@+id/reg_his_line_view" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/regist_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/product_cnt"
+        tools:listitem="@layout/register_history_item"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

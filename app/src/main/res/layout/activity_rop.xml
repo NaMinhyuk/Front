@@ -9,9 +9,9 @@
         android:id="@+id/rop_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
-        app:srcCompat="@drawable/back_ic"
+        android:src="@drawable/back_ic"
         app:tint="@color/gray_600"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -20,14 +20,14 @@
         android:id="@+id/rop_title_tv"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="80dp"
-        android:text="마켓팅 수신 동의"
+        android:text="리뷰운영정책"
         android:textColor="@color/gray_800"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/rop_back_iv"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="@+id/rop_back_iv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/rop_back_iv" />
 
     <View
         android:id="@+id/rop_line_view"
@@ -46,9 +46,11 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
-            android:layout_width="328dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_gravity="center"
             android:orientation="vertical">
 

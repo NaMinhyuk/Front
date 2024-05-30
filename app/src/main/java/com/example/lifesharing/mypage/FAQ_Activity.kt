@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
+import com.example.lifesharing.databinding.ActivityQnaBinding
 import com.example.lifesharing.mypage.mypage_data.FAQListAdapter
 import com.example.lifesharing.mypage.mypage_data.FAQListData
 
@@ -23,8 +24,10 @@ class FAQ_Activity : AppCompatActivity() {
 
         backIv.setOnClickListener {
             // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, MyPageActivity::class.java)
+//            startActivity(intent)
+
+            finish()
         }
 
         recyclerView = findViewById(R.id.my_page_faq_rv)
@@ -33,6 +36,7 @@ class FAQ_Activity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
     }
 
+    // 더미데이터
     private fun getSampleFAQData() : List<FAQListData> {
         val sampleData = mutableListOf<FAQListData>()
         sampleData.add(FAQListData("첫번째 FAQ 타이틀 예시 텍스트 입니다."))

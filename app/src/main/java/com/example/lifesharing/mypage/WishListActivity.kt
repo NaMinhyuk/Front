@@ -2,90 +2,50 @@ package com.example.lifesharing.mypage
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifesharing.R
-import com.example.lifesharing.mypage.mypage_api.ViewWishList
+import com.example.lifesharing.Product_Detail_Activity
+import com.example.lifesharing.databinding.ActivityWishListBinding
+import com.example.lifesharing.mypage.model.response_body.HeartList
+import com.example.lifesharing.mypage.mypage_data.OnItemClickListener
 import com.example.lifesharing.mypage.mypage_data.WishListAdapter
-import com.example.lifesharing.mypage.mypage_data.WishListData
+import com.example.lifesharing.mypage.viewModel.HeartListViewModel
 
 
-// Wish List (찜 목록)
-class WishListActivity  : AppCompatActivity() {
+/** Wish List (찜 목록) */
+class WishListActivity  : AppCompatActivity(), OnItemClickListener {
 
+    private lateinit var binding: ActivityWishListBinding
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: WishListAdapter
-    private val viewWishList = ViewWishList()
+    private lateinit var adapter: WishListAdapter    // 찜 목록 리사이클러뷰 어댑터
+
+    private lateinit var viewModel: HeartListViewModel  // 찜 목록 조회 ViewModal
+    var productId: Long ?= null   // 아이템 클릭 시 필요한 제품 ID 변수 생성
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityWishListBinding.inflate(layoutInflater)
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_wish_list)
+        setContentView(binding.root)
 
-        // RecyclerView 초기화
-        recyclerView = findViewById(R.id.wish_item_rv)
-
-        adapter = WishListAdapter(ArrayList())
-        recyclerView.adapter = adapter
-
-        recyclerView.layoutManager = GridLayoutManager(this, 2)
-
-        // 어댑터에 데이터 변경을 알리고 갱신
-        adapter.notifyDataSetChanged()
-
-        val backIv = findViewById<ImageView>(R.id.wish_back_iv)
-
-        backIv.setOnClickListener {
-            // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
+        // 뒤로가기
+        binding.wishBackIv.setOnClickListener {
+            finish()
         }
 
-        recyclerView = findViewById(R.id.wish_item_rv)
-        recyclerView.adapter = adapter
+//        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 무거동", reviewCount = "(100)", name = "카메라" , deposit = 500000, dayPrice = 10000))
+//        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
 
-        // api를 통해 데이터 받아오기
-        val viewWishList = ViewWishList()
-        val wishListAdapter = WishListAdapter(ArrayList())
+        // 리사이클러 뷰 할당
+        recyclerView = binding.wishItemRv
 
-        viewWishList.getWishList(onSuccess = { heartResults ->
-            val wishListItems = heartResults.map { heartResult ->
-                // HeartResult를 WishListData로 변환
-                WishListData(
-                    img = heartResult.image_url ?: R.drawable.camera.toString(),
-                    location = heartResult.location,
-                    reviewCount = heartResult.reviewCount,
-                    name = heartResult.name,
-                    deposit = heartResult.deposit,
-                    dayPrice = heartResult.dayPrice
-                )
-            }
-            wishListAdapter.setItems(ArrayList(wishListItems)) // 변환된 데이터로 RecyclerView를 업데이트
-        },
-            onFailure = { errorMessage ->
-                Toast.makeText(this@WishListActivity, errorMessage, Toast.LENGTH_SHORT).show()
-            }
-        )
-    }
-
-        /*val WishListItem = ArrayList<WishListData>() // 데이터 리스트 준비
-
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 무거동", reviewCount = "(100)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-        WishListItem.add(WishListData(img = R.drawable.camara, location = "울산 삼산", reviewCount = "(0)", name = "카메라" , deposit = 500000, dayPrice = 10000))
-
-
+        val heartListItem = ArrayList<HeartList>() // 데이터 리스트 준비
 
         // 어댑터 생성 및 설정
-        adapter = WishListAdapter(WishListItem)
+        adapter = WishListAdapter(heartListItem, this)
         recyclerView.adapter = adapter
 
         // 리사이클러뷰 레이아웃 매니저 설정
@@ -93,5 +53,27 @@ class WishListActivity  : AppCompatActivity() {
 
         // 어댑터에 데이터 변경을 알리고 갱신
         adapter.notifyDataSetChanged()
-    }*/
+
+        viewModel = ViewModelProvider(this).get(HeartListViewModel::class.java)
+        viewModel.getHeartList()   // 찜 목록 조회 요청
+        viewModel.heartListItem.observe(this, Observer { heartItems ->  // 찜 목록 관찰
+//            val item = heartItems.map { heartItem ->
+//                WishListData(
+//                    img = heartItem.imageUrl.toString(),
+//                    location = heartItem.location,
+//                    reviewCount = heartItem.reviewCount.toString(),
+//                    name = heartItem.name,
+//                    deposit = heartItem.deposit,
+//                    dayPrice = heartItem.dayPrice
+//                )
+//            }
+            adapter.setItems(ArrayList(heartItems))   // 어댑터에 새로운 찜 리스트로 업데이트
+        })
+    }
+
+    override fun onItemClick(heartList: HeartList) {
+        val intent = Intent(this, Product_Detail_Activity::class.java)
+        intent.putExtra("productId", heartList.productId) // 상세 화면 전환 시 필요한 제품 식별자
+        startActivity(intent)
+    }
 }

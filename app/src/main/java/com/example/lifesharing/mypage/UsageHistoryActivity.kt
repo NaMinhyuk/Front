@@ -4,51 +4,85 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
-import com.example.lifesharing.mypage.mypage_data.FAQListAdapter
-import com.example.lifesharing.mypage.mypage_data.FAQListData
-import com.example.lifesharing.mypage.mypage_data.UsageListAdapter
-import com.example.lifesharing.mypage.mypage_data.UsageListData
+import com.example.lifesharing.databinding.ActivityUsageHistoryBinding
+import com.example.lifesharing.mypage.interfaces.ReviewWriteClickListener
+import com.example.lifesharing.mypage.interfaces.UsageItemClickListener
+import com.example.lifesharing.mypage.model.response_body.UsageHistoryResult
+import com.example.lifesharing.mypage.mypage_data.UsageHistory
+import com.example.lifesharing.mypage.mypage_data.UsageHistoryAdapter
+import com.example.lifesharing.mypage.review.registerReview.RegisterReviewActivity
+import com.example.lifesharing.mypage.viewModel.UsageHistoryViewModel
 
 
 // Usage History (이용내역)
-class UsageHistoryActivity : AppCompatActivity() {
+class UsageHistoryActivity : AppCompatActivity(), ReviewWriteClickListener, UsageItemClickListener {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: UsageListAdapter
+    private lateinit var binding: ActivityUsageHistoryBinding
+    private lateinit var adapter: UsageHistoryAdapter
+    private lateinit var viewModel : UsageHistoryViewModel
+
+    // 더미데이터
+    private var historyList = listOf(
+        UsageHistory(false, "https://lifesharing.s3.ap-northeast-2.amazonaws.com/product/8e4f2c95-64ea-404c-a7c2-f0b7376d9e9e_img.png", "울산 무거동", "Canon [렌즈 포함] EOS 8CanonCanon \n" +
+                "[렌즈 포함] EOS R8CanonCanon ", "3일 17시간", "250,000", "500,000"),
+        UsageHistory(true, "https://lifesharing.s3.ap-northeast-2.amazonaws.com/product/8e4f2c95-64ea-404c-a7c2-f0b7376d9e9e_img.png", "울산 무거동", "Canon [렌즈 포함] EOS 8CanonCanon \n" +
+                "[렌즈 포함] EOS R8CanonCanon ", "4일 3시간", "250,000", "500,000")
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityUsageHistoryBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_usage_history)
+        setContentView(binding.root)
 
-        val backIv = findViewById<ImageView>(R.id.usage_his_back_iv)
+        val searchIv = findViewById<ImageView>(R.id.usage_his_search_iv)
 
-        backIv.setOnClickListener {
-            // 이미지뷰 클릭 시 MyPageActivity로 이동하는 코드
-            val intent = Intent(this, MyPageActivity::class.java)
-            startActivity(intent)
+        setupRecyclerView()
+
+        // 뒤로가기 버튼
+        binding.usageHisBackIv.setOnClickListener {
+           finish()
         }
 
-        recyclerView = findViewById(R.id.my_page_usage_rv)
-        adapter = UsageListAdapter(getSampleUsageData()) // 더미 데이터로 어댑터 초기화
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
+        // 검색 버튼
+        searchIv.setOnClickListener {
+            val registerReviewActivity = Intent(this, RegisterReviewActivity::class.java)
+            startActivity(registerReviewActivity)
+        }
 
+        // 예약 목록 viewModel 초기화
+        viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory(application)).get(UsageHistoryViewModel::class.java)
+        viewModel.loadUsageHistory()
+        viewModel.usageHistoryList.observe(this, Observer { usageHistoryItem ->
+            // RecyclerView 어댑터 업데이트
+            adapter.setItems(ArrayList(usageHistoryItem))
+
+            // 예약 목록 개수 조회
+            val listSize = adapter.itemCount
+            binding.getCount.text = listSize.toString()
+        })
     }
 
-    private fun getSampleUsageData() : List<UsageListData> {
-        val sampleData = mutableListOf<UsageListData>()
-        sampleData.add(UsageListData("Canon [렌즈 포함] EOS 8 Canon...", "3일 17시간", "250,000", "500,000"))
-        sampleData.add(UsageListData("Nike X Stussy Full Zip Washed ...", "5일 9시간", "35,000", "80,000"))
-        sampleData.add(UsageListData("Blitzway Space Astro Boy Jet ...", "2일 10시간", "80,000", "150,000"))
-        sampleData.add(UsageListData("Adidas Gazelle Germany Off White...", "7일 18시간", "20,000", "50,000"))
-        sampleData.add(UsageListData("CDG Logo Coach Jacket Black", "3일 2시간", "20,000", "65,000"))
-        sampleData.add(UsageListData("Bottega Veneta Bi-Fold Wallet...", "5일 20시간", "80,000", "250,000"))
-        sampleData.add(UsageListData("Supreme Backpack Black - 24SS", "11일 13시간", "45,000", "180,000"))
-
-        return sampleData
+    private fun setupRecyclerView() {
+        adapter = UsageHistoryAdapter(ArrayList(emptyList()), this , this)
+        binding.userListView.layoutManager = LinearLayoutManager(this)
+        binding.userListView.adapter = adapter
     }
 
+    // 리뷰 작성하기 클릭 이벤트 리스너
+    override fun onReviewWrite(usageHistoryItem: UsageHistoryResult) {
+        val intent = Intent(this, RegisterReviewActivity::class.java)
+        intent.putExtra("reservationId", usageHistoryItem.reservationId)
+        startActivity(intent)
+    }
+
+    override fun onItemClick(usageHistoryItem: UsageHistoryResult) {
+        //val intent = Intent(this, )
+        /**
+         * 예약 리스트 클릭 시 결제 상세 화면으로 넘어가도록 구현하기
+         */
+    }
 }

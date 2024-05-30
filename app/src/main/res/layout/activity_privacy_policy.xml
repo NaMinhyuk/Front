@@ -9,9 +9,9 @@
         android:id="@+id/privacy_back_iv"
         android:layout_width="32dp"
         android:layout_height="32dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginStart="16dp"
-        app:srcCompat="@drawable/back_ic"
+        android:src="@drawable/back_ic"
         app:tint="@color/gray_600"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
@@ -21,13 +21,13 @@
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
-        android:layout_marginStart="80dp"
         android:text="개인정보 처리방침"
         android:textColor="@color/gray_800"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/privacy_back_iv"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/privacy_line_view"
@@ -41,16 +41,18 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/privacy_line_view"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/privacy_line_view">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
-            android:layout_marginTop="24dp"
             android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -60,7 +62,7 @@
                 android:text="Title 내용 따라갑니다."
                 android:textColor="@color/black"
                 android:textSize="17sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/privacy_tv2"
@@ -70,7 +72,7 @@
                 android:text="제 1조 (목적)"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv3"
@@ -80,7 +82,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv4"
@@ -89,7 +91,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv5"
@@ -98,7 +100,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv6"
@@ -108,7 +110,7 @@
                 android:text="제 2조 (이용약관의 효력 및 변경)"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv7"
@@ -118,7 +120,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv8"
@@ -128,7 +130,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv9"
@@ -138,7 +140,7 @@
                 android:text="이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv10"
@@ -148,7 +150,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv11"
@@ -157,7 +159,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv12"
@@ -167,7 +169,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv13"
@@ -176,7 +178,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv14"
@@ -186,7 +188,7 @@
                 android:text="이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv15"
@@ -196,7 +198,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
             <TextView
                 android:id="@+id/privacy_tv16"
@@ -205,7 +207,7 @@
                 android:text="이용약관 예시 텍스트 입니다. 이용약관 예시 텍스트 입니다."
                 android:textColor="@color/gray_700"
                 android:textSize="14sp"
-                android:textStyle="normal"/>
+                android:textStyle="normal" />
 
         </LinearLayout>
 

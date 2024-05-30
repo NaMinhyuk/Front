@@ -28,13 +28,14 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
         android:text="등록 완료"
         android:textColor="@color/Gray800"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/regist_finish_icon"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="32dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/regist_finish_icon" />
 
     <TextView
         android:layout_width="239dp"
@@ -52,11 +53,11 @@
         android:id="@+id/regist_finish_homebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:src="@drawable/regist_finish_homebtn"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 

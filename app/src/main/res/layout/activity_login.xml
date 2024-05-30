@@ -30,11 +30,14 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:layout_width="24dp"
-                android:layout_height="24dp"
+                android:id="@+id/back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="13dp"
-                android:background="@drawable/back_icon" />
+                android:background="@drawable/back_icon"
+                android:contentDescription="back"
+                android:padding="10dp"/>
 
             <View
                 android:layout_width="80dp"
@@ -44,7 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="38dp"
                 android:layout_marginTop="13dp"
                 android:text="로그인"
                 android:textSize="18sp"
@@ -103,7 +106,9 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email_input_edit_text"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
+                android:contentDescription="email"
+                android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
                 android:text="@={viewModel.email}"
@@ -134,9 +139,10 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password_input"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:inputType="textPassword"
                 android:padding="12dp"
+                android:hint="비밀번호를 입력해주세요"
                 android:text="@={viewModel.password}"
                 android:textAppearance="@style/TextLabel"
                 android:textSize="14sp" />

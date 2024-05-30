@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.lifesharing.R
+import com.example.lifesharing.databinding.ActivityNoticeBinding
 import com.example.lifesharing.mypage.mypage_data.NoticeListAdapter
 import com.example.lifesharing.mypage.mypage_data.NoticeListData
 

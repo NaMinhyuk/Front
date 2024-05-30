@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/res_cal_cl"
+    android:layout_width="328dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/res_current_year"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:textColor="@color/gray_900"
+        android:text="2024년"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/res_current_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textSize="18dp"
+        android:textColor="@color/gray_900"
+        android:text="5월"
+        app:layout_constraintTop_toTopOf="@+id/res_current_year"
+        app:layout_constraintStart_toEndOf="@+id/res_current_year"/>
+
+    <ImageView
+        android:id="@+id/res_cal_prev_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/arrow_right_ic"
+        app:layout_constraintTop_toTopOf="@+id/res_cal_next_btn"
+        app:layout_constraintEnd_toStartOf="@+id/res_cal_next_btn"/>
+
+    <ImageView
+        android:id="@+id/res_cal_next_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/arrow_left_ic"
+        app:layout_constraintTop_toTopOf="@+id/res_current_year"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/res_cal_rl"
+        android:layout_width="328dp"
+        android:layout_height="350dp"
+        tools:listitem="@layout/month_reserve_item"
+        app:layout_constraintTop_toBottomOf="@id/res_current_year"
+        app:layout_constraintStart_toStartOf="@id/res_current_year"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
