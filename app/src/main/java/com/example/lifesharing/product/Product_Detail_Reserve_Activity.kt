@@ -7,15 +7,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifesharing.Product_Detail_Activity
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityProductDetailReserveBinding
 import com.example.lifesharing.product.data.DetailMonthAdapter
 import java.text.SimpleDateFormat
 import java.util.*
-
 class Product_Detail_Reserve_Activity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProductDetailReserveBinding
@@ -31,8 +30,8 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
     private var selectedStartTime: String? = null
     private var selectedEndTime: String? = null
 
-    private var selectedMorningButton: ImageView? = null
-    private var selectedAfternoonButton: ImageView? = null
+    private var selectedMorningButton: Pair<ImageView, TextView>? = null
+    private var selectedAfternoonButton: Pair<ImageView, TextView>? = null
     private var selectedTimeButton: Pair<ImageView, TextView>? = null
 
     // 예시 예약금 데이터 (더미 데이터)
@@ -122,11 +121,10 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
                 enableTimeButtons()
             }
         }
-        calendarRecyclerView.layoutManager = LinearLayoutManager(this)
+        calendarRecyclerView.layoutManager = GridLayoutManager(this, 7) // 7열 그리드 레이아웃으로 변경
         calendarRecyclerView.adapter = calendarAdapter
         updateCalendar()
     }
-
 
     // 달력 데이터 갱신 및 UI 업데이트
     private fun updateCalendar() {
@@ -142,6 +140,7 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         val yearMonthText = year.toString() + "년 " + month
         currentMonthYearTextView.text = yearMonthText
     }
+
 
     // 현재 달의 날짜 데이터 생성
     private fun getCalendarData(calendar: Calendar): List<Date> {
@@ -179,10 +178,6 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
             Pair(binding.reserveHour12Btn, binding.reserveHour12Tv)
         )
 
-        var selectedMorningButton: ImageView? = null
-        var selectedAfternoonButton: ImageView? = null
-        var selectedTimeButton: Pair<ImageView, TextView>? = null
-
         // 시간 버튼 활성화/비활성화 설정 함수
         val enableTimeButtons: (Boolean) -> Unit = { enable ->
             morningButton.isEnabled = enable
@@ -194,8 +189,8 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         morningButton.setOnClickListener {
             // 선택되지 않은 오후 버튼 초기화
             if (selectedAfternoonButton != null) {
-                selectedAfternoonButton?.setImageResource(R.drawable.reserve_time_btn)
-                afternoonText.setTextColor(ContextCompat.getColor(this, R.color.gray_800))
+                selectedAfternoonButton?.first?.setImageResource(R.drawable.reserve_time_btn)
+                selectedAfternoonButton?.second?.setTextColor(ContextCompat.getColor(this, R.color.gray_800))
                 selectedAfternoonButton = null
             }
 
@@ -204,15 +199,15 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
             afternoonButton.isEnabled = false
             morningButton.setImageResource(R.drawable.reserve_selected_btn)
             morningText.setTextColor(ContextCompat.getColor(this, R.color.blue_300))
-            selectedMorningButton = morningButton
+            selectedMorningButton = Pair(morningButton, morningText)
         }
 
         // 오후 버튼 클릭 리스너 설정
         afternoonButton.setOnClickListener {
             // 선택되지 않은 오전 버튼 초기화
             if (selectedMorningButton != null) {
-                selectedMorningButton?.setImageResource(R.drawable.reserve_time_btn)
-                morningText.setTextColor(ContextCompat.getColor(this, R.color.gray_800))
+                selectedMorningButton?.first?.setImageResource(R.drawable.reserve_time_btn)
+                selectedMorningButton?.second?.setTextColor(ContextCompat.getColor(this, R.color.gray_800))
                 selectedMorningButton = null
             }
 
@@ -221,7 +216,7 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
             morningButton.isEnabled = false
             afternoonButton.setImageResource(R.drawable.reserve_selected_btn)
             afternoonText.setTextColor(ContextCompat.getColor(this, R.color.blue_300))
-            selectedAfternoonButton = afternoonButton
+            selectedAfternoonButton = Pair(afternoonButton, afternoonText)
         }
 
         // 시간 버튼 클릭 리스너 설정
@@ -235,17 +230,14 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
                 }
                 updateDateTimeDisplay()
                 checkIfComplete()
-                // 이전 선택된 시간 버튼을 초기 상태로 되돌림
+
+                // 이전 선택된 시간 버튼 초기화
                 if (selectedTimeButton != null) {
                     selectedTimeButton?.first?.setImageResource(R.drawable.reserve_time_btn)
-                    selectedTimeButton?.second?.setTextColor(
-                        ContextCompat.getColor(
-                            this,
-                            R.color.gray_800
-                        )
-                    )
+                    selectedTimeButton?.second?.setTextColor(ContextCompat.getColor(this, R.color.gray_800))
                 }
-                // 선택된 시간 버튼의 이미지와 텍스트 색상을 변경
+
+                // 선택된 시간 버튼 상태 설정
                 button.setImageResource(R.drawable.reserve_selected_btn)
                 textView.setTextColor(ContextCompat.getColor(this, R.color.blue_300))
                 selectedTimeButton = Pair(button, textView)
@@ -253,7 +245,7 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         }
     }
 
-    // 시간 버튼 활성화 함수
+    // 시간 버튼 활성화 설정
     private fun enableTimeButtons() {
         binding.reserveMorningBtn.isEnabled = true
         binding.reserveAfternoonBtn.isEnabled = true
@@ -271,7 +263,7 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         binding.reserveHour12Btn.isEnabled = false
     }
 
-    // 선택된 날짜와 시간 텍스트뷰 업데이트
+    // 선택된 날짜 및 시간 표시 업데이트
     private fun updateDateTimeDisplay() {
         val selectedDates = calendarAdapter.getSelectedDates().toMutableList()
         if (selectedDates.isEmpty()) {
@@ -322,6 +314,7 @@ class Product_Detail_Reserve_Activity : AppCompatActivity() {
         }
     }
 }
+
 
 //    // 대여 요청 처리 (데이터용)
 //    private fun onReserveRequest() {

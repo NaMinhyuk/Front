@@ -1,4 +1,4 @@
-package com.example.lifesharing
+package com.example.lifesharing.product
 
 import android.content.Context
 import android.content.Intent
@@ -12,6 +12,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.bumptech.glide.Glide
+import com.example.lifesharing.BuildConfig
+import com.example.lifesharing.GlobalApplication
+import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivityProductDetailBinding
 import com.example.lifesharing.messenger.userChat.MessengerDetailWithDummy
 import com.example.lifesharing.mypage.mypage_data.UserInfoResultDTO

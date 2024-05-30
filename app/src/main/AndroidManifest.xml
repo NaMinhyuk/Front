@@ -134,7 +134,7 @@
             android:name=".product.Product_Detail_Reserve_Activity"
             android:exported="true" />
         <activity
-            android:name=".Product_Menu_Activity"
+            android:name=".product.Product_Menu_Activity"
             android:exported="true" />
         <activity
             android:name=".product.Product_Detail_Activity"

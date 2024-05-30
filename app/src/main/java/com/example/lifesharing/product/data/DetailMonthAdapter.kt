@@ -52,7 +52,7 @@ class DetailMonthAdapter(private val context: Context, private val onDateSelecte
 
         val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
         val dateString = dateFormat.format(date)
-        val price = reservationPrices[dateString]?.let { "$it" } ?: "x"
+        val price = reservationPrices[dateString]?.let { "$it" } ?: " "
 
         holder.bind(date, price, date == currentDate)
 

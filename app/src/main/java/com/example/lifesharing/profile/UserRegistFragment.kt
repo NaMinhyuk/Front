@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.lifesharing.Product_Detail_Activity
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.databinding.FragmentUserRegistBinding
 import com.example.lifesharing.profile.adapter.SellerProductAdapter
 import com.example.lifesharing.profile.adapter.SellerProductListener

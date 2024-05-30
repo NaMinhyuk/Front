@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.lifesharing.Product_Menu_Activity
+import com.example.lifesharing.product.Product_Menu_Activity
 import com.example.lifesharing.databinding.FragmentFirstCategoryBinding
 
 class First_CategoryFragment() : Fragment() {

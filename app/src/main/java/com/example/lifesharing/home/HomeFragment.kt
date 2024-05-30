@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.widget.ViewPager2
-import com.example.lifesharing.Product_Detail_Activity
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.FragmentHomeBinding
 import com.example.lifesharing.home.home_data.HomeProductClickListener

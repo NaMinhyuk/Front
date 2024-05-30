@@ -14,10 +14,10 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifesharing.Product_Detail_Activity
 import com.example.lifesharing.R
 import com.example.lifesharing.databinding.ActivitySearchBinding
 import com.example.lifesharing.home.HomeFragment
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.search.model.response_body.SearchResult
 import com.example.lifesharing.search.viewModel.SearchViewModel
 import com.kakao.vectormap.mapwidget.component.Horizontal

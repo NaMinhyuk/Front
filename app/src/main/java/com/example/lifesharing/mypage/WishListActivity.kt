@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.lifesharing.Product_Detail_Activity
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.databinding.ActivityWishListBinding
 import com.example.lifesharing.mypage.model.response_body.HeartList
 import com.example.lifesharing.mypage.mypage_data.OnItemClickListener

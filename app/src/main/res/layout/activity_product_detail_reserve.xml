@@ -190,8 +190,8 @@
 
             <ImageView
                 android:id="@+id/reserve_morning_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintStart_toStartOf="@id/time_select_tv"
                 app:layout_constraintTop_toBottomOf="@id/time_select_tv"
@@ -210,8 +210,8 @@
 
             <ImageView
                 android:id="@+id/reserve_afternoon_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_morning_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_morning_btn"
@@ -230,8 +230,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_1_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toBottomOf="@id/reserve_morning_btn"
                 app:layout_constraintStart_toStartOf="@id/reserve_morning_btn"
@@ -250,8 +250,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_2_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_1_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_1_btn"
@@ -270,8 +270,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_3_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_2_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_2_btn"
@@ -290,8 +290,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_4_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_3_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_3_btn"
@@ -310,8 +310,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_5_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toBottomOf="@id/reserve_hour_1_btn"
                 app:layout_constraintStart_toStartOf="@id/reserve_hour_1_btn"
@@ -330,8 +330,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_6_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_5_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_5_btn"
@@ -350,8 +350,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_7_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_6_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_6_btn"
@@ -370,8 +370,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_8_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_7_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_7_btn"
@@ -390,8 +390,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_9_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toBottomOf="@id/reserve_hour_5_btn"
                 app:layout_constraintStart_toStartOf="@id/reserve_hour_5_btn"
@@ -410,8 +410,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_10_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_9_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_9_btn"
@@ -430,8 +430,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_11_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_10_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_10_btn"
@@ -450,8 +450,8 @@
 
             <ImageView
                 android:id="@+id/reserve_hour_12_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="76dp"
+                android:layout_height="42dp"
                 android:src="@drawable/reserve_time_btn"
                 app:layout_constraintTop_toTopOf="@id/reserve_hour_11_btn"
                 app:layout_constraintStart_toEndOf="@id/reserve_hour_11_btn"
@@ -483,6 +483,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 

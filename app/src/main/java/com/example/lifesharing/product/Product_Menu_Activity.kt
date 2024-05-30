@@ -1,4 +1,4 @@
-package com.example.lifesharing
+package com.example.lifesharing.product
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.lifesharing.product.data.MenuAdapter
 import com.example.lifesharing.databinding.ActivityProductMenuBinding
+import com.example.lifesharing.product.Product_Detail_Activity
 import com.example.lifesharing.product.api.CategoryItem
 import com.example.lifesharing.product.interfaces.CategoryItemClickListener
 import com.example.lifesharing.product.view_model.CategoryViewModel

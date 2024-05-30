@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="76dp"
+    android:layout_height="42dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/detail_time_btn_selected"
+        android:layout_width="76dp"
+        android:layout_height="42dp"
+        android:src="@drawable/reserve_selected_btn"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
+        android:id="@+id/detail_time_btn_selected_tv"
+        android:layout_width="76dp"
+        android:layout_height="42dp"
+        android:gravity="center"
+        android:text="오전"
+        android:textSize="14sp"
+        android:textColor="@color/blue_300"
+        app:layout_constraintTop_toTopOf="@id/detail_time_btn_selected"
+        app:layout_constraintBottom_toBottomOf="@id/detail_time_btn_selected"
+        app:layout_constraintStart_toStartOf="@id/detail_time_btn_selected"
+        app:layout_constraintEnd_toEndOf="@id/detail_time_btn_selected" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
